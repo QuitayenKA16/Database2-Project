@@ -13,13 +13,11 @@
 	</style>
 	
 	<body>
-		<?php
-			include "header.php";
-		?>
+		<?php include "header.php";?>
 		
-		<h3>Create new account</h3>
+		<h3>Create new parent account</h3>
 		
-		<form action="new_user_page.php" method="post">
+		<form action="new_parent_page.php" method="post">
 			<label for="field1"><span>Name: <span class="required">*</span></span> <input type="text" name="name"/></label> <br>
 			<label for="field2"><span>Email: <span class="required">*</span></span> <input type="text" name="email"/></label> <br>
 			<label for="field1"><span>Telephone: </span> <input type="text" name="phoneNum"/></label> <br>

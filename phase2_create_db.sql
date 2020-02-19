@@ -26,9 +26,9 @@ drop table if exists users;
 create table users (
     uid int AUTO_INCREMENT,
     name varchar(20),
-    email varchar(10),
+    email varchar(30),
     phoneNum char(10),
-    username varchar (20),
+    username varchar (20) UNIQUE,
     password varchar (25),
 	PRIMARY KEY (uid)
 );

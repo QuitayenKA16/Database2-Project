@@ -5,14 +5,14 @@
 
 	$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 
-	$query = "SELECT * FROM users WHERE username = '$_POST[username]' AND password = '$_POST[password]'";
+	$query = "SELECT * FROM users WHERE username = '$_POST[loginUsername]' AND password = '$_POST[loginPassword]'";
 	$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 	$count = mysqli_num_rows($result);
 	
 	if ($count == 1){
 		session_start();
-		$inputtedUsername = $_POST['username'];
-		$inputtedPassword = $_POST['password'];
+		$inputtedUsername = $_POST['loginUsername'];
+		$inputtedPassword = $_POST['loginPassword'];
 		$_SESSION['username'] = $inputtedUsername;
 		$_SESSION['password'] = $inputtedPassword;
 		

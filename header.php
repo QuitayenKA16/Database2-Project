@@ -18,18 +18,16 @@
 				session_start();
 				if (isset($_SESSION['username'])){
 					echo "<p><b>Signed in as: </b>$_SESSION[username]<p>";
-					echo "<a href='http://localhost/project/user_page.php'>Home</a>";
+					echo "<a href='http://localhost/Database2-Project/user_page.php'>Profile</a>";
 					echo " ";
-					echo "<a href='http://localhost/project/logout.php'>Logout</a><br>";
+					echo "<a href='http://localhost/Database2-Project/logout.php'>Logout</a><br>";
 				}
 				else{
-					echo "<a href='http://localhost/project/landing_page.php'>Home</a>";
+					echo "<a href='http://localhost/Database2-Project/landing_page.php'>Home</a>";
 				}
 			?>
 			
 		</div>
-
-		<br></br>
 		
 		<footer>
 			<p>(C) 2020 David Nguyen and Karamel Quitayen</p>

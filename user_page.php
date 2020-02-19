@@ -14,9 +14,11 @@
 			echo "<br>";
 		?>
 		
-		<div style="border:solid"
-			<p><b>Name: </b> <?php> 
-		/div>
+		<div style="border:solid" >
+			<p><b>Name: </b> <?php echo "$_SESSION[name]"; ?> </br>
+			<p><b>Email: </b> <?php echo "$_SESSION[email]"; ?> </br>
+			<p><b>Phone Number: </b> <?php echo "$_SESSION[phone]"; ?> </br>
+		</div>
 		
 	</body
 	
