@@ -18,7 +18,8 @@
 		
 		$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
 		$_SESSION['uid'] = $row['uid'];
-		$_SESSION['name'] = $row['name'];
+		$_SESSION['firstName'] = $row['firstName'];
+		$_SESSION['lastName'] = $row['lastName'];
 		$_SESSION['email'] = $row['email'];
 		$_SESSION['phone'] = $row['phoneNum'];
 		
@@ -32,7 +33,7 @@
 			$_SESSION['grade'] = $row['grade'];
 		}
 		else
-			$_SESSION['type'] = 1; //parent
+			$_SESSION['type'] = 0; //parent
 
 		if ($_SESSION['username'] == "admin")
 			header ("Location:admin_page.php");

@@ -12,11 +12,11 @@
 
 			$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 
-			$sql = "INSERT INTO users (name, email, phoneNum, username, password)
-				VALUES ('$_POST[name]', '$_POST[email]', '$_POST[phoneNum]', '$_POST[username]', '$_POST[password]')";
+			$sql = "INSERT INTO users (firstName, lastName, email, phoneNum, username, password)
+				VALUES ('$_POST[firstName]', '$_POST[lastName]', '$_POST[email]', '$_POST[phoneNum]', '$_POST[username]', '$_POST[password]')";
 
 			if ($myconnection->query($sql) != TRUE){
-				$_SESSION['error'] = "Error creating student account.<br> Error: " . $sql . "<br>" . $myconnection->error;
+				$_SESSION['error'] = "Error creating parent account.<br> Error: " . $sql . "<br>" . $myconnection->error;
 				header ("Location:create_parent_form.php");
 			}
 			else {

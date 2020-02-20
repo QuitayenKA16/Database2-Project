@@ -22,10 +22,10 @@
 		<div style="border:solid" >
 			<h3>Views</h3>
 			<a href='http://localhost/Database2-Project/view_users_page.php'>View Users</a><br>
-			<a href='http://localhost/Database2-Project/admin_page.php'>View Groups</a><br><br>
+			<a href='http://localhost/Database2-Project/view_groups_page.php'>View Groups</a><br><br>
 			
 			<h3>Create / Edit</h3>
-			<a href='http://localhost/Database2-Project/admin_page.php'>Create Group</a><br>
+			<a href='http://localhost/Database2-Project/create_group_form.php'>Create Group</a><br>
 			<a href='http://localhost/Database2-Project/admin_page.php'>Edit Group</a><br>
 		</div>
 		

@@ -25,11 +25,12 @@ drop table if exists users;
 
 create table users (
     uid int AUTO_INCREMENT,
-    name varchar(20),
+    firstName varchar(10) NOT NULL,
+	lastName varchar(10)NOT NULL,
     email varchar(30),
     phoneNum char(10),
     username varchar (20) UNIQUE,
-    password varchar (25),
+    password varchar (25) NOT NULL,
 	PRIMARY KEY (uid)
 );
 
@@ -58,7 +59,7 @@ create table students (
 
 create table groups (
     gid int AUTO_INCREMENT,
-    name varchar(30),
+    name varchar(50),
     description varchar(100),
     gradeLvl int,
     minMentorGrade int,
@@ -130,4 +131,4 @@ create table mentees (
 		ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-insert into users (name, username, password)  values ("Admin","admin", "");
+insert into users (firstName, lastName, username, password)  values ("Mr.","Admin", "admin", "");

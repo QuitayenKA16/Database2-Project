@@ -7,54 +7,54 @@
 
 -- Dat Relational Database Management System
 
--- create users (uid, name, email, phoneNum, username, password)
-insert into users (name, email, phoneNum, username, password)  values ("Principal Smith", "psmith@mail.com", "1234567890", "psmith", "password1");
+-- create users (uid, firstName, lastName, email, phoneNum, username, password)
+insert into users (firstName, lastName, email, phoneNum, username, password)  values ("Principal", "Smith", "psmith@mail.com", "1234567890", "psmith", "password1");
 
--- parents (uid, name, email, phoneNum, username, password)
-insert into users (name, email, phoneNum, username, password)  values ("Bob Jones", "bjones@mail.com", "1234567890", "bjones", "password1");
-insert into users (name, email, phoneNum, username, password)  values ("Jessica Davis", "jdavis@mail.com", "1234567890", "jdavis", "password1");
-insert into users (name, email, phoneNum, username, password)  values ("David Nguyen", "dnguyen@mail.com", "1234567890", "dnguyen", "password1");
-insert into users (name, email, phoneNum, username, password)  values ("Karamel Quitayen", "kquitayen@mail.com", "1234567890", "kquitayen", "password1");
+-- parents (uid, firstName, lastName, email, phoneNum, username, password)
+insert into users (firstName, lastName, email, phoneNum, username, password)  values ("Bob", "Jones", "bjones@mail.com", "1234567890", "bjones", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password)  values ("Jessica", "Davis", "jdavis@mail.com", "1234567890", "jdavis", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password)  values ("David", "Nguyen", "dnguyen@mail.com", "1234567890", "dnguyen", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password)  values ("Karamel", "Quitayen", "kquitayen@mail.com", "1234567890", "kquitayen", "password1");
 
--- students (uid, name, email, phoneNum, username, password)
-insert into users (name, email, phoneNum, username, password) values ("Sarah Brow", "sbrown@mail.com", "1234567890", "sbrown", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Peter Miller", "pmiller@mail.com", "1234567890", "pmiller", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Allan McCombs", "amccombs@mail.com", "1234567890", "amccombs", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Simon Barber", "sbarber@mail.com", "1234567890", "sbarber", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Justin LaGree", "jlagree@mail.com", "1234567890", "jlagree", "password1");
-insert into users (name, email, phoneNum, username, password) values ("James Tan", "jtan@mail.com", "1234567890", "jtan", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Zack Charlie", "zcharlie@mail.com", "1234567890", "zcharlie", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Fenim Patel", "fpatel@mail.com", "1234567890", "fpatel", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Cindy Chen", "cchen@mail.com", "1234567890", "cchen", "password1");
-insert into users (name, email, phoneNum, username, password) values ("David Adams", "daddams@mail.com", "1234567890", "daddams", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Chris Goulart", "cgoulart@mail.com", "1234567890", "cgoulart", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Byung Kim", "bkim@mail.com", "1234567890", "bkim", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Bill Moloney", "bmoloney@mail.com", "1234567890", "bmoloney", "password1");
-insert into users (name, email, phoneNum, username, password) values ("James Canning", "jcanning@mail.com", "1234567890", "jcanning", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Ethan McGuire", "ethanmcguire@mail.com", "1234567890", "emcguire", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Matthew Beliveau", "mbeliveau@mail.com", "1234567890", "mbeliveau", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Matt Galat", "mgalat@mail.com", "1234567890", "mgalat", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Evan Smith", "esmith@mail.com", "1234567890", "esmith", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Andrew Yaang", "ayaang@mail.com", "1234567890", "ayaang", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Donald Trump", "dtrump@mail.com", "1234567890", "dtrump", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Matthew Perry", "mperry@mail.com", "1234567890", "mperry", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Glen Coty", "gcoty@mail.com", "1234567890", "gcoty", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Steve Barna", "sbarna@mail.com", "1234567890", "sbarna", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Sarah Currier", "scurrier@mail.com", "1234567890", "scurrier", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Jeanne Phan", "jphan@mail.com", "1234567890", "jphan", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Jasen Ripley", "jripley@mail.com", "1234567890", "jripley", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Kristen Soiles", "ksoiles@mail.com", "1234567890", "ksoiles", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Penny Hamourgas", "phamourgas@mail.com", "1234567890", "phamourgas", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Ben Fine", "bfine@mail.com", "1234567890", "bfine", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Sean Cummings", "scummings@mail.com", "1234567890", "scummings", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Venkat Reddy", "vreddy@mail.com", "1234567890", "vreddy", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Cameron Napolitano", "cnapolitano@mail.com", "1234567890", "cnapolitano", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Mark Pierre", "mpierre@mail.com", "1234567890", "mpierre", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Mel Carignan", "mcarignan@mail.com", "1234567890", "mcarignan", "password1");
-insert into users (name, email, phoneNum, username, password) values ("Justin Dom", "jdom@mail.com", "1234567890", "jdom", "password1");
+-- students (uid, firstName, lastName, email, phoneNum, username, password)
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Sarah", "Brow", "sbrown@mail.com", "1234567890", "sbrown", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Peter", "Miller", "pmiller@mail.com", "1234567890", "pmiller", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Allan", "McCombs", "amccombs@mail.com", "1234567890", "amccombs", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Simon", "Barber", "sbarber@mail.com", "1234567890", "sbarber", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Justin", "LaGree", "jlagree@mail.com", "1234567890", "jlagree", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("James", "Tan", "jtan@mail.com", "1234567890", "jtan", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Zack", "Charlie", "zcharlie@mail.com", "1234567890", "zcharlie", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Fenim", "Patel", "fpatel@mail.com", "1234567890", "fpatel", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Cindy", "Chen", "cchen@mail.com", "1234567890", "cchen", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("David", "Adams", "daddams@mail.com", "1234567890", "daddams", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Chris", "Goulart", "cgoulart@mail.com", "1234567890", "cgoulart", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Byung", "Kim", "bkim@mail.com", "1234567890", "bkim", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Bill", "Moloney", "bmoloney@mail.com", "1234567890", "bmoloney", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("James", "Canning", "jcanning@mail.com", "1234567890", "jcanning", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Ethan", "McGuire", "ethanmcguire@mail.com", "1234567890", "emcguire", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Matthew", "Beliveau", "mbeliveau@mail.com", "1234567890", "mbeliveau", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Matt", "Galat", "mgalat@mail.com", "1234567890", "mgalat", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Evan", "Smith", "esmith@mail.com", "1234567890", "esmith", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Andrew", "Yaang", "ayaang@mail.com", "1234567890", "ayaang", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Donald", "Trump", "dtrump@mail.com", "1234567890", "dtrump", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Matthew", "Perry", "mperry@mail.com", "1234567890", "mperry", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Glen", "Coty", "gcoty@mail.com", "1234567890", "gcoty", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Steve", "Barna", "sbarna@mail.com", "1234567890", "sbarna", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Sarah", "Currier", "scurrier@mail.com", "1234567890", "scurrier", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Jeanne", "Phan", "jphan@mail.com", "1234567890", "jphan", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Jasen", "Ripley", "jripley@mail.com", "1234567890", "jripley", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Kristen", "Soiles", "ksoiles@mail.com", "1234567890", "ksoiles", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Penny", "Hamourgas", "phamourgas@mail.com", "1234567890", "phamourgas", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Ben", "Fine", "bfine@mail.com", "1234567890", "bfine", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Sean", "Cummings", "scummings@mail.com", "1234567890", "scummings", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Venkat", "Reddy", "vreddy@mail.com", "1234567890", "vreddy", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Cameron", "Napolitano", "cnapolitano@mail.com", "1234567890", "cnapolitano", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Mark", "Pierre", "mpierre@mail.com", "1234567890", "mpierre", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Mel", "Carignan", "mcarignan@mail.com", "1234567890", "mcarignan", "password1");
+insert into users (firstName, lastName, email, phoneNum, username, password) values ("Justin", "Dom", "jdom@mail.com", "1234567890", "jdom", "password1");
 
 
--- insert users (name, email, phoneNum, username, password)  into type tables (admin, parents, students)
+-- insert users (firstName, lastName, email, phoneNum, username, password)  into type tables (admin, parents, students)
 insert into admins values (1);
 
 insert into parents values (2);

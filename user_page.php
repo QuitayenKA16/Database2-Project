@@ -25,7 +25,7 @@
 		
 		<div>
 			<h4>User Information</h4>
-			<p><b>Name: </b> <?php echo "$_SESSION[name]"; ?> <br>
+			<p><b>Name: </b> <?php echo "$_SESSION[lastName], $_SESSION[firstName]"; ?> <br>
 			<p><b>Email: </b> <?php echo "$_SESSION[email]"; ?> <br>
 			<p><b>Phone Number: </b> <?php echo "$_SESSION[phone]"; ?> <br>
 		</div>

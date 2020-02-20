@@ -8,6 +8,9 @@
 			font: italic 12px Verdana, Arial, sans-serif;
 			position: fixed;
 			bottom: 0;
+			background-color: white;
+			width: 100%;
+			height: 34px;
 		}
 
 	</style>
