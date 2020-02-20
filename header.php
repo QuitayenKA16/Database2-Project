@@ -3,7 +3,6 @@
 		body {
 			font: normal 16px Verdana, Arial, sans-serif;
 		}
-		
 		footer {
 			font: italic 12px Verdana, Arial, sans-serif;
 			position: fixed;
@@ -30,6 +29,13 @@
 		select {
 			margin: 0px 0px 10px 0px;
 		}
+		a {
+			color: #2c87f0;
+		}
+		a:visited {
+			color: #2c87f0;
+		}
+
 	</style>
 	
 	<body>
@@ -40,10 +46,7 @@
 				session_start();
 				if (isset($_SESSION['username'])){
 					echo "<p><b>Signed in as: </b>$_SESSION[username] (UID$_SESSION[uid])<p>";
-					if ($_SESSION['type'] != -1)
-						echo "<a href='http://localhost/Database2-Project/user_page.php'>Profile</a>";
-					else
-						echo "<a href='http://localhost/Database2-Project/admin_page.php'>Profile</a>";
+					echo "<a href='http://localhost/Database2-Project/user_page.php'>Profile</a>";
 					echo " ";
 					echo "<a href='http://localhost/Database2-Project/logout.php'>Logout</a><br>";
 				}

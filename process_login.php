@@ -41,10 +41,7 @@
 				$_SESSION['type'] = -1;
 		}
 
-		if ($_SESSION['type'] == -1)
-			header ("Location:admin_page.php");
-		else
-			header ("Location:user_page.php");
+		header ("Location:user_page.php");
 	}
 	else{
 		session_start();
