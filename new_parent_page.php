@@ -28,7 +28,7 @@
 				$parentId = $row['uid'];
 				
 				$sql = "INSERT INTO parents VALUES (?)";
-				$stmt= $myconnection->prepare($sql);
+				$stmt = $myconnection->prepare($sql);
 				$stmt->bind_param("i", $parentId);
 				
 				if ($stmt->execute() === TRUE) {
