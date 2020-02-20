@@ -13,7 +13,12 @@
 	</style>
 	
 	<body>
-		<?php include "header.php";?>
+		<?php
+			include "header.php";
+			if (isset($_SESSION['error'])){
+				echo "<br>$_SESSION[error]";
+			}
+		?>
 		
 
 		<form action="new_student_page.php" method="post">

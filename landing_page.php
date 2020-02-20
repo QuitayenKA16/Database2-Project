@@ -8,7 +8,10 @@
 	</style>
 	
 	<body>
-		<?php include "header.php";?>
+		<?php
+			include "header.php";
+			$_SESSION['error'] = "";
+		?>
 		
 		<div>
 			<h3>Existing user</h3>

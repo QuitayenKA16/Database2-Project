@@ -129,3 +129,5 @@ create table mentees (
 	constraint FOREIGN KEY (meetingID) references meetings (meetingID)
 		ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+insert into users (name, username, password)  values ("Admin","admin", "");

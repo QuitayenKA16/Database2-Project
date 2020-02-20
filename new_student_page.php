@@ -15,18 +15,17 @@
 			$query = "SELECT * FROM users WHERE username = '$_POST[loginUsername]' AND password = '$_POST[loginPassword]'";
 			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 			$count = mysqli_num_rows($result);
-			$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
-			$parentId = $row['uid'];
 	
 			if ($count == 1){
-			
+				$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
+				$parentId = $row['uid'];
+				
 				$sql = "INSERT INTO users (name, email, phoneNum, username, password)
 					VALUES ('$_POST[name]', '$_POST[email]', '$_POST[phoneNum]', '$_POST[username]', '$_POST[password]')";
 
 				if ($myconnection->query($sql) != TRUE){
-					header ("Refresh: 5; Location:create_student_form.php");
-					echo "Error: " . $sql . "<br>" . $myconnection->error;
-					echo "<br>Error creating student account.<br>Refreshing in 10 seconds...";
+					$_SESSION['error'] = "<br>Error creating student account.<br>Error: " . $sql . "<br>" . $myconnection->error;
+					header ("Location:create_student_form.php");
 				}
 				else{
 					echo "Successful parent selection: <b>$_POST[loginUsername]</b><br>";
@@ -50,8 +49,8 @@
 				}
 			}
 			else{
-				header ("Refresh: 10; Location:create_student_form.php");
-				echo "Parent account either does not exist or is incorrect. Try again :(<br>Refreshing in 10 seconds.";
+				$_SESSION['error'] = "Parent account either does not exist or username and/or password is incorrect.";
+				header ("Location:create_student_form.php");
 			}
 			$myconnection->close();
 		?>

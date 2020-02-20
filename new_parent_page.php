@@ -16,9 +16,8 @@
 				VALUES ('$_POST[name]', '$_POST[email]', '$_POST[phoneNum]', '$_POST[username]', '$_POST[password]')";
 
 			if ($myconnection->query($sql) != TRUE){
-				header ("Refresh: 5; Location:create_parent_form.php");
-				echo "Error creating student account.<br>Refreshing in 10 seconds...";
-				echo "Error: " . $sql . "<br>" . $myconnection->error;
+				$_SESSION['error'] = "Error creating student account.<br> Error: " . $sql . "<br>" . $myconnection->error;
+				header ("Location:create_parent_form.php");
 			}
 			else {
 			

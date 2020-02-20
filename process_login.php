@@ -22,9 +22,26 @@
 		$_SESSION['email'] = $row['email'];
 		$_SESSION['phone'] = $row['phoneNum'];
 		
-		header ("Location:user_page.php");
+		$query = "SELECT * FROM students WHERE uid = '$_SESSION[uid]'";
+		$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+		$count = mysqli_num_rows($result);
+		$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
+		
+		if ($count == 1){
+			$_SESSION['type'] = 1; //student
+			$_SESSION['grade'] = $row['grade'];
+		}
+		else
+			$_SESSION['type'] = 1; //parent
+
+		if ($_SESSION['username'] == "admin")
+			header ("Location:admin_page.php");
+		else
+			header ("Location:user_page.php");
 	}
 	else{
+		session_start();
+		$_SESSION['error'] = "Incorrect username and/or password.";
 		header ("Location:login_form.php");
 	}
 	echo '<br>';

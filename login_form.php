@@ -13,7 +13,12 @@
 	</style>
 	
 	<body>
-		<?php include "header.php";?>
+		<?php
+			include "header.php";
+			if (isset($_SESSION['error'])){
+				echo "<br>$_SESSION[error]";
+			}
+		?>
 		<h3>Login as existing account</h3>
 		<form action="process_login.php" method="post">
 			<label for="field1"><span>Username: <span class="required">*</span></span> <input type="text" name="loginUsername"/></label> <br>

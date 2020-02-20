@@ -13,7 +13,12 @@
 	</style>
 	
 	<body>
-		<?php include "header.php";?>
+		<?php
+			include "header.php";
+			if (isset($_SESSION['error'])){
+				echo "<br>$_SESSION[error]";
+			}
+		?>
 		
 		<h3>Create new parent account</h3>
 		
