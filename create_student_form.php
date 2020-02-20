@@ -1,24 +1,6 @@
 <html>
 	
 	<style>
-		label {
-			display: block;
-			margin: 0px 0px 0px 0px;
-		}
-		label > span{
-			width: 125px;
-			float: left;
-			padding-right: 5px;
-		}
-		select {
-			margin: 0px 0px 10px 0px;
-		}
-		form {
-			margin-bottom: 35px;
-		}
-		span.required {
-			color: red;
-		}
 	</style>
 	
 	<body>

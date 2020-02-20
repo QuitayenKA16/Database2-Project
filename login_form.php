@@ -1,15 +1,5 @@
 <html>
 	<style>
-		label {
-			margin: 0px 0px 10px 0px;
-		}
-		input {
-			margin: 0px 0px 10px 0px;
-		}
-		span.required {
-			color:red;
-		}
-			
 	</style>
 	
 	<body>

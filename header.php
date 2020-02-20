@@ -12,7 +12,24 @@
 			width: 100%;
 			height: 34px;
 		}
-
+		form {
+			margin-bottom: 35px;
+		}
+		label {
+			display: block;
+			margin: 0px 0px 0px 0px;
+		}
+		label > span{
+			width: 125px;
+			float: left;
+			padding-right: 5px;
+		}
+		span.required {
+			color: red;
+		}
+		select {
+			margin: 0px 0px 10px 0px;
+		}
 	</style>
 	
 	<body>
