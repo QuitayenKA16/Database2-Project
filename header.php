@@ -40,7 +40,7 @@
 				session_start();
 				if (isset($_SESSION['username'])){
 					echo "<p><b>Signed in as: </b>$_SESSION[username] (UID$_SESSION[uid])<p>";
-					if ($_SESSION['uid'] != 1)
+					if ($_SESSION['type'] != -1)
 						echo "<a href='http://localhost/Database2-Project/user_page.php'>Profile</a>";
 					else
 						echo "<a href='http://localhost/Database2-Project/admin_page.php'>Profile</a>";

@@ -8,14 +8,14 @@
 -- Dat Relational Database Management System
 
 -- create users (uid, firstName, lastName, email, phoneNum, username, password)
-insert into users (firstName, lastName, email, phoneNum, username, password)  values ("Principal", "Smith", "psmith@mail.com", "1234567890", "psmith", "password1");
 
 -- parents (uid, firstName, lastName, email, phoneNum, username, password)
+insert into users (firstName, lastName, email, phoneNum, username, password)  values ("Principal", "Smith", "psmith@mail.com", "1234567890", "psmith", "password1");
+
 insert into users (firstName, lastName, email, phoneNum, username, password)  values ("Bob", "Jones", "bjones@mail.com", "1234567890", "bjones", "password1");
 insert into users (firstName, lastName, email, phoneNum, username, password)  values ("Jessica", "Davis", "jdavis@mail.com", "1234567890", "jdavis", "password1");
 insert into users (firstName, lastName, email, phoneNum, username, password)  values ("David", "Nguyen", "dnguyen@mail.com", "1234567890", "dnguyen", "password1");
 insert into users (firstName, lastName, email, phoneNum, username, password)  values ("Karamel", "Quitayen", "kquitayen@mail.com", "1234567890", "kquitayen", "password1");
-
 -- students (uid, firstName, lastName, email, phoneNum, username, password)
 insert into users (firstName, lastName, email, phoneNum, username, password) values ("Sarah", "Brow", "sbrown@mail.com", "1234567890", "sbrown", "password1");
 insert into users (firstName, lastName, email, phoneNum, username, password) values ("Peter", "Miller", "pmiller@mail.com", "1234567890", "pmiller", "password1");
@@ -56,46 +56,46 @@ insert into users (firstName, lastName, email, phoneNum, username, password) val
 
 -- insert users (firstName, lastName, email, phoneNum, username, password)  into type tables (admin, parents, students)
 insert into admins values (1);
+insert into admins values (2);
 
-insert into parents values (2);
 insert into parents values (3);
 insert into parents values (4);
 insert into parents values (5);
+insert into parents values (6);
 
 -- (uid, parentID, grade)
-insert into students values (6,2,6);
 insert into students values (7,3,7);
 insert into students values (8,4,8);
 insert into students values (9,5,9);
-insert into students values (10,2,10);
+insert into students values (10,6,10);
 insert into students values (11,3,11);
 insert into students values (12,4,12);
 insert into students values (13,5,6);
-insert into students values (14,2,7);
+insert into students values (14,6,7);
 insert into students values (15,3,8);
 insert into students values (16,4,9);
 insert into students values (17,5,10);
-insert into students values (18,2,11);
+insert into students values (18,6,11);
 insert into students values (19,3,12);
 insert into students values (20,4,6);
 insert into students values (21,5,7);
-insert into students values (22,2,8);
+insert into students values (22,6,8);
 insert into students values (23,3,9);
 insert into students values (24,4,10);
 insert into students values (25,5,11);
-insert into students values (26,2,12);
+insert into students values (26,6,12);
 insert into students values (27,3,6);
 insert into students values (28,4,7);
 insert into students values (29,5,8);
-insert into students values (30,2,9);
+insert into students values (30,6,9);
 insert into students values (31,3,10);
 insert into students values (32,4,11);
 insert into students values (33,5,12);
-insert into students values (34,2,6);
+insert into students values (34,6,6);
 insert into students values (35,3,7);
 insert into students values (36,4,8);
 insert into students values (37,5,9);
-insert into students values (38,2,10);
+insert into students values (38,6,10);
 insert into students values (39,3,11);
 insert into students values (40,4,12);
 

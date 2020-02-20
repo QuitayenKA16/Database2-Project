@@ -1,8 +1,4 @@
 <html>
-	<style>
-
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
