@@ -5,13 +5,6 @@
 			border-collapse: collapse;
 			margin-bottom: 50px;
 		}
-		div {
-			border-style: solid;
-			padding-top: 10px;
-			padding-right: 10px;
-			padding-bottom: 10px;
-			padding-left: 10px;
-		}
 		label > span{
 			width: 25px;
 		}

@@ -25,8 +25,8 @@
 		<?php
 			include "header.php";
 			unset($_SESSION['error']);
-			unset($_SESSION['table_view']);
-			$_SESSION['sort'] = "uidAsc";
+			$_SESSION['table_view'] = 'default';
+			$_SESSION['table_sort'] = 'idAsc';
 		?>
 		
 		<div class="column1" style="background-color:#f2f2f2; width:40%;">
