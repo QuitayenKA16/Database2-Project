@@ -29,17 +29,22 @@
 	<body>
 		<?php
 			include "header.php";
-			$_SESSION['table_view'] = (isset($_POST['table_view'])) ? $_POST['table_view'] : $_SESSION['table_view'];
-			$_SESSION['table_sort'] = (isset($_POST['table_sort'])) ? $_POST['table_sort'] : $_SESSION['table_sort'];
+			if (isset($_POST['table_view'])){
+				$_SESSION['table_view'] = $_POST['table_view'];
+				$_SESSION['table_sort'] = 'idAsc';
+			}
+			else if (isset($_POST['table_sort'])){
+				$_SESSION['table_sort'] = $_POST['table_sort'];
+			}
 		?>
 		
 		<form action="view_users_page.php" method="post">
 			<div align='center'>
 				<h3>View Users</h3>
-				<button type='submit' class='class1' name='table_view' value='default'/>All</button>
-				<button type='submit' class='class1' name='table_view' value='admin'/>Admin</button>
-				<button type='submit' class='class1' name='table_view' value='parents'/>Parents</button>
-				<button type='submit' class='class1' name='table_view' value='students'/>Students</button>
+				<button type='submit' class='class1'<?php if ($_SESSION['table_view']=='default') echo "disabled='disabled'";?> name='table_view' value='default'/>All</button>
+				<button type='submit' class='class1'<?php if ($_SESSION['table_view']=='admin') echo "disabled='disabled'";?> name='table_view' value='admin'/>Admin</button>
+				<button type='submit' class='class1'<?php if ($_SESSION['table_view']=='parents') echo "disabled='disabled'";?> name='table_view' value='parents'/>Parents</button>
+				<button type='submit' class='class1'<?php if ($_SESSION['table_view']=='students') echo "disabled='disabled'";?> name='table_view' value='students'/>Students</button>
 			</div>
 			<br><br>
 		
@@ -51,12 +56,7 @@
 				$sort = " ORDER BY ";
 				
 				if ($_SESSION['table_view'] == "students")
-					if ($_SESSION['table_sort']=='pidAsc' || $_SESSION['table_sort']=='pidDes'){
-						$sort .= "s.";
-						$_SESSION['table_sort'] = 'idAsc';
-					}
-					else
-						$sort .= "u.";
+					$sort .= ($_SESSION['table_sort']=='pidAsc' || $_SESSION['table_sort']=='pidDes') ? "s." : "u.";
 				
 				if ($_SESSION['table_sort']=='idAsc') $sort .= "uid ASC";
 				if ($_SESSION['table_sort']=='idDes') $sort .= "uid DESC";
@@ -78,29 +78,34 @@
 				else
 					$query = "SELECT * FROM users" . $sort;
 				
+							
+				//echo $query . "<br>";
+				
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				$count = mysqli_num_rows($result);
 				
-				echo "<tr>
-							<th><button type='submit' class='class2' name='table_sort' value='idAsc'>&#9650</button>
-							UID <button type='submit' class='class2' name='table_sort' value='idDes'>&#9660</button></th>
-								
-							<th><button type='submit' class='class2' name='table_sort' value='fNameAsc'>&#9650</button>
-							First Name <button type='submit' class='class2' name='table_sort' value='fNameDes'>&#9660</button></th>
-								
-							<th><button type='submit' class='class2' name='table_sort' value='lNameAsc'>&#9650</button>
-							Last Name <button type='submit' class='class2' name='table_sort' value='lNameDes'>&#9660</button></th>
-								
-							<th>Email</th>
-								
-							<th>Phone Number</th>
-								
-							<th><button type='submit' class='class2' name='table_sort' value='uNameAsc'>&#9650</button>
-							Username <button type='submit' class='class2' name='table_sort' value='uNameDes'>&#9660</button></th>";
-							
+				echo "<tr><th>UID <button type='submit' class='class2' name='table_sort' ";
+				if ($_SESSION['table_sort']=='idAsc') echo " value='idDes'>&#9660</button></th>";
+				else echo " value='idAsc'>&#9650</button></th>";
+				
+				echo "<th>First Name <button type='submit' class='class2' name='table_sort' ";
+				if ($_SESSION['table_sort']=='fNameAsc') echo " value='fNameDes'>&#9660</button></th>";
+				else echo " value='fNameAsc'>&#9650</button></th>";
+				
+				echo "<th>Last Name <button type='submit' class='class2' name='table_sort' ";
+				if ($_SESSION['table_sort']=='lNameAsc') echo " value='lNameDes'>&#9660</button></th>";
+				else echo " value='lNameAsc'>&#9650</button></th>";
+				
+				echo "<th>Email</th><th>Phone Number</th>";
+				
+				echo "<th>Username <button type='submit' class='class2' name='table_sort' ";
+				if ($_SESSION['table_sort']=='uNameAsc') echo " value='uNameDes'>&#9660</button></th>";
+				else echo " value='uNameAsc'>&#9650</button></th>";
+				
 				if ($_SESSION['table_view'] == "students"){
-					echo "<th><button type='submit' class='class2' name='table_sort' value='pidAsc'>&#9650</button>
-							 Parent Id <button type='submit' class='class2' name='table_sort' value='pidDes'>&#9660</button></th>";
+					echo "<th>Parent ID <button type='submit' class='class2' name='table_sort' ";
+					if ($_SESSION['table_sort']=='pidAsc') echo " value='pidDes'>&#9660</button></th>";
+					else echo " value='pidAsc'>&#9650</button></th>";
 				}
 				echo "</tr>";
 							
