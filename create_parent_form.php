@@ -20,7 +20,7 @@
 			<label for="field4"><span>Telephone: </span> <input type="text" name="phoneNum"/></label> <br>
 			<label for="field5"><span>Username: <span class="required">*</span></span> <input type="text" name="username"/></label> <br>
 			<label for="field6"><span>Password: <span class="required">*</span></span> <input type="password" name="password"/></label> <br>
-			<input type="submit">
+			<input type="submit" style="font: normal 16px Verdana, Arial, sans-serif;">
 		</form>
 		
 	</body>

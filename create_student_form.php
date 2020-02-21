@@ -34,7 +34,7 @@
 				<option value="11">11</option>
 				<option value="12">12</option>
 			</select><br>
-			<input type="submit">
+			<input type="submit" style="font: normal 16px Verdana, Arial, sans-serif;">
 		</form>
 		
 	</body>

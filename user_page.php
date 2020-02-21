@@ -13,7 +13,6 @@
 		.column2{
 			border-style: none;
 			float: left;
-			padding: 10px;
 			width: 50%;
 		}
 		p.p1 {
@@ -41,11 +40,20 @@
 						echo "Parent<br>";
 					else if ($_SESSION['type'] == -1)
 						echo "Admin<br>";
-					else
+					else{ //student
 						echo "Student<br><p class='p1'><b>Grade Level: </b>$_SESSION[grade]<br>";
+						echo "<p class='p1'><b>Parent UID: </b>";
+						
+						$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
+						$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
+						$query = "SELECT * FROM users u, students s WHERE u.uid = $_SESSION[uid] AND u.uid = s.uid";
+						$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+						$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
+						echo "$row[pid]";
+					};
 				?>
 			<br><br><br>
-			<a href='http://localhost/Database2-Project/user_page.php'>Edit Details</a>
+			<a href='http://localhost/Database2-Project/edit_user_form.php'>Edit Details</a>
 		</div>
 		
 		<div class="column1" style="width:60%;">
@@ -62,7 +70,6 @@
 					echo "<div class='column2' align='center'>";
 					echo "<p style='font: bold 16px Verdana, Arial, sans-serif;'>Create / Edit</p>";
 					echo "<a href='http://localhost/Database2-Project/create_group_form.php'>Create Group</a><br>";
-					echo "<a href='http://localhost/Database2-Project/admin_page.php'>Edit Group</a><br>";
 					echo "</div>";
 				}
 				else if ($_SESSION['type'] == 0){ //user

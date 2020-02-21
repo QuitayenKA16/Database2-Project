@@ -28,6 +28,7 @@
 		}
 		select {
 			margin: 0px 0px 10px 0px;
+			font: normal 16px Verdana, Arial, sans-serif;
 		}
 		a {
 			color: #2c87f0;
@@ -51,6 +52,7 @@
 					echo "<a href='http://localhost/Database2-Project/logout.php'>Logout</a><br>";
 				}
 				else{
+					echo "<p>";
 					echo "<a href='http://localhost/Database2-Project/landing_page.php'>Home</a>";
 				}
 			?>

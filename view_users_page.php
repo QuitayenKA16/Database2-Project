@@ -43,7 +43,7 @@
 					echo ">Students</option>";
 				?>
 			</select>
-			<input type="submit" value="Set">
+			<input type="submit" style="font: normal 16px Verdana, Arial, sans-serif;" value="Set">
 			<label><b>Sort: </b></label>
 			<select type="text" name="table_sort">
 				<?php
@@ -58,7 +58,7 @@
 					echo ">Username</option>";
 				?>
 			</select>
-			<input type="submit" value="Set">
+			<input type="submit" style="font: normal 16px Verdana, Arial, sans-serif;" value="Set">
 		</form>
 		
 		

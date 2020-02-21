@@ -9,6 +9,7 @@
 			setcookie($name, '', time()-1000, '/');
 		}
 	}
+	session_unset();
 	session_destroy();
 	header ("Location:landing_page.php");
 	exit();
