@@ -12,6 +12,10 @@
 			padding-bottom: 10px;
 			padding-left: 10px;
 		}
+		label > span{
+			width: 25px;
+		}
+		
 	</style>
 	
 	<body>

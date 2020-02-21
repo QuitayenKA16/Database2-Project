@@ -12,24 +12,29 @@
 			padding-bottom: 10px;
 			padding-left: 10px;
 		}
+		label {
+			display: block;
+			width: 25px;
+		}
 		
 	</style>
 	
 	<body>
 		<?php
 			include "header.php";
-			$_SESSION['table_view'] = (isset($_POST['view'])) ? $_POST['view'] : "default";
+			$_SESSION['table_view'] = (isset($_POST['table_view'])) ? $_POST['table_view'] : "default";
+			$_SESSION['table_sort'] = (isset($_POST['table_sort'])) ? $_POST['table_sort'] : "default";
 		?>
 		
 		<br>
 		
 		<form action="view_users_page.php" method="post">
-			<label for="field8"><span><b>View: </b></span></label>
-			<select type="text" name="view">
+			<label><b>View: </b></label>
+			<select type="text" name="table_view">
 				<?php
 					echo "<option value='default'";
 					if ($_SESSION['table_view'] == "default") echo " selected";
-					echo ">All</option>";
+					echo ">Default(All)</option>";
 					echo "<option value='parents'";
 					if ($_SESSION['table_view'] == "parents") echo " selected";
 					echo ">Parents</option>";
@@ -38,7 +43,22 @@
 					echo ">Students</option>";
 				?>
 			</select>
-			<input type="submit">
+			<input type="submit" value="Set">
+			<label><b>Sort: </b></label>
+			<select type="text" name="table_sort">
+				<?php
+					echo "<option value='default'";
+					if ($_SESSION['table_sort'] == "default") echo " selected";
+					echo ">Default (UID)</option>";
+					echo "<option value='name'";
+					if ($_SESSION['table_sort'] == "name") echo " selected";
+					echo ">Last Name</option>";
+					echo "<option value='username'";
+					if ($_SESSION['table_sort'] == "username") echo " selected";
+					echo ">Username</option>";
+				?>
+			</select>
+			<input type="submit" value="Set">
 		</form>
 		
 		
@@ -47,17 +67,31 @@
 				$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 				$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 				
-				if ($_SESSION['table_view'] == "parents"){
-					$query = "SELECT * FROM users WHERE uid IN (SELECT uid FROM parents) ORDER BY uid ASC";
+				if ($_SESSION['table_sort'] == "default")
+					$sort = " ORDER BY uid ASC";
+				else if ($_SESSION['table_sort'] == "name")
+					$sort =" ORDER BY lastName ASC";
+				else
+					$sort = " ORDER BY username ASC";
+				
+				if ($_SESSION['table_view'] == "students"){
+					if ($_SESSION['table_sort'] == "default")
+						$sort = " ORDER BY u.uid ASC";
+					else if ($_SESSION['table_sort'] == "name")
+						$sort = " ORDER BY u.lastName ASC";
+					else
+						$sort = " ORDER BY u.username ASC";
+					
+					$query = "SELECT * FROM users u, students s WHERE u.uid = s.uid" . $sort;
+					echo "<caption>All Student Information</caption>";
+					
+				}
+				else if ($_SESSION['table_view'] == "parents"){
+					$query = "SELECT * FROM users WHERE uid IN (SELECT uid FROM parents)" . $sort;
 					echo "<caption>All Parent Information</caption>";
 				}
-				else if ($_SESSION['table_view'] == "students"){
-					//$query = "SELECT * FROM users WHERE uid IN (SELECT uid FROM students) ORDER BY uid ASC";
-					$query = "SELECT * FROM users u, students s WHERE u.uid = s.uid ORDER BY u.uid";
-					echo "<caption>All Student Information</caption>";
-				}
 				else {
-					$query = "SELECT * FROM users WHERE uid > 1";
+					$query = "SELECT * FROM users WHERE uid > 1" . $sort;
 					echo "<caption>All User Information</caption>";
 				}
 				

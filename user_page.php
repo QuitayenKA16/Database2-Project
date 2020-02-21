@@ -25,7 +25,9 @@
 	<body>
 		<?php
 			include "header.php";
-			$_SESSION['error'] = "";
+			unset($_SESSION['error']);
+			unset($_SESSION['table_view']);
+			unset($_SESSION['table_sort']);
 		?>
 		
 		<div class="column1" style="background-color:#f2f2f2; width:40%;">
