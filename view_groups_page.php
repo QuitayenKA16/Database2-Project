@@ -15,11 +15,10 @@
 		<?php
 			include "header.php";
 		?>
-		
-		<br>
-		
+
 		<table style='width:100%'>
-			<caption>Group Information</caption>
+			<div align='center'>
+			<h3>View Groups</h3>
 			<?php
 				$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 				$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
@@ -36,6 +35,7 @@
 					echo "</tr>";
 				}
 			?>
+			</div>
 		</table>
 	</body
 	

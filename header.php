@@ -11,6 +11,9 @@
 			width: 100%;
 			height: 34px;
 		}
+		input {
+			font: normal 16px Verdana, Arial, sans-serif;
+		}
 		form {
 			margin-bottom: 35px;
 		}
@@ -35,6 +38,9 @@
 		}
 		a:visited {
 			color: #2c87f0;
+		}
+		th{
+			background-color: #e6e6e6;
 		}
 
 	</style>

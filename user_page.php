@@ -9,16 +9,16 @@
 			padding: 10px;
 			height:300px;
 			margin-top:15px;
-		}
-		.column2{
-			border-style: none;
-			float: left;
-			width: 50%;
+			width:50%;
 		}
 		p.p1 {
 			font: normal 14px Verdana, Arial, sans-serif;
 			margin-left: 10px;
 		}
+		h4 {
+			margin: 20px 0px 5px 0px;
+		}
+		
 	</style>
 
 	<body>
@@ -29,7 +29,7 @@
 			$_SESSION['table_sort'] = 'idAsc';
 		?>
 		
-		<div class="column1" style="background-color:#f2f2f2; width:40%;">
+		<div class="column1" style="background-color:#f2f2f2;">
 			<h3 align="center">User Information</h3>
 			<p class="p1"><b>Name: </b> <?php echo "$_SESSION[lastName], $_SESSION[firstName]"; ?> <br>
 			<p class="p1"><b>Email: </b> <?php echo "$_SESSION[email]"; ?> <br>
@@ -56,32 +56,31 @@
 			<a href='http://localhost/Database2-Project/edit_user_form.php'>Edit Details</a>
 		</div>
 		
-		<div class="column1" style="width:60%;">
+		<div class="column1" style="">
 			<h3 align="center">Actions</h3>
 				
 			<?php
 				if ($_SESSION['type'] == -1){ //admin
-					echo "<div class='column2' align='center'>";
-					echo "<p style='font: bold 16px Verdana, Arial, sans-serif;'>Views</p>";
-					echo "<a href='http://localhost/Database2-Project/view_users_page.php'>View Users</a><br>";
-					echo "<a href='http://localhost/Database2-Project/view_groups_page.php'>View Groups</a><br><br>";
-					echo "</div>";
-					
-					echo "<div class='column2' align='center'>";
-					echo "<p style='font: bold 16px Verdana, Arial, sans-serif;'>Create / Edit</p>";
-					echo "<a href='http://localhost/Database2-Project/create_group_form.php'>Create Group</a><br>";
+					echo "<div align='center'>";
+					echo "<h4>Views</h4>";
+					echo "<a href='http://localhost/Database2-Project/view_users_page.php'>View users</a><br>";
+					echo "<a href='http://localhost/Database2-Project/view_groups_page.php'>View groups</a><br><br>";
+
+					echo "<h4>Create</h4>";
+					echo "<a href='http://localhost/Database2-Project/create_admin_form.php'>Create new admin account</a><br>";
+					echo "<a href='http://localhost/Database2-Project/create_group_form.php'>Create new group</a><br>";
 					echo "</div>";
 				}
 				else if ($_SESSION['type'] == 0){ //user
 					echo "<div align='center'>";
-					echo "<a href='http://localhost/Database2-Project/user_page.php'>View Children</a><br>";
-					echo "<a href='http://localhost/Database2-Project/user_page.php'>Assign Meetings</a><br>";
+					echo "<a href='http://localhost/Database2-Project/user_page.php'>View children</a><br>";
+					echo "<a href='http://localhost/Database2-Project/user_page.php'>Assign meetings</a><br>";
 					echo "</div>";
 				}
 				else { //student
 					echo "<div align='center'>";
-					echo "<a href='http://localhost/Database2-Project/user_page.php'>Join Group</a><br>";
-					echo "<a href='http://localhost/Database2-Project/user_page.php'>Attend Meeting</a><br>";
+					echo "<a href='http://localhost/Database2-Project/user_page.php'>Join groups</a><br>";
+					echo "<a href='http://localhost/Database2-Project/user_page.php'>Join meetings</a><br>";
 					echo "</div>";
 				}
 			?>

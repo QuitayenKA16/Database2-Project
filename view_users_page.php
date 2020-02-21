@@ -5,9 +5,6 @@
 			border-collapse: collapse;
 			margin-bottom: 50px;
 		}
-		th{
-			background-color: #e6e6e6;
-		}
 		button[type=submit].class1 {
 			font: normal 16px Verdana, Arial, sans-serif;
 			background-color: #bfbfbf;
