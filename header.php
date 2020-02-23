@@ -21,7 +21,7 @@
 			display: block;
 			margin: 0px 0px 0px 0px;
 		}
-		label > span{
+		label > span {
 			width: 125px;
 			float: left;
 			padding-right: 5px;
@@ -39,8 +39,24 @@
 		a:visited {
 			color: #2c87f0;
 		}
-		th{
+		th {
 			background-color: #e6e6e6;
+		}
+		button[type=submit].class1 {
+			font: normal 16px Verdana, Arial, sans-serif;
+			background-color: #bfbfbf;
+			color: white;
+			text-decoration: none;
+			cursor: pointer;
+			width: 10%;
+			height = 20px;
+		}
+		button[type=submit].class2 {
+			font: normal 14px Verdana, Arial, sans-serif;
+			background-color: #e6e6e6;
+			color: black;
+			border: none
+			cursor: pointer;
 		}
 
 	</style>
@@ -53,8 +69,8 @@
 				session_start();
 				if (isset($_SESSION['username'])){
 					echo "<p><b>Signed in as: </b>$_SESSION[username] (UID$_SESSION[uid])<p>";
-					echo "<a href='http://localhost/Database2-Project/user_page.php'>Profile</a>";
-					echo " ";
+					echo "<a href='http://localhost/Database2-Project/$_SESSION[back]'>Back</a> ";
+					echo "<a href='http://localhost/Database2-Project/user_page.php'>Profile</a> ";
 					echo "<a href='http://localhost/Database2-Project/logout.php'>Logout</a><br>";
 				}
 				else{

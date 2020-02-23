@@ -40,7 +40,7 @@
 			else
 				$_SESSION['type'] = -1;
 		}
-
+		$_SESSION[back] = 'user_page.php';
 		header ("Location:user_page.php");
 	}
 	else{

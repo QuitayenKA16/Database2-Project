@@ -6,6 +6,7 @@
 	<body>
 		<?php
 			include "header.php";
+			$_SESSION['back'] = "user_page.php";
 			if (isset($_SESSION['error'])){
 				echo "$_SESSION[error]";
 			}
@@ -14,8 +15,10 @@
 
 		<form action="new_student_page.php" method="post">
 			<h3>Set parent account</h3>
-			<label for="field1"><span>Username: <span class="required">*</span></span> <input type="text" name="loginUsername"/></label> <br>
-			<label for="field2"><span>Password: <span class="required">*</span></span> <input type="password" name="loginPassword"/></label> <br>
+			<label for="field1"><span>Username: <span class="required">*</span></span> <input type="text" name="loginUsername" value=
+				<?php echo "'$_SESSION[username]'";?>/></label> <br>
+			<label for="field2"><span>Password: <span class="required">*</span></span> <input type="password" name="loginPassword" value=
+				<?php echo "'$_SESSION[password]'";?>/></label> <br>
 		
 			<h3>Create student account</h3>
 			<label for="field3"><span>First Name: <span class="required">*</span></span> <input type="text" name="firstName"/></label> <br>

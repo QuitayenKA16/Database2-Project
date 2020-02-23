@@ -8,7 +8,6 @@
 		label > span{
 			width: 25px;
 		}
-		
 	</style>
 	
 	<body>

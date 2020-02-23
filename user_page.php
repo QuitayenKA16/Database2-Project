@@ -24,9 +24,11 @@
 	<body>
 		<?php
 			include "header.php";
+			$_SESSION['back'] = "user_page.php";
 			unset($_SESSION['error']);
 			$_SESSION['table_view'] = 'default';
 			$_SESSION['table_sort'] = 'idAsc';
+			$_SESSION['edit_uid'] = $_SESSION['uid'];
 		?>
 		
 		<div class="column1" style="background-color:#f2f2f2;">
@@ -73,7 +75,8 @@
 				}
 				else if ($_SESSION['type'] == 0){ //user
 					echo "<div align='center'>";
-					echo "<a href='http://localhost/Database2-Project/user_page.php'>View children</a><br>";
+					echo "<a href='http://localhost/Database2-Project/create_student_form.php'>Create student account</a><br>";
+					echo "<a href='http://localhost/Database2-Project/view_children_page.php'>View children</a><br>";
 					echo "<a href='http://localhost/Database2-Project/user_page.php'>Assign meetings</a><br>";
 					echo "</div>";
 				}

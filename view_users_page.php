@@ -5,27 +5,12 @@
 			border-collapse: collapse;
 			margin-bottom: 50px;
 		}
-		button[type=submit].class1 {
-			font: normal 16px Verdana, Arial, sans-serif;
-			background-color: #bfbfbf;
-			color: white;
-			text-decoration: none;
-			cursor: pointer;
-			width: 10%;
-			height = 20px;
-		}
-		button[type=submit].class2 {
-			font: normal 14px Verdana, Arial, sans-serif;
-			background-color: #e6e6e6;
-			color: black;
-			border: none
-			cursor: pointer;
-		}
 	</style>
 	
 	<body>
 		<?php
 			include "header.php";
+			$_SESSION['back'] = "view_users_page.php";
 			if (isset($_POST['table_view'])){
 				$_SESSION['table_view'] = $_POST['table_view'];
 				$_SESSION['table_sort'] = 'idAsc';
@@ -33,6 +18,7 @@
 			else if (isset($_POST['table_sort'])){
 				$_SESSION['table_sort'] = $_POST['table_sort'];
 			}
+			unset($_SESSION['edit_uid']);
 		?>
 		
 		<form action="view_users_page.php" method="post">
@@ -51,7 +37,6 @@
 				$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 				
 				$sort = " ORDER BY ";
-				
 				if ($_SESSION['table_view'] == "students")
 					$sort .= ($_SESSION['table_sort']=='pidAsc' || $_SESSION['table_sort']=='pidDes') ? "s." : "u.";
 				
@@ -76,10 +61,8 @@
 					$query = "SELECT * FROM users" . $sort;
 				
 							
-				//echo $query . "<br>";
-				
+				echo $query . "<br>";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
-				$count = mysqli_num_rows($result);
 				
 				echo "<tr><th>UID <button type='submit' class='class2' name='table_sort' ";
 				if ($_SESSION['table_sort']=='idAsc') echo " value='idDes'>&#9660</button></th>";
@@ -104,10 +87,11 @@
 					if ($_SESSION['table_sort']=='pidAsc') echo " value='pidDes'>&#9660</button></th>";
 					else echo " value='pidAsc'>&#9650</button></th>";
 				}
-				echo "</tr>";
+				echo "<th>Edit</th></tr></form>";
 							
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					echo "<tr>";
+					echo "<form action='http://localhost/Database2-Project/edit_user_form.php' method='post'>";
 					echo "<td>$row[uid]</td>";
 					echo "<td>$row[firstName]</td>";
 					echo "<td>$row[lastName]</td>";
@@ -116,7 +100,14 @@
 					echo "<td>$row[username]</td>";
 					if ($_SESSION['table_view'] == "students")
 						echo "<td>$row[pid]</td>";
-					echo "</tr>";
+					
+					$query = "SELECT * FROM admins WHERE uid = $row[uid]";
+					$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+					$row2 = mysqli_fetch_array ($result2, MYSQLI_ASSOC);
+					echo "<td align='center'>";
+					if (mysqli_num_rows($result2) != 1)
+						echo "<button type='submit' name='edit_uid' value='$row[uid]'>EDIT</button>";
+					echo "</td></form></tr>";
 				}
 			?>
 		</table>

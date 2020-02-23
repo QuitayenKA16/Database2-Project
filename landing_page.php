@@ -17,11 +17,13 @@
 			<h3>Existing user</h3>
 			<a href="http://localhost/Database2-Project/login_form.php">Login existing account</a><br>
 		</div>
-		
+		<br>
 		<div>
 			<h3>New user</h3>
-			<a href="http://localhost/Database2-Project/create_parent_form.php">Create new parent account</a><br>
-			<a href="http://localhost/Database2-Project/create_student_form.php">Create new student account</a>
+			<p><u>Admin:</u> Must be logged in as an admin to create a new admin account.</p>
+			<p><u>Parent:</u>
+			<a href="http://localhost/Database2-Project/create_parent_form.php"> Create new parent account</a><br>
+			</p><p><u>Student:</u> Must be logged in as a parent to create a new child student account.</p>
 			
 		</div>
 
