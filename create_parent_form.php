@@ -12,7 +12,6 @@
 		?>
 		
 		<h3>Create new parent account</h3>
-		
 		<form action="new_parent_page.php" method="post">
 			<label for="field1"><span>First Name: <span class="required">*</span></span> <input type="text" name="firstName"/></label> <br>
 			<label for="field2"><span>Last Name: <span class="required">*</span></span> <input type="text" name="lastName"/></label> <br>
@@ -22,6 +21,5 @@
 			<label for="field6"><span>Password: <span class="required">*</span></span> <input type="password" name="password"/></label> <br>
 			<input type="submit" style="font: normal 16px Verdana, Arial, sans-serif;">
 		</form>
-		
 	</body>
 </html>

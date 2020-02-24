@@ -28,14 +28,20 @@
 			unset($_SESSION['error']);
 			$_SESSION['table_view'] = 'default';
 			$_SESSION['table_sort'] = 'idAsc';
-			$_SESSION['edit_uid'] = $_SESSION['uid'];
+			$_SESSION['edit_uid'] = $_SESSION['loggedUser']['uid'];
+			
+			$uid = $_SESSION['loggedUser']['uid'];
+			$lastName = $_SESSION['loggedUser']['lastName'];
+			$firstName = $_SESSION['loggedUser']['firstName'];
+			$email = $_SESSION['loggedUser']['email'];
+			$phone = $_SESSION['loggedUser']['phoneNum'];
 		?>
 		
 		<div class="column1" style="background-color:#f2f2f2;">
 			<h3 align="center">User Information</h3>
-			<p class="p1"><b>Name: </b> <?php echo "$_SESSION[lastName], $_SESSION[firstName]"; ?> <br>
-			<p class="p1"><b>Email: </b> <?php echo "$_SESSION[email]"; ?> <br>
-			<p class="p1"><b>Phone Number: </b> <?php echo "$_SESSION[phone]"; ?> <br>
+			<p class="p1"><b>Name: </b> <?php echo "$lastName, $firstName"; ?> <br>
+			<p class="p1"><b>Email: </b> <?php echo "$email"; ?> <br>
+			<p class="p1"><b>Phone Number: </b> <?php echo "$phone"; ?> <br>
 			<p class="p1"><b>User type: </b>
 				<?php
 					if ($_SESSION['type'] == 0)
@@ -48,7 +54,7 @@
 						
 						$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 						$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
-						$query = "SELECT * FROM users u, students s WHERE u.uid = $_SESSION[uid] AND u.uid = s.uid";
+						$query = "SELECT * FROM users u, students s WHERE u.uid = $uid AND u.uid = s.uid";
 						$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 						$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
 						echo "$row[pid]";

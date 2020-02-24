@@ -12,7 +12,6 @@
 			}
 		?>
 		
-
 		<form action="new_group_page.php" method="post">
 			<h3>Create new group</h3>
 			<label for="field3"><span>Name: <span class="required">*</span></span> <input type="text" name="name"/></label> <br>
@@ -29,8 +28,5 @@
 			</select><br><br>
 			<input type="submit" style="font: normal 16px Verdana, Arial, sans-serif;">
 		</form>
-		
-		
-		
 	</body>
 </html>

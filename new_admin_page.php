@@ -16,7 +16,6 @@
 				header ("Location:create_admin_form.php");
 			}
 			else {
-			
 				$query = "SELECT * FROM users WHERE username = '$_POST[username]' AND password = '$_POST[password]'";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				$count = mysqli_num_rows($result);
@@ -35,8 +34,6 @@
 			}
 			$myconnection->close();
 		?>
-
 		<br>
-
 	</body>
 </html>

@@ -8,18 +8,11 @@
 	
 	if ($count == 1){
 		session_start();
-		$_SESSION['username'] = $_POST['loginUsername'];
-		$_SESSION['password'] = $_POST['loginPassword'];
-		
-		$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
-		$_SESSION['uid'] = $row['uid'];
-		$_SESSION['firstName'] = $row['firstName'];
-		$_SESSION['lastName'] = $row['lastName'];
-		$_SESSION['email'] = $row['email'];
-		$_SESSION['phone'] = $row['phoneNum'];
+		$_SESSION['loggedUser'] = mysqli_fetch_array ($result, MYSQLI_ASSOC);
+		$uid = $_SESSION['loggedUser']['uid'];
 		
 		// student
-		$query = "SELECT * FROM students WHERE uid = '$_SESSION[uid]'";
+		$query = "SELECT * FROM students WHERE uid = $uid";
 		$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 		$count = mysqli_num_rows($result);
 		$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
@@ -30,7 +23,7 @@
 		}
 		else{
 			//parent
-			$query = "SELECT * FROM parents WHERE uid = '$_SESSION[uid]'";
+			$query = "SELECT * FROM parents WHERE uid = $uid";
 			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 			$count = mysqli_num_rows($result);
 			$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
@@ -40,7 +33,7 @@
 			else
 				$_SESSION['type'] = -1;
 		}
-		$_SESSION[back] = 'user_page.php';
+		$_SESSION['back'] = 'user_page.php';
 		header ("Location:user_page.php");
 	}
 	else{

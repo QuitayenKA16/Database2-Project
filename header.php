@@ -42,8 +42,10 @@
 		th {
 			background-color: #e6e6e6;
 		}
-		button[type=submit].class1 {
+		button[type=submit] {
 			font: normal 16px Verdana, Arial, sans-serif;
+		}
+		button[type=submit].class1 {
 			background-color: #bfbfbf;
 			color: white;
 			text-decoration: none;
@@ -67,8 +69,10 @@
 			<p style="font-size:12px"><i></i></p>
 			<?php
 				session_start();
-				if (isset($_SESSION['username'])){
-					echo "<p><b>Signed in as: </b>$_SESSION[username] (UID$_SESSION[uid])<p>";
+				if (isset($_SESSION['loggedUser'])){
+					$username = $_SESSION['loggedUser']['username'];
+					$uid = $_SESSION['loggedUser']['uid'];
+					echo "<p><b>Signed in as: </b>$username (UID$uid)<p>";
 					echo "<a href='http://localhost/Database2-Project/$_SESSION[back]'>Back</a> ";
 					echo "<a href='http://localhost/Database2-Project/user_page.php'>Profile</a> ";
 					echo "<a href='http://localhost/Database2-Project/logout.php'>Logout</a><br>";

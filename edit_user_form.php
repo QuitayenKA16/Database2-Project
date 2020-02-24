@@ -1,5 +1,4 @@
 <html>
-	
 	<style>
 	</style>
 	
@@ -29,7 +28,7 @@
 			$grade = (mysqli_num_rows($result) == 1) ? $row['grade'] : 5;
 		?>
 		
-		<form action="header.php">
+		<form action="header.php" method="post">
 			<h3>Edit account details</h3>
 			<label><span>First Name: <span class="required">*</span></span> <input type="text" name="firstName" <?php echo "value='$firstName'";?>/></label> <br>
 			<label><span>Last Name: <span class="required">*</span></span> <input type="text" name="lastName" <?php echo "value='$lastName'";?>/></label> <br>
@@ -62,8 +61,9 @@
 						echo "<option value='N/A'>N/A</option>";
 					}
 				?>
-			</select><br>
-			<input type="submit" style="font: normal 16px Verdana, Arial, sans-serif;">
+			</select><br><br>
+			<button type="submit" name="action" value="delete">Delete</button>
+			<button type="submit" name="action" value="edit">Submit</button>
 		</form>
 		
 	</body>

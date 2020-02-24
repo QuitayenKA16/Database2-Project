@@ -62,7 +62,7 @@
 					echo "<td>$row[name]</td>";
 					echo "<td>$row[description]</td>";
 					echo "<td>$row[gradeLvl]</td>";
-					echo "<td align='center'><button type='submit' name='edit_uid' value='$row[gid]'>VIEW</button>";
+					echo "<td align='center'><button type='submit' name='edit_gid' value='$row[gid]'>VIEW</button>";
 					echo "</td></form></tr>";
 				}
 			?>

@@ -19,6 +19,7 @@
 				$_SESSION['table_sort'] = $_POST['table_sort'];
 			}
 			unset($_SESSION['edit_uid']);
+			$uid = $_SESSION['loggedUser']['uid'];
 		?>
 		
 		<form action="view_children_page.php" method="post">
@@ -33,7 +34,7 @@
 				$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 				
 				$query = "SELECT * FROM users u, students s WHERE u.uid = s.uid AND s.pid = "
-					. $_SESSION['uid'] . " ORDER BY ";
+					. $uid . " ORDER BY ";
 				
 				if ($_SESSION['table_sort']=='idAsc') $query .= "u.uid ASC";
 				if ($_SESSION['table_sort']=='idDes') $query .= "u.uid DESC";
