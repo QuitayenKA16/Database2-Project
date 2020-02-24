@@ -66,7 +66,6 @@
 		
 		<div class="column1" style="">
 			<h3 align="center">Actions</h3>
-				
 			<?php
 				if ($_SESSION['type'] == -1){ //admin
 					echo "<div align='center'>";
@@ -93,8 +92,6 @@
 					echo "</div>";
 				}
 			?>
-		</div>
-
-		
+		</div>		
 	</body
 </html>

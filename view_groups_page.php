@@ -68,5 +68,4 @@
 			?>
 		</table>
 	</body
-	
 </html>
