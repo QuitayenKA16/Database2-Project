@@ -12,7 +12,7 @@
 			}
 			$_SESSION['back'] = "group_page.php";
 			$gName = $_SESSION['group']['name'];
-			$gLvl = $_SESSION['group']['gradeLvl'];
+			$gLvl = $_SESSION['group']['mentee_grade_req'];
 			$gDesc = $_SESSION['group']['description'];
 		?>
 		

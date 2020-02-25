@@ -28,12 +28,14 @@
 				$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 				$query = "SELECT * FROM groups ORDER BY ";
 				
-				if ($_SESSION['table_sort']=='idAsc') $query .= "gid ASC";
-				if ($_SESSION['table_sort']=='idDes') $query .= "gid DESC";
+				if ($_SESSION['table_sort']=='idAsc') $query .= "group_id ASC";
+				if ($_SESSION['table_sort']=='idDes') $query .= "group_id DESC";
 				if ($_SESSION['table_sort']=='nameAsc') $query .= "name ASC";
 				if ($_SESSION['table_sort']=='nameDes') $query .= "name DESC";
-				if ($_SESSION['table_sort']=='gradeAsc') $query .= "gradeLvl ASC";
-				if ($_SESSION['table_sort']=='gradeDes') $query .= "gradeLvl DESC";
+				if ($_SESSION['table_sort']=='menteeGradeAsc') $query .= "mentee_grade_req ASC";
+				if ($_SESSION['table_sort']=='menteeGradeDes') $query .= "mentee_grade_req DESC";
+				if ($_SESSION['table_sort']=='mentorGradeAsc') $query .= "mentor_grade_req ASC";
+				if ($_SESSION['table_sort']=='mentorGradeDes') $query .= "mentor_grade_req DESC";
 				
 				echo $query . "<br>";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
@@ -49,20 +51,25 @@
 				
 				echo "<th>Description</th>";
 				
-				echo "<th>Grade Level <button type='submit' class='class2' name='table_sort' ";
-				if ($_SESSION['table_sort']=='gradeAsc') echo " value='gradeDes'>&#9660</button></th>";
-				else echo " value='gradeAsc'>&#9650</button></th>";
+				echo "<th>Mentee Grade <button type='submit' class='class2' name='table_sort' ";
+				if ($_SESSION['table_sort']=='menteeGradeAsc') echo " value='menteeGradeDes'>&#9660</button></th>";
+				else echo " value='menteeGradeAsc'>&#9650</button></th>";
+				
+				echo "<th>Mentor Grade <button type='submit' class='class2' name='table_sort' ";
+				if ($_SESSION['table_sort']=='mentorGradeAsc') echo " value='mentorGradeDes'>&#9660</button></th>";
+				else echo " value='mentorGradeAsc'>&#9650</button></th>";
 				
 				echo "<th>Meetings</th></tr></form>";
 				
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					echo "<tr>";
 					echo "<form action='http://localhost/Database2-Project/group_page.php' method='post'>";
-					echo "<td>$row[gid]</td>";
+					echo "<td>$row[group_id]</td>";
 					echo "<td>$row[name]</td>";
 					echo "<td>$row[description]</td>";
-					echo "<td>$row[gradeLvl]</td>";
-					echo "<td align='center'><button type='submit' name='edit_gid' value='$row[gid]'>VIEW</button>";
+					echo "<td>$row[mentee_grade_req]</td>";
+					echo "<td>$row[mentor_grade_req]</td>";
+					echo "<td align='center'><button type='submit' name='edit_gid' value='$row[group_id]'>VIEW</button>";
 					echo "</td></form></tr>";
 				}
 			?>

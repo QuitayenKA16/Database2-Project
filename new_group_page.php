@@ -11,7 +11,7 @@
 			$gradeLvl = $_POST['grade'];
 			$minMentor = $gradeLvl + 3;
 			
-			$sql = "INSERT INTO groups (name, description, gradeLvl, minMentorGrade) VALUES (?, ?, ?, ?)";
+			$sql = "INSERT INTO groups (name, description, mentee_grade_req, mentor_grade_req) VALUES (?, ?, ?, ?)";
 			$stmt = $myconnection->prepare($sql);
 			$stmt->bind_param("ssii", $name, $desc, $gradeLvl, $minMentor);
 					

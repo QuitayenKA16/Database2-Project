@@ -13,17 +13,15 @@
 			if (isset($_POST['edit_uid']))	$_SESSION['edit_uid'] = $_POST['edit_uid'];
 			$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 			$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
-			$query = "SELECT * FROM users u WHERE uid = $_SESSION[edit_uid]";
+			$query = "SELECT * FROM users WHERE id = $_SESSION[edit_uid]";
 			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 			$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
-			$firstName = $row['firstName'];
-			$lastName = $row['lastName'];
+			$name = $row['name'];
 			$email = $row['email'];
-			$phone = $row['phoneNum'];
-			$username = $row['username'];
+			$phone = $row['phone'];
 			$password = $row['password'];
 			
-			$query = "SELECT * FROM students WHERE uid = '$_SESSION[edit_uid]'";
+			$query = "SELECT * FROM students WHERE student_id = '$_SESSION[edit_uid]'";
 			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 			$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
 			$grade = (mysqli_num_rows($result) == 1) ? $row['grade'] : 5;
@@ -31,11 +29,9 @@
 		
 		<form action="header.php" method="post">
 			<h3>Edit account details</h3>
-			<label><span>First Name: <span class="required">*</span></span> <input type="text" name="firstName" <?php echo "value='$firstName'";?>/></label> <br>
-			<label><span>Last Name: <span class="required">*</span></span> <input type="text" name="lastName" <?php echo "value='$lastName'";?>/></label> <br>
+			<label><span>Name: <span class="required">*</span></span> <input type="text" name="name" <?php echo "value='$name'";?>/></label> <br>
+			<label><span>Phone: </span> <input type="text" name="phone" <?php echo "value='$phone'";?>/></label> <br>
 			<label><span>Email: </span> <input type="text" name="email" <?php echo "value='$email'";?>/></label> <br>
-			<label><span>Telephone: </span> <input type="text" name="phoneNum" <?php echo "value='$phone'";?>/></label> <br>
-			<label><span>Username: <span class="required">*</span></span> <input type="text" name="username" <?php echo "value='$username'";?> disabled="disabled"/></label> <br>
 			<label><span>Password: <span class="required">*</span></span> <input type="password" name="password" <?php echo "value='$password'";?>/></label> <br>
 			<label><span>Grade Level: <span class="required">*</span></span></label>
 			<select name="grade" 
@@ -63,7 +59,7 @@
 					}
 				?>
 			</select><br><br>
-			<?php if ($_SESSION['loggedUser']['uid'] != $_SESSION['edit_uid'])
+			<?php if ($_SESSION['loggedUser']['id'] != $_SESSION['edit_uid'])
 				echo "<button type='submit' name='action' value='delete'>Delete</button>";?>
 			<button type="submit" name="action" value="edit">Submit</button>
 		</form>

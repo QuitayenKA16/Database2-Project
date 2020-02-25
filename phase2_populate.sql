@@ -104,16 +104,16 @@ insert into students (student_id, parent_id, grade) values (39+15,3+15,11);
 insert into students (student_id, parent_id, grade) values (40+15,4+15,12);
 
 
--- create groups (group_id, name, description, mentor_grade_req, mentee_grade_req)
-insert into groups (name, description, mentor_grade_req, mentee_grade_req) values ("6th Grade Math", "6th graders study math", 6, 9);
-insert into groups (name, description, mentor_grade_req, mentee_grade_req) values ("7th Grade Math", "7th graders study math", 7, 9);
-insert into groups (name, description, mentor_grade_req, mentee_grade_req) values ("8th Grade Math", "8th graders study math", 8, 11);
-insert into groups (name, description, mentor_grade_req, mentee_grade_req) values ("9th Grade Math", "9th graders study math", 9, 12);
+-- create groups (group_id, name, description, mentee_grade_req, mentor_grade_req)
+insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("6th Grade Math", "6th graders study math", 6, 9);
+insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("7th Grade Math", "7th graders study math", 7, 9);
+insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("8th Grade Math", "8th graders study math", 8, 11);
+insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("9th Grade Math", "9th graders study math", 9, 12);
 
-insert into groups (name, description, mentor_grade_req, mentee_grade_req) values ("6th Grade English", "6th graders study English", 6, 9);
-insert into groups (name, description, mentor_grade_req, mentee_grade_req) values ("7th Grade English", "7th graders study English", 7, 9);
-insert into groups (name, description, mentor_grade_req, mentee_grade_req) values ("8th Grade English", "8th graders study English", 8, 11);
-insert into groups (name, description, mentor_grade_req, mentee_grade_req) values ("9th Grade English", "9th graders study English", 9, 12);
+insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("6th Grade English", "6th graders study English", 6, 9);
+insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("7th Grade English", "7th graders study English", 7, 9);
+insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("8th Grade English", "8th graders study English", 8, 11);
+insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("9th Grade English", "9th graders study English", 9, 12);
 
 	
 -- time_slot (time_slot_id, day_of_the_week, start_time, end_time)

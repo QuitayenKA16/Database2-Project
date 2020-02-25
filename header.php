@@ -70,9 +70,9 @@
 			<?php
 				session_start();
 				if (isset($_SESSION['loggedUser'])){
-					$username = $_SESSION['loggedUser']['username'];
-					$uid = $_SESSION['loggedUser']['uid'];
-					echo "<p><b>Signed in as: </b>$username (UID$uid)<p>";
+					$name = $_SESSION['loggedUser']['name'];
+					$id = $_SESSION['loggedUser']['id'];
+					echo "<p><b>Signed in as: </b>$name (UID$id)<p>";
 					echo "<a href='http://localhost/Database2-Project/$_SESSION[back]'>Back</a> ";
 					echo "<a href='http://localhost/Database2-Project/user_page.php'>Profile</a> ";
 					echo "<a href='http://localhost/Database2-Project/logout.php'>Logout</a><br>";
