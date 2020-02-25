@@ -8,7 +8,7 @@
 			include "header.php";
 			if (isset($_SESSION['error'])){
 				echo "<br>$_SESSION[error]";
-				$_SESSION['error'] = "";
+				unset($_SESSION['error']);
 			}
 		?>
 		

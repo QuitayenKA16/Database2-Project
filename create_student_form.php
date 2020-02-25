@@ -6,9 +6,9 @@
 	<body>
 		<?php
 			include "header.php";
-			$_SESSION['back'] = "user_page.php";
 			if (isset($_SESSION['error'])){
-				echo "$_SESSION[error]";
+				echo "<br>$_SESSION[error]";
+				unset($_SESSION['error']);
 			}
 			$username = $_SESSION['loggedUser']['username'];
 			$password = $_SESSION['loggedUser']['password'];

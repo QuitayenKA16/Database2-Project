@@ -7,6 +7,7 @@
 			include "header.php";
 			if (isset($_SESSION['error'])){
 				echo "$_SESSION[error]";
+				unset($_SESSION['error']);
 			}
 			
 			if (isset($_POST['edit_uid']))	$_SESSION['edit_uid'] = $_POST['edit_uid'];
@@ -42,19 +43,19 @@
 					if ($grade > 5){
 						echo "type='number' value='$grade'>/";
 						if ($grade == 6)	echo "<option value='6' selected>6</option>";
-						else	echo "<option value='6'>6</option>";
+						else				echo "<option value='6'>6</option>";
 						if ($grade == 7)	echo "<option value='7' selected>7</option>";
-						else	echo "<option value='7'>7</option>";
+						else				echo "<option value='7'>7</option>";
 						if ($grade == 8)	echo "<option value='8' selected>8</option>";
-						else	echo "<option value='8'>8</option>";
+						else				echo "<option value='8'>8</option>";
 						if ($grade == 9)	echo "<option value='9' selected>9</option>";
-						else	echo "<option value='9'>9</option>";
+						else				echo "<option value='9'>9</option>";
 						if ($grade == 10)	echo "<option value='10' selected>10</option>";
-						else	echo "<option value='10'>10</option>";
+						else				echo "<option value='10'>10</option>";
 						if ($grade == 11)	echo "<option value='11' selected>11</option>";
-						else	echo "<option value='11'>11</option>";
+						else				echo "<option value='11'>11</option>";
 						if ($grade == 12)	echo "<option value='12' selected>12</option>";
-						else	echo "<option value='12'>12</option>";
+						else				echo "<option value='12'>12</option>";
 					}
 					else{
 						echo "type='text' value='N/A' disabled='disabled'>/";
@@ -62,7 +63,8 @@
 					}
 				?>
 			</select><br><br>
-			<button type="submit" name="action" value="delete">Delete</button>
+			<?php if ($_SESSION['loggedUser']['uid'] != $_SESSION['edit_uid'])
+				echo "<button type='submit' name='action' value='delete'>Delete</button>";?>
 			<button type="submit" name="action" value="edit">Submit</button>
 		</form>
 		

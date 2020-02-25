@@ -21,7 +21,6 @@
 		<?php
 			include "header.php";
 			$_SESSION['back'] = "view_groups_page.php";
-			unset($_SESSION['error']);
 			$_SESSION['table_view'] = 'default';
 			$_SESSION['table_sort'] = 'idAsc';
 			
@@ -37,7 +36,7 @@
 		?>
 		
 		<div class="column1" style="background-color:#f2f2f2;">
-			<h3 align="center">User Information</h3>
+			<h3 align="center">Group Information</h3>
 			<p class="p1"><b>GID: </b> <?php echo "$gid"; ?> <br>
 			<p class="p1"><b>Name: </b> <?php echo "$gName"; ?> <br>
 			<p class="p1"><b>Grade Level: </b> <?php echo "$gLvl"; ?> <br>

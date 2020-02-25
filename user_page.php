@@ -25,7 +25,6 @@
 		<?php
 			include "header.php";
 			$_SESSION['back'] = "user_page.php";
-			unset($_SESSION['error']);
 			$_SESSION['table_view'] = 'default';
 			$_SESSION['table_sort'] = 'idAsc';
 			$_SESSION['edit_uid'] = $_SESSION['loggedUser']['uid'];
