@@ -65,7 +65,7 @@
 	
 	<body>
 		<div align="center" style="border:double">
-			<h1>  Database Project - Phase 2</h1>
+			<h1> F*CK THIS Database Project - Phase 2</h1>
 			<p style="font-size:12px"><i></i></p>
 			<?php
 				session_start();

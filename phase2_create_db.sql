@@ -22,7 +22,7 @@ drop table if exists parents;
 drop table if exists users;
 
 -- create tables
-
+/*
 create table users (
     uid int AUTO_INCREMENT,
     firstName varchar(10) NOT NULL,
@@ -132,3 +132,4 @@ create table mentees (
 );
 
 insert into users (firstName, lastName, username, password)  values ("Mr.","Admin", "admin", "");
+*/

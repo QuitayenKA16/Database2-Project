@@ -10,6 +10,7 @@
 				echo "<br>$_SESSION[error]";
 				unset($_SESSION['error']);
 			}
+			$_SESSION['back'] = "group_page.php";
 			$gName = $_SESSION['group']['name'];
 			$gLvl = $_SESSION['group']['gradeLvl'];
 			$gDesc = $_SESSION['group']['description'];

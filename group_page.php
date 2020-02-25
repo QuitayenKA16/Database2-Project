@@ -23,10 +23,11 @@
 			$_SESSION['back'] = "view_groups_page.php";
 			$_SESSION['table_view'] = 'default';
 			$_SESSION['table_sort'] = 'idAsc';
+			$edit_gid = (isset($_POST['edit_gid'])) ? $_POST['edit_gid'] : $_SESSION['group']['gid'];
 			
 			$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 			$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
-			$query = "SELECT * FROM groups WHERE gid = $_POST[edit_gid]";
+			$query = "SELECT * FROM groups WHERE gid = $edit_gid";
 			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 			$_SESSION['group'] = mysqli_fetch_assoc ($result);
 			$gid = $_SESSION['group']['gid'];
