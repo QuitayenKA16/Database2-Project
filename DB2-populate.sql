@@ -115,6 +115,15 @@ insert into groups (name, description, mentee_grade_req, mentor_grade_req) value
 insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("8th Grade English", "8th graders study English", 8, 11);
 insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("9th Grade English", "9th graders study English", 9, 12);
 
+-- Chris and Fenim's crap
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 6', 'Grade 6', 9, null);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 7', 'Grade 7', 10, null);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 8', 'Grade 8', 11, null);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 9', 'Grade 9', 12, 6);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 10', 'Grade 10', null, 7);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 11', 'Grade 11', null, 8);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 12', 'Grade 12', null, 9);
+
 	
 -- time_slot (time_slot_id, day_of_the_week, start_time, end_time)
 insert into time_slot (day_of_the_week, start_time, end_time) values ("Saturday", "16:00:00", "17:00:00"); -- 4pm-5pm
@@ -141,8 +150,6 @@ insert into meetings (meet_name, date, time_slot_id, capacity, announcement, gro
 
 -- set mentees (uid, mid)
 
--- create study material (bid, title, author, URL, notes, assignedDate, type)
-
--- add students to groups (name, email, phone, username, password)  (studentID, gid)
+-- create study matd, title, author, URL, notes, assignedDate, tyerial (bipe)
 
 -- add studymaterial to meeting (mid, bid)

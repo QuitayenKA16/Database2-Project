@@ -38,7 +38,8 @@
 				
 				$sort = " ORDER BY ";
 				if ($_SESSION['table_view'] == "students")
-					$sort .= ($_SESSION['table_sort']=='pidAsc' || $_SESSION['table_sort']=='pidDes') ? "s." : "u.";
+					$sort .= ($_SESSION['table_sort']=='pidAsc' || $_SESSION['table_sort']=='pidDes'
+								|| $_SESSION['table_sort']=='gradeAsc' || $_SESSION['table_sort']=='gradeDes') ? "s." : "u.";
 				
 				if ($_SESSION['table_sort']=='idAsc') $sort .= "id ASC";
 				if ($_SESSION['table_sort']=='idDes') $sort .= "id DESC";
@@ -48,6 +49,8 @@
 				if ($_SESSION['table_sort']=='emailDes') $sort .= "email DESC";
 				if ($_SESSION['table_sort']=='pidAsc') $sort .= "parent_id ASC";
 				if ($_SESSION['table_sort']=='pidDes') $sort .= "parent_id DESC";
+				if ($_SESSION['table_sort']=='gradeAsc') $sort .= "grade ASC";
+				if ($_SESSION['table_sort']=='gradeDes') $sort .= "grade DESC";
 			
 				if ($_SESSION['table_view'] == "students")
 					$query = "SELECT * FROM users u, students s WHERE u.id = s.student_id" . $sort;
@@ -80,6 +83,9 @@
 					echo "<th>Parent ID <button type='submit' class='class2' name='table_sort' ";
 					if ($_SESSION['table_sort']=='pidAsc') echo " value='pidDes'>&#9660</button></th>";
 					else echo " value='pidAsc'>&#9650</button></th>";
+					echo "<th>Grade <button type='submit' class='class2' name='table_sort' ";
+					if ($_SESSION['table_sort']=='gradeAsc') echo " value='gradeDes'>&#9660</button></th>";
+					else echo " value='gradeAsc'>&#9650</button></th>";
 				}
 				echo "<th>Edit</th></tr></form>";
 							
@@ -90,8 +96,10 @@
 					echo "<td>$row[name]</td>";
 					echo "<td>$row[email]</td>";
 					echo "<td>$row[phone]</td>";
-					if ($_SESSION['table_view'] == "students")
+					if ($_SESSION['table_view'] == "students"){
 						echo "<td>$row[parent_id]</td>";
+						echo "<td>$row[grade]</td>";
+					}
 					
 					$query = "SELECT * FROM admins WHERE admin_id = $row[id]";
 					$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());

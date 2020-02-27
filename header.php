@@ -79,7 +79,7 @@
 				}
 				else{
 					echo "<p>";
-					echo "<a href='http://localhost/Database2-Project/landing_page.php'>Home</a>";
+					echo "<a href='http://localhost/Database2-Project/index.php'>Home</a>";
 				}
 			?>
 			

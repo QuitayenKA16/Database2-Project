@@ -59,7 +59,7 @@
 				if ($_SESSION['table_sort']=='mentorGradeAsc') echo " value='mentorGradeDes'>&#9660</button></th>";
 				else echo " value='mentorGradeAsc'>&#9650</button></th>";
 				
-				echo "<th>Meetings</th></tr></form>";
+				echo "<th>Details</th></tr></form>";
 				
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					echo "<tr>";
@@ -70,9 +70,10 @@
 					echo "<td>$row[mentee_grade_req]</td>";
 					echo "<td>$row[mentor_grade_req]</td>";
 					echo "<td align='center'><button type='submit' name='edit_gid' value='$row[group_id]'>VIEW</button>";
-					echo "</td></form></tr>";
+					echo "</form></tr>";
 				}
 			?>
+		</form>
 		</table>
 	</body
 </html>

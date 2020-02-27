@@ -11,6 +11,6 @@
 	}
 	session_unset();
 	session_destroy();
-	header ("Location:landing_page.php");
+	header ("Location:index.php");
 	exit();
 ?>

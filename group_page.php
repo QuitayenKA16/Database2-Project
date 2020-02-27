@@ -53,8 +53,8 @@
 			<h3 align="center">Actions</h3>
 			<?php
 				echo "<div align='center'>";
-				echo "<a href='http://localhost/Database2-Project/group_page.php'>View members</a><br>";
-				echo "<a href='http://localhost/Database2-Project/group_page.php'>View meetings</a><br><br>";
+				echo "<a href='http://localhost/Database2-Project/view_members_page.php'>View members</a><br>";
+				echo "<a href='http://localhost/Database2-Project/view_meetings_page.php'>View meetings</a><br><br>";
 				echo "</div>";
 			?>
 		</div>
