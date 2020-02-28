@@ -105,24 +105,13 @@ insert into students (student_id, parent_id, grade) values (40+15,4+15,12);
 
 
 -- create groups (group_id, name, description, mentee_grade_req, mentor_grade_req)
-insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("6th Grade Math", "6th graders study math", 6, 9);
-insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("7th Grade Math", "7th graders study math", 7, 9);
-insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("8th Grade Math", "8th graders study math", 8, 11);
-insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("9th Grade Math", "9th graders study math", 9, 12);
-
-insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("6th Grade English", "6th graders study English", 6, 9);
-insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("7th Grade English", "7th graders study English", 7, 9);
-insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("8th Grade English", "8th graders study English", 8, 11);
-insert into groups (name, description, mentee_grade_req, mentor_grade_req) values ("9th Grade English", "9th graders study English", 9, 12);
-
--- Chris and Fenim's crap
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 6', 'Grade 6', 9, null);
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 7', 'Grade 7', 10, null);
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 8', 'Grade 8', 11, null);
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 9', 'Grade 9', 12, 6);
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 10', 'Grade 10', null, 7);
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 11', 'Grade 11', null, 8);
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Group 12', 'Grade 12', null, 9);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 6', '', 9, null);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 7', '', 10, null);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 8', '', 11, null);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 9', '', 12, 6);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 10', '', null, 7);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 11', '', null, 8);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 12', '', null, 9);
 
 	
 -- time_slot (time_slot_id, day_of_the_week, start_time, end_time)
@@ -136,20 +125,59 @@ insert into time_slot (day_of_the_week, start_time, end_time) values ("Sunday", 
 insert into time_slot (day_of_the_week, start_time, end_time) values ("Sunday", "19:00:00", "20:00:00"); -- 7pm-8pm
 	
 -- meetings (meet_id, meet_name, date, time_slot_id, capacity, announcement, group_id)
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Math Meeting", "2020-03-07", 1+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Math Meeting", "2020-03-07", 2+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Math Meeting", "2020-03-07", 3+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Math Meeting", "2020-03-07", 4+6, 0, "", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade English Meeting", "2020-03-08", 5+6, 0, "", 5);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade English Meeting", "2020-03-08", 6+6, 0, "", 6);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade English Meeting", "2020-03-08", 7+6, 0, "", 7);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade English Meeting", "2020-03-08", 8+6, 0, "", 8);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 1", "2020-09-05", 1+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 1", "2020-09-05", 2+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 1", "2020-09-05", 3+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 1", "2020-09-05", 4+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 2", "2020-09-06", 5+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 2", "2020-09-06", 6+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 2", "2020-09-06", 7+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 2", "2020-09-06", 8+6, 0, "", 4);
 
+-- set mentors (mentor_id) and mentees (mentee_id)
+insert into mentors (mentor_id) SELECT student_id FROM students WHERE grade >= 9;
+insert into mentees (mentee_id) SELECT student_id FROM students WHERE grade <= 9;
 
--- set mentors (uid, mid)
+-- enroll (meet_id, mentee_id)
+insert into enroll values (100, 42); -- 6th grade saturday
+insert into enroll values (100, 35);
+insert into enroll values (104, 49); -- 6th grade sunday
+insert into enroll values (104, 28);
 
--- set mentees (uid, mid)
+insert into enroll values (101, 43); -- 7th grade saturday
+insert into enroll values (101, 36);
+insert into enroll values (105, 50); -- 7th grade sunday
+insert into enroll values (105, 29);
 
--- create study matd, title, author, URL, notes, assignedDate, tyerial (bipe)
+insert into enroll values (102, 23); -- 8th grade saturday
+insert into enroll values (102, 44);
+insert into enroll values (106, 37); -- 8th grade sunday
+insert into enroll values (106, 30);
 
--- add studymaterial to meeting (mid, bid)
+insert into enroll values (103, 52); -- 9th grade saturday
+insert into enroll values (103, 38);
+insert into enroll values (107, 45); -- 9th grade sunday
+insert into enroll values (107, 31);
+
+-- enroll2 (meet_id, mentor_id)
+insert into enroll2 values (100, 38); -- 6th grade saturday
+insert into enroll2 values (100, 31);
+insert into enroll2 values (104, 45); -- 6th grade sunday
+insert into enroll2 values (104, 24);
+
+insert into enroll2 values (101, 53); -- 7th grade saturday
+insert into enroll2 values (101, 46);
+insert into enroll2 values (105, 25); -- 7th grade sunday
+insert into enroll2 values (105, 32);
+
+insert into enroll2 values (102, 33); -- 8th grade saturday
+insert into enroll2 values (102, 40);
+insert into enroll2 values (106, 47); -- 8th grade sunday
+insert into enroll2 values (106, 26);
+
+insert into enroll2 values (103, 41); -- 9th grade saturday
+insert into enroll2 values (103, 48);
+insert into enroll2 values (107, 34); -- 9th grade sunday
+insert into enroll2 values (107, 27);
+
+update meetings set capacity = capacity + 4;

@@ -10,7 +10,17 @@
 				unset($_SESSION['error']);
 			}
 			
-			if (isset($_POST['edit_uid']))	$_SESSION['edit_uid'] = $_POST['edit_uid'];
+			if (isset($_POST['edit_uid'])){
+				$_SESSION['edit_uid'] = $_POST['edit_uid'];
+				if ($_SESSION['type'] == -1) //admin editing another user
+					echo "<br><a href='http://localhost/Database2-Project/view_users_page.php'>Back</a> ";
+				else if ($_SESSION['type'] == 0) //parent editing child
+					echo "<br><a href='http://localhost/Database2-Project/view_children_page.php'>Back</a> ";
+			}
+			else {
+				echo "<br><a href='http://localhost/Database2-Project/user_page.php'>Back</a> ";
+			}
+			
 			$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 			$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 			$query = "SELECT * FROM users WHERE id = $_SESSION[edit_uid]";

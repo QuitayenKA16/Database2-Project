@@ -12,7 +12,7 @@
 			if (mysqli_num_rows($result) == 1){
 				$parentId = (mysqli_fetch_array ($result, MYSQLI_ASSOC))['id'];
 				
-				$sql = "SELECT * FROM parents WHERE id = " . $parentId;
+				$sql = "SELECT * FROM parents WHERE parent_id = " . $parentId;
 				$result = mysqli_query($myconnection, $sql) or die ('Query failed: ' . mysql_error());
 				
 				if (mysqli_num_rows($result) == 1) {
@@ -32,9 +32,18 @@
 						$studentId = $row['id'];
 						$grade = $_POST['grade'];
 				
-						$sql = "INSERT INTO students VALUES (" . $studentId . "," . $parentId . "," . $grade . ")";
-						if ($myconnection->query($sql) === TRUE)
+						$sql = "INSERT INTO students VALUES (" . $studentId . "," . $grade . "," . $parentId . ")";
+						if ($myconnection->query($sql) === TRUE){
 							echo "Successful new student creation: <b>$_POST[name]</b>";
+							if ($grade <= 9){ //mentees
+								$sql = "INSERT INTO mentees VALUES (" . $studentId . ")";
+								if ($myconnection->query($sql) != TRUE) echo "Error: " . $sql . "<br>" . $myconnection->error;
+							}
+							if ($grade >= 9){ //mentors
+								$sql = "INSERT INTO mentors VALUES (" . $studentId . ")";
+								if ($myconnection->query($sql) != TRUE) echo "Error: " . $sql . "<br>" . $myconnection->error;
+							}
+						}
 						else
 							echo "Error: " . $sql . "<br>" . $myconnection->error;
 					}

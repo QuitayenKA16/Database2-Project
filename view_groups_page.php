@@ -13,7 +13,6 @@
 	<body>
 		<?php
 			include "header.php";
-			$_SESSION['back'] = "view_groups_page.php";
 			if (isset($_POST['table_sort']))
 				$_SESSION['table_sort'] = $_POST['table_sort'];
 		?>

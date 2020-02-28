@@ -10,7 +10,7 @@
 				echo "<br>$_SESSION[error]";
 				unset($_SESSION['error']);
 			}
-			$_SESSION['back'] = "group_page.php";
+			echo "<a href='http://localhost/Database2-Project/group_page.php'>Back</a> ";
 			$gName = $_SESSION['group']['name'];
 			$gLvl = $_SESSION['group']['mentee_grade_req'];
 			$gDesc = $_SESSION['group']['description'];

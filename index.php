@@ -3,8 +3,6 @@
 		h3 {
 			margin: 20px 0px 5px 0px;
 		}
-
-		
 	</style>
 	
 	<body>
@@ -18,6 +16,7 @@
 			<a href="http://localhost/Database2-Project/login_form.php">Login existing account</a><br>
 		</div>
 		<br>
+		
 		<div>
 			<h3>New user</h3>
 			<p><u>Admin:</u> Must be logged in as an admin to create a new admin account.</p>

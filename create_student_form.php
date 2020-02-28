@@ -17,14 +17,14 @@
 		<form action="new_student_page.php" method="post">
 			<h3>Set parent account</h3>
 			<label for="field1"><span>Email: <span class="required">*</span></span> <input type="text" name="loginEmail" value=
-				<?php echo "$email";?>/></label> <br>
+				<?php echo "$email";?>></label> <br>
 			<label for="field2"><span>Password: <span class="required">*</span></span> <input type="password" name="loginPassword" value=
-				<?php echo "$password";?>/></label> <br>
+				<?php echo "$password";?>></label> <br>
 		
 			<h3>Create student account</h3>
 			<label for="field3"><span>Name: <span class="required">*</span></span> <input type="text" name="name"/></label> <br>
 			<label for="field5"><span>Phone: </span> <input type="text" name="phone"/></label> <br>
-			<label for="field4"><span>Email: </span> <input type="text" name="email"/></label> <br>
+			<label for="field4"><span>Email: <span class="required">*</span></span> <input type="text" name="email"/></label> <br>
 			<label for="field7"><span>Password: <span class="required">*</span></span> <input type="password" name="password"/></label> <br>
 			<label for="field8"><span>Grade Level: <span class="required">*</span></span></label>
 			<select type="number" name="grade">

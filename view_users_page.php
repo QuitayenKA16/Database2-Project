@@ -10,7 +10,6 @@
 	<body>
 		<?php
 			include "header.php";
-			$_SESSION['back'] = "view_users_page.php";
 			if (isset($_POST['table_view'])){
 				$_SESSION['table_view'] = $_POST['table_view'];
 				$_SESSION['table_sort'] = 'idAsc';

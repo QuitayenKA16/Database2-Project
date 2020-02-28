@@ -7,9 +7,8 @@
 			border-style: solid;
 			float: left;
 			padding: 10px;
-			height:300px;
+			height:305px;
 			margin-top:15px;
-			width:50%;
 		}
 		p.p1 {
 			font: normal 14px Verdana, Arial, sans-serif;
@@ -18,14 +17,17 @@
 		h4 {
 			margin: 20px 0px 5px 0px;
 		}
-		
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			margin-bottom: 50px;
+		}
 	</style>
 
 	<body>
 		<?php
 			include "header.php";
 			unset($_SESSION['error']);
-			$_SESSION['back'] = "user_page.php";
 			$_SESSION['table_view'] = 'default';
 			$_SESSION['table_sort'] = 'idAsc';
 			$_SESSION['edit_uid'] = $_SESSION['loggedUser']['id'];
@@ -36,7 +38,7 @@
 			$phone = $_SESSION['loggedUser']['phone'];
 		?>
 		
-		<div class="column1" style="background-color:#f2f2f2;">
+		<div class="column1" style="background-color:#f2f2f2; width:40%;">
 			<h3 align="center">User Information</h3>
 			<p class="p1"><b>Name: </b> <?php echo "$name"; ?> <br>
 			<p class="p1"><b>Email: </b> <?php echo "$email"; ?> <br>
@@ -63,8 +65,7 @@
 			<a href='http://localhost/Database2-Project/edit_user_form.php'>Edit Details</a>
 		</div>
 		
-		<div class="column1" style="">
-			<h3 align="center">Actions</h3>
+		<div class="column1" style="width:60%;">
 			<?php
 				if ($_SESSION['type'] == -1){ //admin
 					echo "<div align='center'>";
@@ -86,8 +87,15 @@
 				}
 				else { //student
 					echo "<div align='center'>";
-					echo "<a href='http://localhost/Database2-Project/user_page.php'>Join groups</a><br>";
-					echo "<a href='http://localhost/Database2-Project/user_page.php'>Join meetings</a><br>";
+					$gid = $_SESSION['grade'] - 5;
+					
+					$query = "SELECT * FROM meetings m, time_slot t WHERE m.group_id = $gid AND m.time_slot_id = t.time_slot_id";
+					$_SESSION['group'] = mysqli_fetch_assoc (mysqli_query($myconnection, $query));
+					echo "<h4>Upcoming Meetings:</h4>";
+					echo "<table><tr><th>MID</th><th>Date</th><th>Time</th><th>Roll</th></tr>";
+					
+						
+					echo "</table>";
 					echo "</div>";
 				}
 			?>

@@ -73,13 +73,12 @@
 					$name = $_SESSION['loggedUser']['name'];
 					$id = $_SESSION['loggedUser']['id'];
 					echo "<p><b>Signed in as: </b>$name (UID$id)<p>";
-					echo "<a href='http://localhost/Database2-Project/$_SESSION[back]'>Back</a> ";
 					echo "<a href='http://localhost/Database2-Project/user_page.php'>Profile</a> ";
 					echo "<a href='http://localhost/Database2-Project/logout.php'>Logout</a><br>";
 				}
 				else{
 					echo "<p>";
-					echo "<a href='http://localhost/Database2-Project/index.php'>Home</a>";
+					echo "<a href='http://localhost/Database2-Project/logout.php'>Home</a>";
 				}
 			?>
 			
