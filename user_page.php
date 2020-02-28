@@ -7,8 +7,14 @@
 			border-style: solid;
 			float: left;
 			padding: 10px;
-			height:305px;
-			margin-top:15px;
+			height: auto;
+			margin-top: 15px;
+			position: relative;
+		}
+		.column1 > span {
+			position: absolute;
+			bottom: 0;
+			right: 0;
 		}
 		p.p1 {
 			font: normal 14px Verdana, Arial, sans-serif;
@@ -69,6 +75,7 @@
 			<?php
 				if ($_SESSION['type'] == -1){ //admin
 					echo "<div align='center'>";
+					echo "<h3>Actions</h3>";
 					echo "<h4>Views</h4>";
 					echo "<a href='http://localhost/Database2-Project/view_users_page.php'>View users</a><br>";
 					echo "<a href='http://localhost/Database2-Project/view_groups_page.php'>View groups</a><br><br>";
@@ -80,6 +87,7 @@
 				}
 				else if ($_SESSION['type'] == 0){ //user
 					echo "<div align='center'>";
+					echo "<h3>Actions</h3>";
 					echo "<a href='http://localhost/Database2-Project/create_student_form.php'>Create student account</a><br>";
 					echo "<a href='http://localhost/Database2-Project/view_children_page.php'>View children</a><br>";
 					echo "<a href='http://localhost/Database2-Project/user_page.php'>Assign meetings</a><br>";
@@ -89,15 +97,58 @@
 					echo "<div align='center'>";
 					$gid = $_SESSION['grade'] - 5;
 					
-					$query = "SELECT * FROM meetings m, time_slot t WHERE m.group_id = $gid AND m.time_slot_id = t.time_slot_id";
-					$_SESSION['group'] = mysqli_fetch_assoc (mysqli_query($myconnection, $query));
 					echo "<h4>Upcoming Meetings:</h4>";
-					echo "<table><tr><th>MID</th><th>Date</th><th>Time</th><th>Roll</th></tr>";
+					echo "<table style='width:80%;'><tr><th>MID</th><th>GID</th><th>Date</th><th>Time</th><th>Roll</th></tr>";
 					
+					$query = "SELECT * FROM meetings m, enroll e WHERE m.meet_id = e.meet_id AND e.mentee_id = $uid";
+					$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+					while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
+						echo "<tr>";
+						echo "<td align='center'>$row[meet_id]</td>";
+						echo "<td align='center'>$row[group_id]</td>";
+						echo "<td align='center'>$row[date]</td>";
+						$query = "SELECT * FROM time_slot WHERE time_slot_id = $row[time_slot_id]";
+						$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+						$row2 = mysqli_fetch_array ($result2, MYSQLI_ASSOC);
+						echo "<td align='center'>$row2[day_of_the_week] $row2[start_time] - $row2[end_time]</td>";
+						echo "<td align='center'>mentee</td>";
+						echo "</tr>";
 						
-					echo "</table>";
+						$query = "SELECT * FROM assign a, material m WHERE m.material_id = a.material_id AND a.meet_id = $row[meet_id]";
+						$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+						echo "<tr><td align='center' colspan=5><h4>Study Material</h4><table style='width:90%;'>";
+						echo "<th>ID</th><th>Title</th><th>Author</th><th>Type</th><th>URL</th><th>Assigned Date</th><th>Notes</th>";
+						while ($row2 = mysqli_fetch_array ($result2, MYSQLI_ASSOC)){
+							echo "<tr>";
+							echo "<td>$row2[material_id]</td>";
+							echo "<td>$row2[title]</td>";
+							echo "<td>$row2[author]</td>";
+							echo "<td>$row2[type]</td>";
+							echo "<td>$row2[url]</td>";
+							echo "<td>$row2[assigned_date]</td>";
+							echo "<td>$row2[notes]</td>";
+							echo "</tr>";
+						}
+						echo "</table></td></tr>";
+					}
+					
+					$query = "SELECT * FROM meetings m, enroll2 e WHERE m.meet_id = e.meet_id AND e.mentor_id = $uid";
+					$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+					while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
+						echo "<tr>";
+						echo "<td align='center'>$row[meet_id]</td>";
+						echo "<td align='center'>$row[group_id]</td>";
+						echo "<td align='center'>$row[date]</td>";
+						$query = "SELECT * FROM time_slot WHERE time_slot_id = $row[time_slot_id]";
+						$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+						$row2 = mysqli_fetch_array ($result2, MYSQLI_ASSOC);
+						echo "<td align='center'>$row2[day_of_the_week] $row2[start_time] - $row2[end_time]</td>";
+						echo "<td align='center'>mentor</td>";
+						echo "</tr>";
+					}
 					echo "</div>";
 				}
+				echo "</table>";
 			?>
 		</div>		
 	</body

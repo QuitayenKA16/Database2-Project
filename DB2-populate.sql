@@ -143,17 +143,14 @@ insert into enroll values (100, 42); -- 6th grade saturday
 insert into enroll values (100, 35);
 insert into enroll values (104, 49); -- 6th grade sunday
 insert into enroll values (104, 28);
-
 insert into enroll values (101, 43); -- 7th grade saturday
 insert into enroll values (101, 36);
 insert into enroll values (105, 50); -- 7th grade sunday
 insert into enroll values (105, 29);
-
 insert into enroll values (102, 23); -- 8th grade saturday
 insert into enroll values (102, 44);
 insert into enroll values (106, 37); -- 8th grade sunday
 insert into enroll values (106, 30);
-
 insert into enroll values (103, 52); -- 9th grade saturday
 insert into enroll values (103, 38);
 insert into enroll values (107, 45); -- 9th grade sunday
@@ -164,20 +161,56 @@ insert into enroll2 values (100, 38); -- 6th grade saturday
 insert into enroll2 values (100, 31);
 insert into enroll2 values (104, 45); -- 6th grade sunday
 insert into enroll2 values (104, 24);
-
 insert into enroll2 values (101, 53); -- 7th grade saturday
 insert into enroll2 values (101, 46);
 insert into enroll2 values (105, 25); -- 7th grade sunday
 insert into enroll2 values (105, 32);
-
 insert into enroll2 values (102, 33); -- 8th grade saturday
 insert into enroll2 values (102, 40);
 insert into enroll2 values (106, 47); -- 8th grade sunday
 insert into enroll2 values (106, 26);
-
 insert into enroll2 values (103, 41); -- 9th grade saturday
 insert into enroll2 values (103, 48);
 insert into enroll2 values (107, 34); -- 9th grade sunday
 insert into enroll2 values (107, 27);
 
 update meetings set capacity = capacity + 4;
+
+
+-- create study material (material_id, title, author, type, url, assigned_date, notes)
+insert into material (title, author, type, url, assigned_date, notes) values ("Fantasy Fiction", "English Author1", "English", "N/A", "2020-09-05", "CH1"); --6th grade
+insert into material (title, author, type, url, assigned_date, notes) values ("Pre-Algebra", "Math Author1", "Math", "N/A", "2020-09-06", "CH1");
+insert into material (title, author, type, url, assigned_date, notes) values ("Autobiographies", "English Author2", "English", "N/A", "2020-09-05", "CH1"); --7th grade
+insert into material (title, author, type, url, assigned_date, notes) values ("Geometry", "Math Author2", "Math", "N/A", "2020-09-06", "CH1");
+insert into material (title, author, type, url, assigned_date, notes) values ("Shakespearan Literature", "English Author3", "English", "N/A", "2020-09-05", "CH1"); --8th grade
+insert into material (title, author, type, url, assigned_date, notes) values ("Algebra", "Math Author3", "Math", "N/A", "2020-09-06", "CH1");
+insert into material (title, author, type, url, assigned_date, notes) values ("Dystopian Fiction", "English Author41", "English", "N/A", "2020-09-05", "CH1"); --9th grade
+insert into material (title, author, type, url, assigned_date, notes) values ("Pre-Calculus", "Math Author4", "Math", "N/A", "2020-09-06", "CH1");
+
+insert into material (title, author, type, url, assigned_date, notes) values ("Fantasy Fiction", "English Author1", "English", "N/A", "2020-09-05", "CH2"); --6th grade
+insert into material (title, author, type, url, assigned_date, notes) values ("Pre-Algebra", "Math Author1", "Math", "N/A", "2020-09-06", "CH2");
+insert into material (title, author, type, url, assigned_date, notes) values ("Autobiographies", "English Author2", "English", "N/A", "2020-09-05", "CH2"); --7th grade
+insert into material (title, author, type, url, assigned_date, notes) values ("Geometry", "Math Author2", "Math", "N/A", "2020-09-06", "CH2");
+insert into material (title, author, type, url, assigned_date, notes) values ("Shakespearan Literature", "English Author3", "English", "N/A", "2020-09-05", "CH2"); --8th grade
+insert into material (title, author, type, url, assigned_date, notes) values ("Algebra", "Math Author3", "Math", "N/A", "2020-09-06", "CH2");
+insert into material (title, author, type, url, assigned_date, notes) values ("Dystopian Fiction", "English Author41", "English", "N/A", "2020-09-05", "CH2"); --9th grade
+insert into material (title, author, type, url, assigned_date, notes) values ("Pre-Calculus", "Math Author4", "Math", "N/A", "2020-09-06", "CH2");
+
+
+-- assign material (meet_id, material_id)
+insert into assign values (100, 12);
+insert into assign values (101, 13);
+insert into assign values (102, 14);
+insert into assign values (103, 15);
+insert into assign values (104, 16);
+insert into assign values (105, 17);
+insert into assign values (106, 18);
+insert into assign values (107, 19);
+insert into assign values (100, 20);
+insert into assign values (101, 21);
+insert into assign values (102, 22);
+insert into assign values (103, 23);
+insert into assign values (104, 24);
+insert into assign values (105, 25);
+insert into assign values (106, 26);
+insert into assign values (107, 27);

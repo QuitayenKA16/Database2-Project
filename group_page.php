@@ -35,7 +35,7 @@
 			$gMentor = ($_SESSION['group']['mentor_grade_req'] == NULL) ? "N/A" : $_SESSION['group']['mentor_grade_req'];
 			$gDesc = $_SESSION['group']['description'];
 		?>
-		
+		<div align="center"><br><a href='http://localhost/Database2-Project/view_groups_page.php'>Back</a></div>
 		<div class="column1" style="background-color:#f2f2f2;">
 			<h3 align="center">Group Information</h3>
 			<p class="p1"><b>GID: </b> <?php echo "$gid"; ?> <br>
@@ -58,6 +58,5 @@
 				echo "</div>";
 			?>
 		</div>
-		<br><br><a href='http://localhost/Database2-Project/view_groups_page.php'>Back</a>
 	</body
 </html>

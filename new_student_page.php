@@ -5,8 +5,12 @@
 		
 			$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 			$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
-
-			$query = "SELECT * FROM users WHERE email = '$_POST[loginEmail]' AND password = '$_POST[loginPassword]'";
+			
+			$name = $_SESSION['loggedUser']['name'];
+			$email = $_SESSION['loggedUser']['email'];
+			$password = $_SESSION['loggedUser']['password'];
+			
+			$query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
 			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 	
 			if (mysqli_num_rows($result) == 1){
@@ -16,7 +20,7 @@
 				$result = mysqli_query($myconnection, $sql) or die ('Query failed: ' . mysql_error());
 				
 				if (mysqli_num_rows($result) == 1) {
-					echo "Successful parent selection: <b>$_POST[name]</b><br>";
+					echo "Successful parent selection: <b>$name</b><br>";
 				
 					$sql = "INSERT INTO users (name, email, phone, password)
 						VALUES ('$_POST[name]', '$_POST[email]', '$_POST[phone]', '$_POST[password]')";

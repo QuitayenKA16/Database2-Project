@@ -34,7 +34,7 @@
 			$mCapacity = $_SESSION['meet']['capacity'];
 			$mAnnounce = $_SESSION['meet']['announcement'];
 		?>
-		
+		<div align="center"><br><a href='http://localhost/Database2-Project/view_groups_page.php'>Back</a></div>
 		<div class="column1" style="background-color:#f2f2f2; width:40%;">
 			<h3 align="center">Meeting Information</h3>
 			<p class="p1"><b>MID: </b> <?php echo "$edit_mid"; ?> <br>
@@ -47,6 +47,7 @@
 		
 		<div class="column1" align="center" style="width:20%;">
 			<h3 >Mentors</h3>
+			<a href='http://localhost/Database2-Project/enroll_form.php'>Edit</a><br><br>
 			<?php
 				$query = "SELECT * FROM enroll2 WHERE meet_id = $edit_mid";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
@@ -62,6 +63,7 @@
 		</div>
 		<div class="column1" align="center" style="width:20%;">
 			<h3 >Mentees</h3>
+			<a href='http://localhost/Database2-Project/enroll_form.php'>Edit</a><br><br>
 			<?php
 				$query = "SELECT * FROM enroll WHERE meet_id = $edit_mid";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
@@ -80,6 +82,5 @@
 			<?php
 			?>
 		</div>
-		<a href='http://localhost/Database2-Project/view_meetings_page.php'>Back</a>
 	</body
 </html>
