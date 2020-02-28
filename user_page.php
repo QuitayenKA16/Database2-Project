@@ -7,6 +7,7 @@
 			border-style: solid;
 			float: left;
 			padding: 10px;
+			min-height: 319px;
 			height: auto;
 			margin-top: 15px;
 			position: relative;
@@ -102,6 +103,8 @@
 					
 					$query = "SELECT * FROM meetings m, enroll e WHERE m.meet_id = e.meet_id AND e.mentee_id = $uid";
 					$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+					$count = mysqli_num_rows($result);
+					
 					while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 						echo "<tr>";
 						echo "<td align='center'>$row[meet_id]</td>";
@@ -113,7 +116,8 @@
 						echo "<td align='center'>$row2[day_of_the_week] $row2[start_time] - $row2[end_time]</td>";
 						echo "<td align='center'>mentee</td>";
 						echo "</tr>";
-						
+
+						/*
 						$query = "SELECT * FROM assign a, material m WHERE m.material_id = a.material_id AND a.meet_id = $row[meet_id]";
 						$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 						echo "<tr><td align='center' colspan=5><h4>Study Material</h4><table style='width:90%;'>";
@@ -130,10 +134,12 @@
 							echo "</tr>";
 						}
 						echo "</table></td></tr>";
+						*/
 					}
 					
 					$query = "SELECT * FROM meetings m, enroll2 e WHERE m.meet_id = e.meet_id AND e.mentor_id = $uid";
 					$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+					$count += mysqli_num_rows($result);
 					while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 						echo "<tr>";
 						echo "<td align='center'>$row[meet_id]</td>";
@@ -147,6 +153,10 @@
 						echo "</tr>";
 					}
 					echo "</div>";
+					
+					if ($count == 0){
+						echo "<tr><td align='center' colspan=5>No Upcoming Meetings</td></tr>";
+					}
 				}
 				echo "</table>";
 			?>
