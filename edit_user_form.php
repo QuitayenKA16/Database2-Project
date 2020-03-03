@@ -37,12 +37,18 @@
 			$grade = (mysqli_num_rows($result) == 1) ? $row['grade'] : 5;
 		?>
 		
-		<form action="header.php" method="post">
+		<form action="edit_user.php" method="post">
 			<h3>Edit account details</h3>
 			<label><span>Name: <span class="required">*</span></span> <input type="text" name="name" <?php echo "value='$name'";?>/></label> <br>
 			<label><span>Phone: </span> <input type="text" name="phone" <?php echo "value='$phone'";?>/></label> <br>
-			<label><span>Email: </span> <input type="text" name="email" <?php echo "value='$email'";?>/></label> <br>
-			<label><span>Password: <span class="required">*</span></span> <input type="password" name="password" <?php echo "value='$password'";?>/></label> <br>
+			<label><span>Email: </span> <input type="text" name="email" <?php echo "value='$email'";?> disabled='disabled'/></label> <br>
+			<label><span>Password: <span class="required">*</span></span> <input type="password" name="password" 
+				<?php
+					echo "value='$password'";
+					if ($_SESSION['edit_uid'] != $_SESSION['loggedUser']['id'] && $_SESSION['type'] == 0)
+						echo " disabled='disabled'";
+				?>
+				/></label> <br>
 			<label><span>Grade Level: <span class="required">*</span></span></label>
 			<select name="grade" 
 				<?php
@@ -69,8 +75,8 @@
 					}
 				?>
 			</select><br><br>
-			<?php if ($_SESSION['loggedUser']['id'] != $_SESSION['edit_uid'])
-				echo "<button type='submit' name='action' value='delete'>Delete</button>";?>
+			<?php if ($_SESSION['type'] == -1) //only admins can delete
+				echo "<button type='submit' name='delete' value='delete'>Delete</button>";?>
 			<button type="submit" name="action" value="edit">Submit</button>
 		</form>
 		

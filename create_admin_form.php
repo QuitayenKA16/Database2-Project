@@ -14,7 +14,7 @@
 		
 		<h3>Create new admin account</h3>
 		
-		<form action="new_admin_page.php" method="post">
+		<form action="new_admin.php" method="post">
 			<label for="field1"><span>Name: <span class="required">*</span></span> <input type="text" name="name"/></label> <br>
 			<label for="field4"><span>Phone: </span> <input type="text" name="phone"/></label> <br>
 			<label for="field3"><span>Email: <span class="required">*</span></span> <input type="text" name="email"/></label> <br>

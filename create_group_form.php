@@ -12,7 +12,7 @@
 			}
 		?>
 		
-		<form action="new_group_page.php" method="post">
+		<form action="new_group.php" method="post">
 			<h3>Create new group</h3>
 			<label for="field3"><span>Name: <span class="required">*</span></span> <input type="text" name="name"/></label> <br>
 			<label for="field4"><span>Description: </span> <input type="text" name="description"/></label> <br>

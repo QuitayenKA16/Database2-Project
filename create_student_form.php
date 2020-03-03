@@ -14,7 +14,7 @@
 			$password = $_SESSION['loggedUser']['password'];
 		?>
 
-		<form action="new_student_page.php" method="post">
+		<form action="new_student.php" method="post">
 			<h3>Create student account</h3>
 			<label for="field3"><span>Name: <span class="required">*</span></span> <input type="text" name="name"/></label> <br>
 			<label for="field5"><span>Phone: </span> <input type="text" name="phone"/></label> <br>
