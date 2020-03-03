@@ -29,7 +29,7 @@
 				
 				
 				$query = "SELECT * FROM users u, students s WHERE u.id = s.student_id AND s.grade = $group_id + 5";
-				echo $query . "<br>";
+				echo "SELECT * FROM users u, students s WHERE u.id = s.student_id AND s.grade = gid<br>";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				$count = mysqli_num_rows($result);
 				
@@ -58,7 +58,7 @@
 		<table style='width:100%'>
 			<?php
 				$query = "SELECT * FROM users u, students s WHERE u.id = s.student_id AND s.grade >= $mentor_grade_req";
-				echo $query . "<br>";
+				echo "SELECT * FROM users u, students s WHERE u.id = s.student_id AND s.grade >= mentor_grade_req<br>";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				$count = mysqli_num_rows($result);
 				

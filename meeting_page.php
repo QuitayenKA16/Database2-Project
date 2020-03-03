@@ -7,12 +7,19 @@
 			border-style: solid;
 			float: left;
 			padding: 10px;
-			height:300px;
+			height: auto;
+			min-height:305px;
 			margin-top:15px;
 		}
 		p.p1 {
 			font: normal 14px Verdana, Arial, sans-serif;
 			margin-left: 10px;
+		}
+		table {width:100%;}
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			margin-bottom: 50px;
 		}
 	</style>
 
@@ -45,8 +52,8 @@
 			<p class="p1"><b>Announcement: </b> <?php echo "$mAnnounce"; ?> <br><br>
 		</div>
 		
-		<div class="column1" align="center" style="width:20%;">
-			<h3 >Mentors</h3>
+		<div class="column1" align="center" style="width:30%;">
+			<h3>Mentors</h3>
 			<a href='http://localhost/Database2-Project/enroll_form.php'>Edit</a><br><br>
 			<?php
 				$query = "SELECT * FROM enroll2 WHERE meet_id = $edit_mid";
@@ -61,7 +68,7 @@
 				}
 			?>
 		</div>
-		<div class="column1" align="center" style="width:20%;">
+		<div class="column1" align="center" style="width:30%;">
 			<h3 >Mentees</h3>
 			<a href='http://localhost/Database2-Project/enroll_form.php'>Edit</a><br><br>
 			<?php
@@ -77,10 +84,27 @@
 				}
 			?>
 		</div>
-		<div class="column1" style="width:20%;">
-			<h3 align="center">Study Crap</h3>
+		<div class="column1" style="width:100%; min-height:200px;">
+			<h3 align="center">Study Material</h3>
 			<?php
+				$query = "SELECT * FROM assign a, material m WHERE m.material_id = a.material_id AND a.meet_id = $edit_mid";
+				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+				echo "<table>";
+				echo "<th>ID</th><th>Title</th><th>Author</th><th>Type</th><th>URL</th><th>Assigned Date</th><th>Notes</th>";
+				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)){
+					echo "<tr>";
+					echo "<td>$row[material_id]</td>";
+					echo "<td>$row[title]</td>";
+					echo "<td>$row[author]</td>";
+					echo "<td>$row[type]</td>";
+					echo "<td>$row[url]</td>";
+					echo "<td>$row[assigned_date]</td>";
+					echo "<td>$row[notes]</td>";
+					echo "</tr>";
+				}
+				echo "</table></td></tr>";
 			?>
 		</div>
+		<p>hi
 	</body
 </html>

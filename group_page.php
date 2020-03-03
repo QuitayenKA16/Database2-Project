@@ -53,8 +53,10 @@
 			<?php
 				echo "<div align='center'>";
 				echo "<a href='http://localhost/Database2-Project/view_members_page.php'>View members</a><br><br><br>";
-				echo "<a href='http://localhost/Database2-Project/view_meetings_page.php'>View meetings</a><br>";
-				echo "<a href='http://localhost/Database2-Project/create_meeting_form.php'>Create meeting</a><br><br>";
+				if ($_SESSION['group']['mentor_grade_req'] != NULL){
+					echo "<a href='http://localhost/Database2-Project/view_meetings_page.php'>View meetings</a><br>";
+					echo "<a href='http://localhost/Database2-Project/create_meeting_form.php'>Create meeting</a><br><br>";
+				}
 				echo "</div>";
 			?>
 		</div>
