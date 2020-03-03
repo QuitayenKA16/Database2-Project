@@ -79,11 +79,13 @@
 					echo "<h3>Actions</h3>";
 					echo "<h4>Views/Edit</h4>";
 					echo "<a href='http://localhost/Database2-Project/view_users_page.php'>View users</a><br>";
-					echo "<a href='http://localhost/Database2-Project/view_groups_page.php'>View groups</a><br><br>";
+					echo "<a href='http://localhost/Database2-Project/view_groups_page.php'>View groups</a><br>";
+					echo "<a href='http://localhost/Database2-Project/view_time_slots_page.php'>View time slots</a><br><br>";
 
 					echo "<h4>Create</h4>";
 					echo "<a href='http://localhost/Database2-Project/create_admin_form.php'>Create new admin account</a><br>";
 					//echo "<a href='http://localhost/Database2-Project/create_group_form.php'>Create new group</a><br>";
+					echo "<a href='http://localhost/Database2-Project/create_time_slot_form.php'>Create new time slot</a><br>";
 					echo "</div>";
 				}
 				else if ($_SESSION['type'] == 0){ //user
@@ -143,8 +145,8 @@
 				
 					echo "<div align='center'>";
 					echo "<h4>Actions</h4>";
-					if ($_SESSION['grade'] <= 9)	echo "<a href='http://localhost/Database2-Project/user_page.php'>Edit Meetings (Mentee)</a><br>";
-					if ($_SESSION['grade'] >= 9)	echo "<a href='http://localhost/Database2-Project/user_page.php'>Edit Meetings (Mentor)</a><br>";
+					if ($_SESSION['grade'] <= 9)	echo "<a href='http://localhost/Database2-Project/user_page.php'>Edit meetings (mentee)</a><br>";
+					if ($_SESSION['grade'] >= 9)	echo "<a href='http://localhost/Database2-Project/user_page.php'>Edit meetings (mentor)</a><br>";
 					echo "</div>";
 				}
 			?>

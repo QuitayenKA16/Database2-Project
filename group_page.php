@@ -15,6 +15,9 @@
 			font: normal 14px Verdana, Arial, sans-serif;
 			margin-left: 10px;
 		}
+		h4 {
+			margin: 20px 0px 5px 0px;
+		}
 	</style>
 
 	<body>
@@ -50,12 +53,14 @@
 		
 		<div class="column1" style="">
 			<h3 align="center">Actions</h3>
+			<div align='center'>
+			<h4>View/Edit</h4>
+			<a href='http://localhost/Database2-Project/view_members_page.php'>View members</a><br>
 			<?php
-				echo "<div align='center'>";
-				echo "<a href='http://localhost/Database2-Project/view_members_page.php'>View members</a><br><br><br>";
 				if ($_SESSION['group']['mentor_grade_req'] != NULL){
-					echo "<a href='http://localhost/Database2-Project/view_meetings_page.php'>View meetings</a><br>";
-					echo "<a href='http://localhost/Database2-Project/create_meeting_form.php'>Create meeting</a><br><br>";
+					echo "<a href='http://localhost/Database2-Project/view_meetings_page.php'>View meetings</a><br><br>";
+					echo "<h4>Create</h4>";
+					echo "<a href='http://localhost/Database2-Project/create_meeting_form.php'>Create meeting</a><br>";
 				}
 				echo "</div>";
 			?>

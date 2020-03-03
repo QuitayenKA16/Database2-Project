@@ -116,12 +116,12 @@ INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_r
 	
 -- time_slot (time_slot_id, day_of_the_week, start_time, end_time)
 insert into time_slot (day_of_the_week, start_time, end_time) values ("Saturday", "16:00:00", "17:00:00"); -- 4pm-5pm
-insert into time_slot (day_of_the_week, start_time, end_time) values ("Saturday", "17:00:00", "18:00:00"); -- 5pm-6pm
-insert into time_slot (day_of_the_week, start_time, end_time) values ("Saturday", "18:00:00", "19:00:00"); -- 6pm-7pm
-insert into time_slot (day_of_the_week, start_time, end_time) values ("Saturday", "19:00:00", "20:00:00"); -- 7pm-8pm
 insert into time_slot (day_of_the_week, start_time, end_time) values ("Sunday", "16:00:00", "17:00:00"); -- 4pm-5pm
+insert into time_slot (day_of_the_week, start_time, end_time) values ("Saturday", "17:00:00", "18:00:00"); -- 5pm-6pm
 insert into time_slot (day_of_the_week, start_time, end_time) values ("Sunday", "17:00:00", "18:00:00"); -- 5pm-6pm
+insert into time_slot (day_of_the_week, start_time, end_time) values ("Saturday", "18:00:00", "19:00:00"); -- 6pm-7pm
 insert into time_slot (day_of_the_week, start_time, end_time) values ("Sunday", "18:00:00", "19:00:00"); -- 6pm-7pm
+insert into time_slot (day_of_the_week, start_time, end_time) values ("Saturday", "19:00:00", "20:00:00"); -- 7pm-8pm
 insert into time_slot (day_of_the_week, start_time, end_time) values ("Sunday", "19:00:00", "20:00:00"); -- 7pm-8pm
 	
 -- meetings (meet_id, meet_name, date, time_slot_id, capacity, announcement, group_id)
