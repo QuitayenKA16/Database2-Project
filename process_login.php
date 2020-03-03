@@ -34,7 +34,7 @@
 	}
 	else{
 		session_start();
-		$_SESSION['error'] = "Incorrect email and/or password.";
+		$_SESSION['message'] = "Incorrect email and/or password.";
 		header ("Location:login_form.php");
 	}
 	echo '<br>';

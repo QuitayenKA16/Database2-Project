@@ -5,8 +5,9 @@
 	<body>
 		<?php
 			include "header.php";
-			if (isset($_SESSION['error'])){
-				echo "<br>$_SESSION[error]";
+			if (isset($_SESSION['message'])){
+				echo "<br>$_SESSION[message]";
+				unset($_SESSION['message']);
 			}
 		?>
 		<h3>Login as existing account</h3>

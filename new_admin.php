@@ -10,10 +10,10 @@
 
 			$sql = "INSERT INTO users (name, email, phone, password)
 				VALUES ('$_POST[name]', '$_POST[email]', '$_POST[phone]', '$_POST[password]')";
-
+			$_SESSION['message'] = $sql . "<br>";
+			
 			if ($myconnection->query($sql) != TRUE){
-				$_SESSION['error'] = "Error creating admin account.<br> Error: " . $sql . "<br>" . $myconnection->error;
-				header ("Location:create_admin_form.php");
+				$_SESSION['message'] .= "Error creating admin account.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 			}
 			else {
 				$query = "SELECT * FROM users WHERE email = '$_POST[email]' AND password = '$_POST[password]'";
@@ -26,12 +26,14 @@
 				$stmt->bind_param("i", $id);
 				
 				if ($stmt->execute() === TRUE) {
-					echo "Successful new admin creation: <b>$_POST[name]</b>";
-				} else {
-					echo "Error: " . $sql . "<br>" . $myconnection->error;
+					$_SESSION['message'] .= "Successful new admin creation: <b>$_POST[name]</b><br>";
+				}
+				else {
+					$_SESSION['message'] .= "Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 				}
 			}
 			$myconnection->close();
+			header ("Location:create_admin_form.php");
 		?>
 		<br>
 	</body>

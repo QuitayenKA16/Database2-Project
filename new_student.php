@@ -11,12 +11,14 @@
 			$password = $_SESSION['loggedUser']['password'];
 			
 			$query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+			$_SESSION['message'] = $query . "<br>";
 			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 	
 			if (mysqli_num_rows($result) == 1){
 				$parentId = (mysqli_fetch_array ($result, MYSQLI_ASSOC))['id'];
 				
 				$sql = "SELECT * FROM parents WHERE parent_id = " . $parentId;
+				$_SESSION['message'] = $sql . "<br>";
 				$result = mysqli_query($myconnection, $sql) or die ('Query failed: ' . mysql_error());
 				
 				if (mysqli_num_rows($result) == 1) {
@@ -24,10 +26,10 @@
 				
 					$sql = "INSERT INTO users (name, email, phone, password)
 						VALUES ('$_POST[name]', '$_POST[email]', '$_POST[phone]', '$_POST[password]')";
+					$_SESSION['message'] = $sql . "<br>";
 					
 					if ($myconnection->query($sql) != TRUE){
-						$_SESSION['error'] = "<br>Error creating student account.<br>Error: " . $sql . "<br>" . $myconnection->error;
-						header ("Location:create_student_form.php");
+						$_SESSION['error'] = "<br>Error creating student account.<br>Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 					}
 					else{
 						$query = "SELECT * FROM users WHERE email = '$_POST[email]' AND password = '$_POST[password]'";
@@ -38,30 +40,33 @@
 				
 						$sql = "INSERT INTO students VALUES (" . $studentId . "," . $grade . "," . $parentId . ")";
 						if ($myconnection->query($sql) === TRUE){
-							echo "Successful new student creation: <b>$_POST[name]</b>";
+							$_SESSION['message'] .= "Successful new student creation: <b>$_POST[name]</b><br>";
 							if ($grade <= 9){ //mentees
 								$sql = "INSERT INTO mentees VALUES (" . $studentId . ")";
-								if ($myconnection->query($sql) != TRUE) echo "Error: " . $sql . "<br>" . $myconnection->error;
+								$_SESSION['message'] = $sql . "<br>";
+								if ($myconnection->query($sql) != TRUE) echo "Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 							}
 							if ($grade >= 9){ //mentors
 								$sql = "INSERT INTO mentors VALUES (" . $studentId . ")";
-								if ($myconnection->query($sql) != TRUE) echo "Error: " . $sql . "<br>" . $myconnection->error;
+								$_SESSION['message'] = $sql . "<br>";
+								if ($myconnection->query($sql) != TRUE) echo "Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 							}
 						}
 						else
-							echo "Error: " . $sql . "<br>" . $myconnection->error;
+							$_SESSION['message'] .= "Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 					}
 				}
 				else {
-					$_SESSION['error'] = "Parent account was not entered.";
+					$_SESSION['message'] .= "Parent account was not entered.<br>";
 					header ("Location:create_student_form.php");
 				}
 			}
 			else{
-				$_SESSION['error'] = "Parent account username and/or password is incorrect.";
-				header ("Location:create_student_form.php");
+				$_SESSION['message'] .= "Parent account username and/or password is incorrect.<br>";
 			}
 			$myconnection->close();
+			header ("Location:create_student_form.php");
+			
 		?>
 		<br>
 	</body>

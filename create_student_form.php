@@ -6,9 +6,9 @@
 	<body>
 		<?php
 			include "header.php";
-			if (isset($_SESSION['error'])){
-				echo "<br>$_SESSION[error]";
-				unset($_SESSION['error']);
+			if (isset($_SESSION['message'])){
+				echo "<br>$_SESSION[message]";
+				unset($_SESSION['message']);
 			}
 			$email = $_SESSION['loggedUser']['email'];
 			$password = $_SESSION['loggedUser']['password'];

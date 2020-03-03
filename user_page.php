@@ -34,7 +34,7 @@
 	<body>
 		<?php
 			include "header.php";
-			unset($_SESSION['error']);
+			unset($_SESSION['message']);
 			$_SESSION['table_view'] = 'default';
 			$_SESSION['table_sort'] = 'idAsc';
 			$_SESSION['edit_uid'] = $_SESSION['loggedUser']['id'];

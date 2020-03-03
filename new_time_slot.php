@@ -10,25 +10,24 @@
 			$end = $_POST['end_time'] . ":00";
 			
 			$sql = "INSERT INTO time_slot (day_of_the_week, start_time, end_time) VALUES ('Saturday', '$start', '$end')";
-			$_SESSION['error'] = $sql . "<br>";
+			$_SESSION['message'] = $sql . "<br>";
 					
 			if ($myconnection->query($sql) != TRUE){
-				$_SESSION['error'] .= "Error creating time slot.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
-				header ("Location:create_time_slot_form.php");
+				$_SESSION['message'] .= "Error creating time slot.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 			}
 			else {
-				$_SESSION['error'] .= "Successful creation of time slot: Saturday $start - $end<br>";
+				$_SESSION['message'] .= "Successful creation of time slot: Saturday $start - $end<br>";
 				$sql = "INSERT INTO time_slot (day_of_the_week, start_time, end_time) VALUES ('Sunday', '$start', '$end')";
-				$_SESSION['error'] .= $sql . "<br>";
+				$_SESSION['message'] .= $sql . "<br>";
 				if ($myconnection->query($sql) != TRUE){
-					$_SESSION['error'] .= "Error creating time slot.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
+					$_SESSION['message'] .= "Error creating time slot.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 				}
 				else {
-					$_SESSION['error'] .= "Successful creation of time slot: Sunday $start - $end<br>";
+					$_SESSION['message'] .= "Successful creation of time slot: Sunday $start - $end<br>";
 				}
-				header ("Location:create_time_slot_form.php");
 			}
 			$myconnection->close();
+			header ("Location:create_time_slot_form.php");
 		?>
 		<br>
 	</body>

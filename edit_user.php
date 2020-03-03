@@ -39,8 +39,8 @@
 					}
 				}
 				else {
-					$_SESSION['error'] = "Error updating record: " . $myconnection->error;
-					echo $_SESSION['error'];
+					$_SESSION['message'] = "Error updating record: " . $myconnection->error;
+					echo $_SESSION['message'];
 					header ("Location:edit_user_form.php");
 				}
 			}

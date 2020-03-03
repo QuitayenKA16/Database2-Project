@@ -8,7 +8,7 @@
 	<body>
 		<?php
 			include "header.php";
-			$_SESSION['error'] = "";
+			$_SESSION['message'] = "";
 		?>
 		
 		<div>

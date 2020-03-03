@@ -5,9 +5,9 @@
 	<body>
 		<?php
 			include "header.php";
-			if (isset($_SESSION['error'])){
-				echo "$_SESSION[error]";
-				unset($_SESSION['error']);
+			if (isset($_SESSION['message'])){
+				echo "$_SESSION[message]";
+				unset($_SESSION['message']);
 			}
 			
 			if (isset($_POST['edit_uid'])){
