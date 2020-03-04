@@ -8,10 +8,10 @@
 
 			$sql = "INSERT INTO users (name, email, phone, password)
 				VALUES ('$_POST[name]', '$_POST[email]', '$_POST[phone]', '$_POST[password]')";
-			$_SESSION['message'] = $sql . "<br>";
+			$_SESSION['message'] = "";
 
 			if ($myconnection->query($sql) != TRUE){
-				$_SESSION['message'] .= "Error creating parent account.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
+				$_SESSION['message'] .= "Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 			}
 			else {
 			
@@ -21,15 +21,11 @@
 				$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
 				$parentId = $row['id'];
 				
-				$sql = "INSERT INTO parents VALUES (?)";
-				$stmt = $myconnection->prepare($sql);
-				$_SESSION['message'] .= $stmt . "<br>";
-				$stmt->bind_param("i", $parentId);
-				
-				if ($stmt->execute() === TRUE) {
+				$sql = "INSERT INTO parents VALUES ($parentId)";				
+				if ($myconnection->query($sql) == TRUE){
 					$_SESSION['message'] .= "Successful new parent creation: <b>$_POST[name]</b>";
 				} else {
-					$_SESSION['message'] .= "Error: " . $sql . "<br>" . $myconnection->error . "<br>";
+					$_SESSION['message'] .= "Error: " . $myconnection->error . "<br>";
 				}
 			}
 			$myconnection->close();

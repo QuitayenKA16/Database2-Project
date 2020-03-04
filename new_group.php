@@ -14,13 +14,12 @@
 			$sql = "INSERT INTO groups (name, description, mentee_grade_req, mentor_grade_req) VALUES (?, ?, ?, ?)";
 			$stmt = $myconnection->prepare($sql);
 			$stmt->bind_param("ssii", $name, $desc, $gradeLvl, $minMentor);
-			$_SESSION['message'] = $sql . "<br>";
 					
 			if ($stmt->execute() != TRUE){
-				$_SESSION['message'] .= "Error creating group.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
+				$_SESSION['message'] = "Error creating group.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 			}
 			else {
-				$_SESSION['message'] .= "Successful group creation: <b>$_POST[name]</b><br>";
+				$_SESSION['message'] = "Successful group creation: <b>$_POST[name]</b><br>";
 			}
 			$myconnection->close();
 			header ("Location:create_group_form.php");

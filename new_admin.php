@@ -3,14 +3,10 @@
 		<?php
 			include "header.php";
 		
-			$myconnection = mysqli_connect('localhost', 'root', '') 
-				or die ('Could not connect: ' . mysql_error());
-
+			$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 			$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
-
-			$sql = "INSERT INTO users (name, email, phone, password)
-				VALUES ('$_POST[name]', '$_POST[email]', '$_POST[phone]', '$_POST[password]')";
-			$_SESSION['message'] = $sql . "<br>";
+			$sql = "INSERT INTO users (name, email, phone, password) VALUES ('$_POST[name]', '$_POST[email]', '$_POST[phone]', '$_POST[password]')";
+			$_SESSION['message'] = "";
 			
 			if ($myconnection->query($sql) != TRUE){
 				$_SESSION['message'] .= "Error creating admin account.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";

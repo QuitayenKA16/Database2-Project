@@ -19,7 +19,7 @@
 				echo $sql . "<br>";
 	
 				if ($myconnection->query($sql) === TRUE)
-					echo "Successful deleting user " . $_SESSION['edit_uid'] . "<br>";
+					echo "Successful deleting user: <b>UID" . $_SESSION['edit_uid'] . "</b><br>";
 			}
 			else {
 				$sql = (isset($_POST['password'])) ? 
