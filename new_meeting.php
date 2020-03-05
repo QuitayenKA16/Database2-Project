@@ -2,7 +2,6 @@
 	<body>
 		<?php
 			include "header.php";
-		
 			$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 			$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 			$_SESSION['message'] = "";
@@ -10,35 +9,33 @@
 			$group_id = $_SESSION['group']['group_id'];
 			$name = $_POST['name'];
 			$announcement = $_POST['announcement'];
-			$week = $_POST['week'];
+			$year = substr($_POST['week'], 0, 4);
+			$week = substr($_POST['week'], -2, 2);
+			$date = new DateTime();
+			$date->setISODate($year,$week);
+			$date = $date->format('yy-m-d');
+			$date = strtotime($date);
 			$time_slot_id = $_POST['time_slot_id'];
 			
-			$_SESSION['message'] .= $group_id . "<br>";
-			$_SESSION['message'] .= $name . "<br>";
-			$_SESSION['message'] .= $announcement . "<br>";
-			$_SESSION['message'] .= $week . "<br>";
-			$_SESSION['message'] .= $time_slot_id . "<br>";
+			$query = "SELECT day_of_the_week FROM time_slot WHERE time_slot_id = $time_slot_id";
+			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+			$day_of_the_week = (mysqli_fetch_array ($result, MYSQLI_ASSOC))['day_of_the_week'];
+			$increment = ($day_of_the_week == "Saturday") ? "+5 day" : "+6 day";
+			$date = strtotime($increment, $date);
+			$date = date('yy-m-d', $date);
 			
 			$query = "INSERT INTO meetings (meet_name, date, time_slot_id, capacity, announcement, group_id)
-				VALUES ($name, $date, $time_slot_id, 0, $announcement, $group_id)";
-			$_SESSION['message'] .= $query;
+					VALUES ('$name', '$date', $time_slot_id, 0, '$announcement', $group_id)";
+			$_SESSION['message'] .= $query . "<br>";
 			
-			/*
-			if ($myconnection->query($sql) != TRUE){
-				$_SESSION['message'] .= "Error creating time slot.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
+			
+			if ($myconnection->query($query) != TRUE){
+				$_SESSION['message'] .= "Error creating meeting.<br> Error: " . $query . "<br>" . $myconnection->error . "<br>";
 			}
 			else {
-				$_SESSION['message'] .= "Successful creation of time slot: Saturday $start - $end<br>";
-				$sql = "INSERT INTO time_slot (day_of_the_week, start_time, end_time) VALUES ('Sunday', '$start', '$end')";
-				$_SESSION['message'] .= $sql . "<br>";
-				if ($myconnection->query($sql) != TRUE){
-					$_SESSION['message'] .= "Error creating time slot.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
-				}
-				else {
-					$_SESSION['message'] .= "Successful creation of time slot: Sunday $start - $end<br>";
-				}
+				$_SESSION['message'] .= "Successful creation of meeting: $name";
 			}
-			*/
+			
 			$myconnection->close();
 			header ("Location:create_meeting_form.php");
 		?>
