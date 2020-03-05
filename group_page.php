@@ -12,7 +12,7 @@
 			width:50%;
 		}
 		p.p1 {
-			font: normal 14px Verdana, Arial, sans-serif;
+			font: normal 14px Comic Sans MS, cursive, sans-serif;
 			margin-left: 10px;
 		}
 		h4 {
@@ -47,7 +47,7 @@
 			<p class="p1"><b>Can Mentor: </b> <?php echo "$gMentee"; ?> <br>
 			<p class="p1"><b>Can be Mentored by: </b> <?php echo "$gMentor"; ?> <br>
 
-			<br><br><br>
+			<br><br>
 			<a href='http://localhost/Database2-Project/edit_group_form.php'>Edit Details</a>
 		</div>
 		

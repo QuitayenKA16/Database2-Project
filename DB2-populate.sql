@@ -10,7 +10,7 @@
 
 -- users (id, email, password, name, phone)
 
-insert into users (name, email, phone, password) values ("Admin", "admin@mail.com", "1234567890", "");
+insert into users (name, email, phone, password) values ("Admin", "admin@gmail.com", "1234567890", "password");
 insert into users (name, email, phone, password) values ("Principal Smith", "psmith@mail.com", "1234567890", "password1");
 
 -- parents (name, email, phone, password)

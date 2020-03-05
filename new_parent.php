@@ -14,13 +14,7 @@
 				$_SESSION['message'] .= "Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 			}
 			else {
-			
-				$query = "SELECT * FROM users WHERE email = '$_POST[email]' AND password = '$_POST[password]'";
-				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
-				$count = mysqli_num_rows($result);
-				$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
-				$parentId = $row['id'];
-				
+				$parentId = $myconnection->insert_id;
 				$sql = "INSERT INTO parents VALUES ($parentId)";				
 				if ($myconnection->query($sql) == TRUE){
 					$_SESSION['message'] .= "Successful new parent creation: <b>$_POST[name]</b>";

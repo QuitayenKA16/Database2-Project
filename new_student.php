@@ -27,10 +27,7 @@
 						$_SESSION['message'] .= "Error creating student account.<br>Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 					}
 					else{
-						$query = "SELECT * FROM users WHERE email = '$_POST[email]' AND password = '$_POST[password]'";
-						$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
-						$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
-						$studentId = $row['id'];
+						$studentId = $myconnection->insert_id;
 						$grade = $_POST['grade'];
 				
 						$sql = "INSERT INTO students VALUES (" . $studentId . "," . $grade . "," . $parentId . ")";

@@ -12,16 +12,9 @@
 				$_SESSION['message'] .= "Error creating admin account.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 			}
 			else {
-				$query = "SELECT * FROM users WHERE email = '$_POST[email]' AND password = '$_POST[password]'";
-				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
-				$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
-				$id = $row['id'];
-				
-				$sql = "INSERT INTO admins VALUES (?)";
-				$stmt = $myconnection->prepare($sql);
-				$stmt->bind_param("i", $id);
-				
-				if ($stmt->execute() === TRUE) {
+				$parentId = $myconnection->insert_id;
+				$sql = "INSERT INTO admins VALUES ($parentId)";		
+				if ($myconnection->query($sql) == TRUE) {
 					$_SESSION['message'] .= "Successful new admin creation: <b>$_POST[name]</b><br>";
 				}
 				else {

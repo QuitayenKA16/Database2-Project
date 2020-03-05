@@ -12,7 +12,7 @@
 			margin-top:15px;
 		}
 		p.p1 {
-			font: normal 14px Verdana, Arial, sans-serif;
+			font: normal 14px Comic Sans MS, cursive, sans-serif;
 			margin-left: 10px;
 		}
 		table {width:100%;}

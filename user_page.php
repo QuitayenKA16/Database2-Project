@@ -18,7 +18,7 @@
 			right: 0;
 		}
 		p.p1 {
-			font: normal 14px Verdana, Arial, sans-serif;
+			font: normal 16px Comic Sans MS, cursive, sans-serif;
 			margin-left: 10px;
 		}
 		h4 {

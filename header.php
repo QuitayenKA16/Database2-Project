@@ -1,10 +1,10 @@
 <html>
 	<style>
 		body {
-			font: normal 16px Verdana, Arial, sans-serif;
+			font: normal 16px Comic Sans MS, cursive, sans-serif;
 		}
 		footer {
-			font: italic 12px Verdana, Arial, sans-serif;
+			font: italic 12px Comic Sans MS, cursive, sans-serif;
 			position: fixed;
 			bottom: 0;
 			background-color: white;
@@ -12,7 +12,7 @@
 			height: 34px;
 		}
 		input {
-			font: normal 16px Verdana, Arial, sans-serif;
+			font: normal 16px Comic Sans MS, cursive, sans-serif;
 		}
 		form {
 			margin-bottom: 35px;
@@ -31,9 +31,10 @@
 		}
 		select {
 			margin: 0px 0px 10px 0px;
-			font: normal 16px Verdana, Arial, sans-serif;
+			font: normal 16px Comic Sans MS, cursive, sans-serif;
 		}
 		a {
+			font: normal 16px Comic Sans MS, cursive, sans-serif;
 			color: #2c87f0;
 		}
 		a:visited {
@@ -43,7 +44,7 @@
 			background-color: #e6e6e6;
 		}
 		button[type=submit] {
-			font: normal 16px Verdana, Arial, sans-serif;
+			font: normal 16px Comic Sans MS, cursive, sans-serif;
 		}
 		button[type=submit].class1 {
 			background-color: #bfbfbf;
@@ -54,7 +55,7 @@
 			height = 20px;
 		}
 		button[type=submit].class2 {
-			font: normal 14px Verdana, Arial, sans-serif;
+			font: normal 14px Comic Sans MS, cursive, sans-serif;
 			background-color: #e6e6e6;
 			color: black;
 			border: none
