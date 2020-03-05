@@ -12,6 +12,7 @@
 			include "header.php";
 			$meet_id = $_SESSION['meet']['meet_id'];
 			$group_id = $_SESSION['meet']['group_id'];
+			$g_desc = $_SESSION['group']['description'];
 			$mentor_grade_req = $_SESSION['group']['mentor_grade_req'];
 		?>
 		
@@ -20,16 +21,14 @@
 				<br><a href='http://localhost/Database2-Project/meeting_page.php'>Back</a>
 				<h3>Mentees</h3>
 			</div>
-			<br>
 		
 		<table style='width:100%'>
 			<?php
 				$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 				$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 				
-				
-				$query = "SELECT * FROM users u, students s WHERE u.id = s.student_id AND s.grade = $group_id + 5";
-				echo "SELECT * FROM users u, students s WHERE u.id = s.student_id AND s.grade = gid<br>";
+				$query = "SELECT * FROM users u, students s WHERE u.id = s.student_id AND s.grade = $g_desc";
+				echo "$query<br>";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				$count = mysqli_num_rows($result);
 				

@@ -10,6 +10,7 @@
 			background-color: white;
 			width: 100%;
 			height: 34px;
+			z-index: -1;
 		}
 		input {
 			font: normal 16px Comic Sans MS, cursive, sans-serif;

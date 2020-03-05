@@ -8,7 +8,7 @@
 			float: left;
 			padding: 10px;
 			height: auto;
-			min-height:305px;
+			min-height:307px;
 			margin-top:15px;
 		}
 		p.p1 {
@@ -84,8 +84,9 @@
 				}
 			?>
 		</div>
-		<div class="column1" style="width:100%; min-height:200px;">
-			<h3 align="center">Study Material</h3>
+		<div class="column1" align="center" style="width:100%; min-height:200px;">
+			<br><h3 style="display: inline;">Study Material</h3>
+			<a href='http://localhost/Database2-Project/assign_material_form.php'>Edit</a><br><br>
 			<?php
 				$query = "SELECT * FROM assign a, material m WHERE m.material_id = a.material_id AND a.meet_id = $edit_mid";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());

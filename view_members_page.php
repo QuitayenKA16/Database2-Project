@@ -17,7 +17,8 @@
 			else if (isset($_POST['table_sort'])){
 				$_SESSION['table_sort'] = $_POST['table_sort'];
 			}
-			$gid = $_SESSION['group']['group_id']
+			$gid = $_SESSION['group']['group_id'];
+			$g_desc = $_SESSION['group']['description'];
 		?>
 		
 		<form action="view_members_page.php" method="post">
@@ -33,7 +34,7 @@
 				$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 				
 				$query = "SELECT * FROM users u, students s
-							WHERE u.id = s.student_id AND s.grade = $gid + 5 ORDER BY ";
+							WHERE u.id = s.student_id AND s.grade = $g_desc ORDER BY ";
 				
 				if ($_SESSION['table_sort']=='idAsc') $query .= "u.id ASC";
 				if ($_SESSION['table_sort']=='idDes') $query .= "u.id DESC";

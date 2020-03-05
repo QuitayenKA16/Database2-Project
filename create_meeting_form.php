@@ -2,7 +2,7 @@
 	
 	<style>
 		textarea {
-			width: 215px;
+			width: 231px;
 			height: 50px;
 			resize: none;
 		}

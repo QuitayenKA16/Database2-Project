@@ -7,9 +7,10 @@
 			border-style: solid;
 			float: left;
 			padding: 10px;
-			min-height: 325px;
+			min-height: 328px;
 			height: auto;
 			margin-top: 15px;
+			margin-bottom: 25px;
 			position: relative;
 		}
 		.column1 > span {
@@ -84,7 +85,6 @@
 
 					echo "<h4>Create</h4>";
 					echo "<a href='http://localhost/Database2-Project/create_admin_form.php'>Create new admin account</a><br>";
-					//echo "<a href='http://localhost/Database2-Project/create_group_form.php'>Create new group</a><br>";
 					echo "<a href='http://localhost/Database2-Project/create_time_slot_form.php'>Create new time slot</a><br>";
 					echo "</div>";
 				}

@@ -10,7 +10,7 @@
 
 -- users (id, email, password, name, phone)
 
-insert into users (name, email, phone, password) values ("Admin", "admin@gmail.com", "1234567890", "password");
+insert into users (name, email, phone, password) values ("Admin", "admin@mail.com", "1234567890", "password");
 insert into users (name, email, phone, password) values ("Principal Smith", "psmith@mail.com", "1234567890", "password1");
 
 -- parents (name, email, phone, password)
@@ -105,13 +105,13 @@ insert into students (student_id, parent_id, grade) values (40+15,4+15,12);
 
 
 -- create groups (group_id, name, description, mentee_grade_req, mentor_grade_req)
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 6', '', 9, null);
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 7', '', 10, null);
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 8', '', 11, null);
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 9', '', 12, 6);
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 10', '', null, 7);
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 11', '', null, 8);
-INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 12', '', null, 9);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 6', 6, 9, null);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 7', 7, 10, null);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 8', 8, 11, null);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 9', 9, 12, 6);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 10', 10, null, 7);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 11', 11, null, 8);
+INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 12', 12, null, 9);
 
 	
 -- time_slot (time_slot_id, day_of_the_week, start_time, end_time)

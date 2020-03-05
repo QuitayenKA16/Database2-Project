@@ -26,13 +26,13 @@
 					$meet_name = ($group_id + 5) . "th Grade Meeting " . $count;
 					$sql = "INSERT INTO meetings (meet_name, date, time_slot_id, capacity, announcement, group_id)
 						VALUES ($meet_name, $satStr, 0, '', $group_id)";
-					//echo $sql . "<br>";
+					//$_SESSION['message'] .= $sql . "<br>";
 					
 					$count += 1;
 					$meet_name = ($group_id + 5) . "th Grade Meeting " . $count;
 					$sql = "INSERT INTO meetings (meet_name, date, time_slot_id, capacity, announcement, group_id)
 						VALUES ($meet_name, $sunStr, 0, '', $group_id)";
-					//echo $sql . "<br>";
+					//$_SESSION['message'] .= $sql . "<br>";
 					
 					$count += 1;
 					$satDate = strtotime("+7 day", $satDate);
