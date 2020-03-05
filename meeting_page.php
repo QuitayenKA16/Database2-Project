@@ -54,7 +54,7 @@
 		
 		<div class="column1" align="center" style="width:30%;">
 			<h3>Mentors</h3>
-			<a href='http://localhost/Database2-Project/enroll_form.php'>Edit</a><br><br>
+			<a href='http://localhost/Database2-Project/enroll_mentor_form.php'>Edit</a><br><br>
 			<?php
 				$query = "SELECT * FROM enroll2 WHERE meet_id = $edit_mid";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
@@ -70,7 +70,7 @@
 		</div>
 		<div class="column1" align="center" style="width:30%;">
 			<h3 >Mentees</h3>
-			<a href='http://localhost/Database2-Project/enroll_form.php'>Edit</a><br><br>
+			<a href='http://localhost/Database2-Project/meeting_page.php'>Edit</a><br><br>
 			<?php
 				$query = "SELECT * FROM enroll WHERE meet_id = $edit_mid";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
@@ -84,7 +84,7 @@
 				}
 			?>
 		</div>
-		<div class="column1" align="center" style="width:100%; min-height:200px;">
+		<div class="column1" align="center" style="width:100%; min-height:200px; margin-bottom:25px">
 			<br><h3 style="display: inline;">Study Material</h3>
 			<a href='http://localhost/Database2-Project/assign_material_form.php'>Edit</a><br><br>
 			<?php
@@ -106,6 +106,5 @@
 				echo "</table></td></tr>";
 			?>
 		</div>
-		<p>hi
 	</body
 </html>

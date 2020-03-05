@@ -81,7 +81,8 @@
 					echo "<h4>Views/Edit</h4>";
 					echo "<a href='http://localhost/Database2-Project/view_users_page.php'>View users</a><br>";
 					echo "<a href='http://localhost/Database2-Project/view_groups_page.php'>View groups</a><br>";
-					echo "<a href='http://localhost/Database2-Project/view_time_slots_page.php'>View time slots</a><br><br>";
+					echo "<a href='http://localhost/Database2-Project/view_time_slots_page.php'>View time slots</a><br>";
+					echo "<a href='http://localhost/Database2-Project/view_all_meetings_page.php'>View meetings</a><br><br>";
 
 					echo "<h4>Create</h4>";
 					echo "<a href='http://localhost/Database2-Project/create_admin_form.php'>Create new admin account</a><br>";

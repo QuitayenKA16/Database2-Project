@@ -15,7 +15,17 @@
 				$_SESSION['message'] .= "Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 			}
 			else {
-				$_SESSION['message'] .= "Successful study material creation: <b>$_POST[title]</b>";
+				$_SESSION['message'] .= "Successful study material creation: <b>$_POST[title]</b><br>";
+				$material_id = $myconnection->insert_id;
+				$meet_id = $_SESSION['meet']['meet_id'];
+				$sql = "INSERT INTO assign (meet_id, material_id) VALUES ($meet_id, $material_id)";
+
+				if ($myconnection->query($sql) != TRUE){
+					$_SESSION['message'] .= "Error: " . $sql . "<br>" . $myconnection->error . "<br>";
+				}
+				else{
+					$_SESSION['message'] .= "Successful assignment to meeting: <b>$meet_id</b>";
+				}
 			}
 			
 			$myconnection->close();
