@@ -7,7 +7,7 @@
 			border-style: solid;
 			float: left;
 			padding: 10px;
-			min-height: 328px;
+			min-height: 335px;
 			height: auto;
 			margin-top: 15px;
 			margin-bottom: 25px;
@@ -19,7 +19,7 @@
 			right: 0;
 		}
 		p.p1 {
-			font: normal 16px Comic Sans MS, cursive, sans-serif;
+			font: normal 16px Verdana, Geneva, sans-serif;
 			margin-left: 10px;
 		}
 		h4 {

@@ -19,7 +19,7 @@
 			<label for="field4"><span>Phone: </span> <input type="text" name="phone"/></label> <br>
 			<label for="field3"><span>Email: <span class="required">*</span></span> <input type="text" name="email"/></label> <br>
 			<label for="field6"><span>Password: <span class="required">*</span></span> <input type="password" name="password"/></label> <br>
-			<input type="submit" style="font: normal 16px Comic Sans MS, cursive, sans-serif;">
+			<input type="submit" style="font: normal 16px Verdana, Geneva, sans-serif;">
 		</form>
 		
 	</body>

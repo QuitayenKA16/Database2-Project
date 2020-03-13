@@ -1,10 +1,4 @@
 <html>
-	<style>	
-		h3 {
-			margin: 20px 0px 5px 0px;
-		}
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";

@@ -35,7 +35,7 @@
 					}
 				?>
 			</select><br>
-			<input type="submit" style="font: normal 16px Comic Sans MS, cursive, sans-serif;">
+			<input type="submit" style="font: normal 16px Verdana, Geneva, sans-serif;">
 		</form>
 	</body>
 </html>

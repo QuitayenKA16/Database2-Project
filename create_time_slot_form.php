@@ -20,8 +20,8 @@
 				<option value='Saturday'>Saturday</option>
 				<option value='Sunday'>Sunday</option>
 			</select><br><br>
-			<p style="font: normal 14px Comic Sans MS, cursive, sans-serif;">*Meeting length is automatically set to 1 hour.</p>
-			<input type="submit" style="font: normal 16px Comic Sans MS, cursive, sans-serif;">
+			<p style="font: normal 14px Verdana, Geneva, sans-serif;">*Meeting length is automatically set to 1 hour.</p>
+			<input type="submit" style="font: normal 16px Verdana, Geneva, sans-serif;">
 		</form>
 	</body>
 </html>

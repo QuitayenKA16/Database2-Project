@@ -12,7 +12,7 @@
 			width:50%;
 		}
 		p.p1 {
-			font: normal 14px Comic Sans MS, cursive, sans-serif;
+			font: normal 14px Verdana, Geneva, sans-serif;
 			margin-left: 10px;
 		}
 		h4 {

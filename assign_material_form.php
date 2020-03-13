@@ -26,7 +26,7 @@
 			<label><span>URL:</span><input type="text" name="url"/></label><br>
 			<label><span>Assigned Date:<span class="required">*</span></span><input type="date" name="date"/></label><br>
 			<label><span>Notes:</span><textarea name="notes"/></textarea></label><br>
-			<input type="submit" style="font: normal 16px Comic Sans MS, cursive, sans-serif;">
+			<input type="submit" style="font: normal 16px Verdana, Geneva, sans-serif;">
 		</form>
 	</body>
 </html>
