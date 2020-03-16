@@ -102,7 +102,7 @@
 					$gid = $_SESSION['grade'] - 5;
 					
 					echo "<h4>Upcoming Meetings:</h4>";
-					echo "<table style='width:80%;'><tr><th>MID</th><th>GID</th><th>Date</th><th>Time</th><th>Roll</th></tr>";
+					echo "<table style='width:80%;'><tr><th>MID</th><th>GID</th><th>Date</th><th>Time</th><th>Role</th></tr>";
 					
 					$query = "SELECT * FROM meetings m, enroll e WHERE m.meet_id = e.meet_id AND e.mentee_id = $uid";
 					$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());

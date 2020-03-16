@@ -60,7 +60,8 @@
 				if ($_SESSION['group']['mentor_grade_req'] != NULL){
 					echo "<a href='http://localhost/Database2-Project/view_meetings_page.php'>View meetings</a><br><br>";
 					echo "<h4>Create</h4>";
-					echo "<a href='http://localhost/Database2-Project/create_meeting_form.php'>Create meeting</a><br>";
+					echo "<a href='http://localhost/Database2-Project/create_meeting_form.php'>Create single meeting</a><br>";
+					echo "<a href='http://localhost/Database2-Project/create_meetings_form.php'>Create multiple meetings</a><br>";
 				}
 				echo "</div>";
 			?>
