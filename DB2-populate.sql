@@ -125,42 +125,50 @@ insert into time_slot (day_of_the_week, start_time, end_time) values ("Sunday", 
 insert into time_slot (day_of_the_week, start_time, end_time) values ("Sunday", "19:00:00", "20:00:00"); -- 7pm-8pm
 	
 -- meetings (meet_id, meet_name, date, time_slot_id, capacity, announcement, group_id)
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 1", "2020-03-21", 1+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 1", "2020-03-21", 2+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 1", "2020-03-21", 3+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 1", "2020-03-21", 4+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 2", "2020-03-22", 5+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 2", "2020-03-22", 6+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 2", "2020-03-22", 7+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 2", "2020-03-22", 8+6, 0, "", 4);
 
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 1", "2020-03-28", 1+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 1", "2020-03-28", 2+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 1", "2020-03-28", 3+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 1", "2020-03-28", 4+6, 0, "", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 2", "2020-03-29", 5+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 2", "2020-03-29", 6+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 2", "2020-03-29", 7+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 2", "2020-03-29", 8+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 3", "2020-03-28", 1+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 3", "2020-03-28", 2+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 3", "2020-03-28", 3+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 3", "2020-03-28", 4+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 4", "2020-03-29", 5+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 4", "2020-03-29", 6+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 4", "2020-03-29", 7+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 4", "2020-03-29", 8+6, 0, "", 4);
 
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 3", "2020-04-04", 2+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 3", "2020-04-04", 3+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 3", "2020-04-04", 4+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 3", "2020-04-04", 1+6, 0, "", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 4", "2020-04-05", 6+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 4", "2020-04-05", 7+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 4", "2020-04-05", 8+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 4", "2020-04-05", 5+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 5", "2020-04-04", 2+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 5", "2020-04-04", 3+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 5", "2020-04-04", 4+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 5", "2020-04-04", 1+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 6", "2020-04-05", 6+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 6", "2020-04-05", 7+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 6", "2020-04-05", 8+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 6", "2020-04-05", 5+6, 0, "", 4);
 
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 5", "2020-04-11", 3+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 5", "2020-04-11", 4+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 5", "2020-04-11", 1+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 5", "2020-04-11", 2+6, 0, "", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 6", "2020-04-12", 7+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 6", "2020-04-12", 8+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 6", "2020-04-12", 5+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 6", "2020-04-12", 6+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 7", "2020-04-11", 3+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 7", "2020-04-11", 4+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 7", "2020-04-11", 1+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 7", "2020-04-11", 2+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 8", "2020-04-12", 7+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 8", "2020-04-12", 8+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 8", "2020-04-12", 5+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 8", "2020-04-12", 6+6, 0, "", 4);
 
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 7", "2020-04-18", 4+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 7", "2020-04-18", 1+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 7", "2020-04-18", 2+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 7", "2020-04-18", 3+6, 0, "", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 8", "2020-04-19", 8+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 8", "2020-04-19", 5+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 8", "2020-04-19", 6+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 8", "2020-04-19", 7+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 9", "2020-04-18", 4+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 9", "2020-04-18", 1+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 9", "2020-04-18", 2+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 9", "2020-04-18", 3+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 10", "2020-04-19", 8+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 10", "2020-04-19", 5+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 10", "2020-04-19", 6+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 10", "2020-04-19", 7+6, 0, "", 4);
 
 -- set mentors (mentor_id) and mentees (mentee_id)
 insert into mentors (mentor_id) SELECT student_id FROM students WHERE grade >= 9;
@@ -184,6 +192,23 @@ insert into enroll values (103, 38);
 insert into enroll values (107, 45); -- 9th grade sunday
 insert into enroll values (107, 31);
 
+insert into enroll values (108, 42); -- 6th grade saturday
+insert into enroll values (108, 35);
+insert into enroll values (112, 49); -- 6th grade sunday
+insert into enroll values (112, 28);
+insert into enroll values (109, 43); -- 7th grade saturday
+insert into enroll values (109, 36);
+insert into enroll values (113, 50); -- 7th grade sunday
+insert into enroll values (113, 29);
+insert into enroll values (110, 23); -- 8th grade saturday
+insert into enroll values (110, 44);
+insert into enroll values (114, 37); -- 8th grade sunday
+insert into enroll values (114, 30);
+insert into enroll values (111, 52); -- 9th grade saturday
+insert into enroll values (111, 38);
+insert into enroll values (115, 45); -- 9th grade sunday
+insert into enroll values (115, 31);
+
 -- enroll2 (meet_id, mentor_id)
 insert into enroll2 values (100, 38); -- 6th grade saturday
 insert into enroll2 values (100, 31);
@@ -201,6 +226,23 @@ insert into enroll2 values (103, 41); -- 9th grade saturday
 insert into enroll2 values (103, 48);
 insert into enroll2 values (107, 34); -- 9th grade sunday
 insert into enroll2 values (107, 27);
+
+insert into enroll2 values (108, 38); -- 6th grade saturday
+insert into enroll2 values (108, 31);
+insert into enroll2 values (112, 45); -- 6th grade sunday
+insert into enroll2 values (112, 24);
+insert into enroll2 values (109, 53); -- 7th grade saturday
+insert into enroll2 values (109, 46);
+insert into enroll2 values (113, 25); -- 7th grade sunday
+insert into enroll2 values (113, 32);
+insert into enroll2 values (110, 33); -- 8th grade saturday
+insert into enroll2 values (110, 40);
+insert into enroll2 values (114, 47); -- 8th grade sunday
+insert into enroll2 values (114, 26);
+insert into enroll2 values (111, 41); -- 9th grade saturday
+insert into enroll2 values (111, 48);
+insert into enroll2 values (115, 34); -- 9th grade sunday
+insert into enroll2 values (115, 27);
 
 -- update meeting capacities
 update meetings set capacity = (SELECT COUNT(*) FROM enroll WHERE meet_id = meetings.meet_id) + (SELECT COUNT(*) FROM enroll2 WHERE meet_id = meetings.meet_id);

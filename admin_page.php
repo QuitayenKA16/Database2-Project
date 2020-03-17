@@ -28,7 +28,10 @@
 		table, th, td {
 			border: 1px solid black;
 			border-collapse: collapse;
-			margin-bottom: 50px;
+			margin-bottom: 25px;
+		}
+		table {
+			width: 95%;
 		}
 		button.linkBtn {
 			background-color: transparent;
@@ -83,16 +86,15 @@
 		<div class='column1' align='center' style='width:100%; margin-bottom:25px;'>
 			<h3>Finalize Meetings</h3>
 			<?php
-				$friDate = strtotime('next friday');
-				$friDate = date('yy-m-d', $friDate);
-				echo "<b>Next deadline: </b>" . $friDate . "<br><br>";
-				$query = "SELECT * FROM meetings WHERE date > CURDATE() AND date < DATE_ADD(CURDATE(), INTERVAL 4 WEEK)";
 				$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 				$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
+				
+				echo "<b>Next deadline: </b>" . date('l yy-m-d', strtotime('next week')) . "<br><br>";
+				$query = "SELECT * FROM meetings WHERE date > CURDATE() AND date < DATE_ADD(CURDATE(), INTERVAL 1 WEEK)";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				
-				echo "<table style='width:80%;'><tr><th>MID</th><th>GID</th><th>Date</th><th>Day of Week</th><th>Timeslot</th>
-								<th>Mentors (min. 1)</th><th>Mentees (min. 2)</th><th>Edit</th><th>Cancel</th></tr>";
+				echo "<table><tr><th>MID</th><th>GID</th><th>Date</th><th>Day of Week</th><th>Timeslot</th>
+						<th>Mentors (min. 1)</th><th>Mentees (min. 2)</th><th>Study Material</th><th>Edit</th><th>Cancel</th></tr>";
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					echo "<tr>";
 					echo "<td align='center'>$row[meet_id]</td>";
@@ -121,6 +123,11 @@
 						echo "<td align='center' style='color:red;'>$menteeCnt</td>";
 					else 
 						echo "<td align='center'>$menteeCnt</td>";
+					
+					$query = "SELECT * from assign WHERE meet_id = $row[meet_id]";
+					$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+					$materialCnt = mysqli_num_rows($result2);
+					echo "<td align='center'>$materialCnt</td>";
 					
 					echo "<form action='http://localhost/Database2-Project/meeting_page.php' method='post'>";
 					echo "<td align='center'><button class='linkBtn' type='submit' name='edit_mid' value='$row[meet_id]'>Details</button></td></form>";

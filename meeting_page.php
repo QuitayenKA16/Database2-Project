@@ -54,7 +54,8 @@
 		<div class="column1" style="background-color:#f2f2f2; width:40%;">
 			<h3 align="center">Meeting Information</h3>
 			<p class="p1"><b>MID: </b> <?php echo "$edit_mid"; ?> <br>
-			<p class="p1"><b>GID: </b> <?php echo "$gid"; ?> <br>
+			<p class="p1"><b>GID: </b> <?php echo "<a style='font: normal 14px Verdana, Geneva, sans-serif;'
+														href='http://localhost/Database2-Project/group_page.php'>$gid</a>"; ?> <br>
 			<p class="p1"><b>Name: </b> <?php echo "$mName"; ?> <br>
 			<p class="p1"><b>Date: </b> <?php echo "$mDate"; ?> <br>
 			<p class="p1"><b>Time Slot: </b> <?php echo "$mDayOfWeek $mStartTime - $mEndTime"; ?> <br>
