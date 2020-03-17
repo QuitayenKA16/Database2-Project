@@ -37,7 +37,7 @@
 		$_SESSION['message'] = "Incorrect email and/or password.";
 		header ("Location:login_form.php");
 	}
-	echo '<br>';
+
 	mysqli_free_result($result);
 	mysqli_close($myconnection);
 ?>

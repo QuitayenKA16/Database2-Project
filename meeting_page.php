@@ -8,7 +8,7 @@
 			float: left;
 			padding: 10px;
 			height: auto;
-			min-height:307px;
+			min-height:317px;
 			margin-top:15px;
 		}
 		p.p1 {
@@ -33,6 +33,7 @@
 			$query = "SELECT * FROM meetings m, time_slot t WHERE meet_id = $edit_mid AND m.time_slot_id = t.time_slot_id";
 			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 			$_SESSION['meet'] = mysqli_fetch_assoc ($result);
+			$gid = $_SESSION['meet']['group_id'];
 			$mName = $_SESSION['meet']['meet_name'];
 			$mDate = $_SESSION['meet']['date'];
 			$mDayOfWeek = $_SESSION['meet']['day_of_the_week'];
@@ -40,11 +41,20 @@
 			$mEndTime = $_SESSION['meet']['end_time'];
 			$mCapacity = $_SESSION['meet']['capacity'];
 			$mAnnounce = $_SESSION['meet']['announcement'];
+			
+			$query = "SELECT * FROM groups WHERE group_id = $gid";
+			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+			$_SESSION['group'] = mysqli_fetch_assoc ($result);
 		?>
-		<div align="center"><br><a href='http://localhost/Database2-Project/view_groups_page.php'>Back</a></div>
+		<div align="center">
+			<br><a href='http://localhost/Database2-Project/view_groups_page.php'>View Groups</a>
+			<a href='http://localhost/Database2-Project/view_all_meetings_page.php'>View Meetings</a>
+		</div>
+		
 		<div class="column1" style="background-color:#f2f2f2; width:40%;">
 			<h3 align="center">Meeting Information</h3>
 			<p class="p1"><b>MID: </b> <?php echo "$edit_mid"; ?> <br>
+			<p class="p1"><b>GID: </b> <?php echo "$gid"; ?> <br>
 			<p class="p1"><b>Name: </b> <?php echo "$mName"; ?> <br>
 			<p class="p1"><b>Date: </b> <?php echo "$mDate"; ?> <br>
 			<p class="p1"><b>Time Slot: </b> <?php echo "$mDayOfWeek $mStartTime - $mEndTime"; ?> <br>
@@ -54,7 +64,7 @@
 		
 		<div class="column1" align="center" style="width:30%;">
 			<h3>Mentors</h3>
-			<a href='http://localhost/Database2-Project/enroll_mentor_form.php'>Edit</a><br><br>
+			<a href='http://localhost/Database2-Project/enroll_members_form.php'>Edit</a><br><br>
 			<?php
 				$query = "SELECT * FROM enroll2 WHERE meet_id = $edit_mid";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
@@ -70,7 +80,7 @@
 		</div>
 		<div class="column1" align="center" style="width:30%;">
 			<h3 >Mentees</h3>
-			<a href='http://localhost/Database2-Project/meeting_page.php'>Edit</a><br><br>
+			<a href='http://localhost/Database2-Project/enroll_members_form.php'>Edit</a><br><br>
 			<?php
 				$query = "SELECT * FROM enroll WHERE meet_id = $edit_mid";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());

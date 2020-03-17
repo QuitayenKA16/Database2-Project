@@ -30,6 +30,15 @@
 			border-collapse: collapse;
 			margin-bottom: 50px;
 		}
+		button.linkBtn {
+			background-color: transparent;
+			outline: none;
+			border: none;
+			overflow: hidden;
+			text-decoration: underline;
+			cursor: pointer;
+			color: #2c87f0;
+		}
 	</style>
 
 	<body>
@@ -46,7 +55,7 @@
 			$phone = $_SESSION['loggedUser']['phone'];
 		?>
 		
-		<div class="column1" style="background-color:#f2f2f2; width:30%;">
+		<div class="column1" style="background-color:#f2f2f2; width:40%;">
 			<h3 align="center">User Information</h3>
 			<p class="p1"><b>Name: </b> <?php echo "$name"; ?> <br>
 			<p class="p1"><b>Email: </b> <?php echo "$email"; ?> <br>
@@ -56,7 +65,7 @@
 			<a href='http://localhost/Database2-Project/edit_user_form.php'>Edit Details</a>
 		</div>
 	
-		<div class='column1' style='width:35%;'>
+		<div class='column1' style='width:60%;'>
 			<div align='center'>
 				<h3>Actions</h3>
 				<h4>Views/Edit</h4>
@@ -71,28 +80,54 @@
 			</div>
 		</div>	
 		
-		<div class='column1' align='center' style='background-color:#f2f2f2; width:35%;'>
+		<div class='column1' align='center' style='width:100%; margin-bottom:25px;'>
 			<h3>Finalize Meetings</h3>
 			<?php
-				$friDate = strtotime('next month');
+				$friDate = strtotime('next friday');
 				$friDate = date('yy-m-d', $friDate);
-				echo $friDate . "<br>";
-				$query = "SELECT * FROM meetings WHERE date < $friDate";
+				echo "<b>Next deadline: </b>" . $friDate . "<br><br>";
+				$query = "SELECT * FROM meetings WHERE date > CURDATE() AND date < DATE_ADD(CURDATE(), INTERVAL 4 WEEK)";
 				$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 				$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				
-				echo "<table style='width:80%;'><tr><th>MID</th><th>GID</th><th>Date</th><th>Time</th><th>Capacity</th></tr>";
+				echo "<table style='width:80%;'><tr><th>MID</th><th>GID</th><th>Date</th><th>Day of Week</th><th>Timeslot</th>
+								<th>Mentors (min. 1)</th><th>Mentees (min. 2)</th><th>Edit</th><th>Cancel</th></tr>";
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					echo "<tr>";
 					echo "<td align='center'>$row[meet_id]</td>";
 					echo "<td align='center'>$row[group_id]</td>";
 					echo "<td align='center'>$row[date]</td>";
+					
 					$query = "SELECT * FROM time_slot WHERE time_slot_id = $row[time_slot_id]";
 					$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 					$row2 = mysqli_fetch_array ($result2, MYSQLI_ASSOC);
-						echo "<td align='center'>$row2[day_of_the_week] $row2[start_time] - $row2[end_time]</td>";
-					echo "<td align='center'>$row[capacity]</td>";
+					echo "<td align='center'>$row2[day_of_the_week]</td>";
+					echo "<td align='center'>$row2[start_time] - $row2[end_time]</td>";
+					
+					$query = "SELECT mentee_id from enroll WHERE meet_id = $row[meet_id]";
+					$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+					$menteeCnt = mysqli_num_rows($result2);
+					$query = "SELECT mentor_id from enroll2 WHERE meet_id = $row[meet_id]";
+					$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+					$mentorCnt = mysqli_num_rows($result2);
+					
+					if ($mentorCnt < 2)
+						echo "<td align='center' style='color:red;'>$mentorCnt</td>";
+					else 
+						echo "<td align='center'>$mentorCnt</td>";
+					
+					if ($menteeCnt < 3)
+						echo "<td align='center' style='color:red;'>$menteeCnt</td>";
+					else 
+						echo "<td align='center'>$menteeCnt</td>";
+					
+					echo "<form action='http://localhost/Database2-Project/meeting_page.php' method='post'>";
+					echo "<td align='center'><button class='linkBtn' type='submit' name='edit_mid' value='$row[meet_id]'>Details</button></td></form>";
+					
+					echo "<form action='http://localhost/Database2-Project/cancel_meeting_form.php' method='post'>";
+					echo "<td align='center'><button type='submit' name='edit_mid' value='$row[meet_id]'>CANCEL</button></td></form>";
+					
 					echo "</tr>";
 				}
 				
