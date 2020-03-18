@@ -19,7 +19,7 @@
 		?>
 		
 		<form action="new_meetings.php" method="post">
-			<br><a href='http://localhost/Database2-Project/group_page.php'>Back</a>
+			<br><a href='<?php echo "$_SESSION[path]";?>group_page.php'>Back</a>
 			<h3>Create mutiple new meetings for Group <?php echo $gid;?></h3>
 			<label><span>Name:<span class="required">*</span></span> <input type="text" name="name"/></label> <br>
 			<label><span>Announcement:</span><textarea name="announcement"></textarea></label><br>

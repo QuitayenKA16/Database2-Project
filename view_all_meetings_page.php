@@ -63,7 +63,7 @@
 				
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					echo "<tr>";
-					echo "<form action='http://localhost/Database2-Project/meeting_page.php' method='post'>";
+					echo "<form action='$_SESSION[path]meeting_page.php' method='post'>";
 					echo "<td>$row[meet_id]</td>";
 					echo "<td>$row[group_id]</td>";
 					echo "<td>$row[meet_name]</td>";

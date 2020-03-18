@@ -23,7 +23,7 @@
 		
 		<form action="view_members_page.php" method="post">
 			<div align='center'>
-				<br><a href='http://localhost/Database2-Project/group_page.php'>Back</a>
+				<br><a href='<?php echo "$_SESSION[path]";?>group_page.php'>Back</a>
 				<h3>View Group Members</h3>
 			</div>
 			<br>

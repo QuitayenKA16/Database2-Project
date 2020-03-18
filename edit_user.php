@@ -5,11 +5,11 @@
 			
 			$id = $_SESSION['edit_uid'];
 			if ($id == $_SESSION['loggedUser']['id'])
-				echo "<br><a href='http://localhost/Database2-Project/user_page.php'>Back</a><br><br>";
+				echo "<br><a href='$_SESSION[path]user_page.php'>Back</a><br><br>";
 			else if ($_SESSION['type'] == -1) //admin
-				echo "<br><a href='http://localhost/Database2-Project/view_users_page.php'>Back</a><br><br>";
+				echo "<br><a href='$_SESSION[path]view_users_page.php'>Back</a><br><br>";
 			else if ($_SESSION['type'] == 0) //parent
-				echo "<br><a href='http://localhost/Database2-Project/view_children_page.php'>Back</a><br><br>";	
+				echo "<br><a href='$_SESSION[path]view_children_page.php'>Back</a><br><br>";	
 				
 			$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 			$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');

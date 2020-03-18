@@ -17,7 +17,7 @@
 			}
 		?>
 		
-		<div><br><a href='http://localhost/Database2-Project/meeting_page.php'>Back</a></div>
+		<div><br><a href='<?php echo "$_SESSION[path]";?>meeting_page.php'>Back</a></div>
 		<h3>Assign new study material</h3>
 		<form action="new_study_material.php" method="post">
 			<label><span>Title:<span class="required">*</span></span> <input type="text" name="title"/></label> <br>

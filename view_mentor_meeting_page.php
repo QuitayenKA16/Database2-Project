@@ -115,7 +115,7 @@
 					}
 					else {
 						echo "<p>You are not enrolled as a mentor in any meetings.</p>";
-						echo "<p>Find meetings to mentor: <a href='http://localhost/Database2-Project/student_enroll_form.php'>Edit Meetings</a></p>";
+						echo "<p>Find meetings to mentor: <a href='$_SESSION[path]student_enroll_form.php'>Edit Meetings</a></p>";
 						echo "</div></form>";
 					}
 				?>

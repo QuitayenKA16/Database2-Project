@@ -90,7 +90,7 @@
 							
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					echo "<tr>";
-					echo "<form action='http://localhost/Database2-Project/edit_user_form.php' method='post'>";
+					echo "<form action='$_SESSION[path]edit_user_form.php' method='post'>";
 					echo "<td>$row[id]</td>";
 					echo "<td>$row[name]</td>";
 					echo "<td>$row[email]</td>";

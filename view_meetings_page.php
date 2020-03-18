@@ -20,7 +20,7 @@
 		<form action="meeting_page.php" method="post">
 		<table style='width:100%'>
 			<div align='center'>
-				<br><a href='http://localhost/Database2-Project/group_page.php'>Back</a>
+				<br><a href='<?php echo "$_SESSION[path]";?>group_page.php'>Back</a>
 				<h3>View Meetings</h3>
 			</div>
 			<?php
@@ -37,7 +37,7 @@
 				
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					echo "<tr>";
-					echo "<form action='http://localhost/Database2-Project/meeting_page.php' method='post'>";
+					echo "<form action='$_SESSION[path]meeting_page.php' method='post'>";
 					echo "<td>$row[meet_id]</td>";
 					echo "<td>$row[meet_name]</td>";
 					echo "<td>$row[date]</td>";

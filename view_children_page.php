@@ -76,9 +76,9 @@
 					echo "<td>$row[email]</td>";
 					echo "<td>$row[phone]</td>";
 					echo "<td>$row[grade]</td>";
-					echo "<form action='http://localhost/Database2-Project/student_enroll_form.php' method='post'>";
-					echo "<td align='center'><button type='submit' name='edit_uid' value='$row[id]'>EDIT</button></td>";
-					echo "<form action='http://localhost/Database2-Project/edit_user_form.php' method='post'>";
+					echo "<form action='$_SESSION[path]student_enroll_form.php' method='post'>";
+					echo "<td align='center'><button type='submit' name='edit_uid' value='$row[id]'>EDIT</button></td></form>";
+					echo "<form action='$_SESSION[path]edit_user_form.php' method='post'>";
 					echo "<td align='center'><button type='submit' name='edit_uid' value='$row[id]'>EDIT</button></td>";
 					echo "</form></tr>";
 				}

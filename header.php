@@ -70,16 +70,17 @@
 			<p style="font-size:12px"><i></i></p>
 			<?php
 				session_start();
+				$_SESSION['path'] = 'http://localhost/Database2-Project/';
 				if (isset($_SESSION['loggedUser'])){
 					$name = $_SESSION['loggedUser']['name'];
 					$id = $_SESSION['loggedUser']['id'];
 					echo "<p><b>Signed in as: </b>$name (UID$id)<p>";
-					echo "<a href='http://localhost/Database2-Project/user_page.php'>Profile</a> ";
-					echo "<a href='http://localhost/Database2-Project/logout.php'>Logout</a><br>";
+					echo "<a href='$_SESSION[path]user_page.php'>Profile</a> ";
+					echo "<a href='$_SESSION[path]logout.php'>Logout</a><br>";
 				}
 				else{
 					echo "<p>";
-					echo "<a href='http://localhost/Database2-Project/logout.php'>Home</a>";
+					echo "<a href='$_SESSION[path]logout.php'>Home</a>";
 				}
 			?>
 		</div>

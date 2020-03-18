@@ -45,14 +45,14 @@
 			<p class="p1"><b>Phone Number: </b> <?php echo "$phone"; ?> <br>
 			<p class="p1"><b>User type: </b>Parent<br>
 			<br><br><br>
-			<a href='http://localhost/Database2-Project/edit_user_form.php'>Edit Details</a>
+			<a href='<?php echo "$_SESSION[path]";?>edit_user_form.php'>Edit Details</a>
 		</div>
 	
 		<div class='column1' style='width:60%;'>
 			<div align='center'>
 				<h3>Actions</h3>
-				<a href='http://localhost/Database2-Project/create_student_form.php'>Create student account</a><br>
-				<a href='http://localhost/Database2-Project/view_children_page.php'>View and edit children</a><br>
+				<a href='<?php echo "$_SESSION[path]";?>create_student_form.php'>Create student account</a><br>
+				<a href='<?php echo "$_SESSION[path]";?>view_children_page.php'>View and edit children</a><br>
 			</div>
 		</div>
 

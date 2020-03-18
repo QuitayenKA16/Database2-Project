@@ -42,7 +42,7 @@
 		<form action="enroll_members.php" method="post">
 		
 		<div align='center'>
-			<br><a href='http://localhost/Database2-Project/meeting_page.php'>Back</a><br>
+			<br><a href='<?php echo "$_SESSION[path]";?>meeting_page.php'>Back</a><br>
 			<h3>Mentees</h3>
 		</div>
 		<table style='width:100%'>

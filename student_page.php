@@ -64,7 +64,7 @@
 					echo "$row[parent_id]";
 				?>
 			<br><br><br>
-			<a href='http://localhost/Database2-Project/edit_user_form.php'>Edit Details</a>
+			<a href='<?php echo "$_SESSION[path]";?>edit_user_form.php'>Edit Details</a>
 		</div>
 		
 			<?php
@@ -115,10 +115,10 @@
 				echo "</table>";
 				echo "<div align='center'>";
 				echo "<h4>Actions</h4>";
-				echo "<a href='http://localhost/Database2-Project/student_enroll_form.php'>Edit meetings</a><br>";
-				echo "<a href='http://localhost/Database2-Project/view_student_study_material_page.php'>View study material</a><br>";
+				echo "<a href='$_SESSION[path]student_enroll_form.php'>Edit meeting enrollment</a><br>";
+				echo "<a href='$_SESSION[path]view_student_study_material_page.php'>View study material</a><br>";
 				if ($_SESSION['grade'] >= 9)
-					echo "<a href='http://localhost/Database2-Project/view_mentor_meeting_page.php'>View meetings (mentor)</a><br>";
+					echo "<a href='$_SESSION[path]view_mentor_meeting_page.php'>View meetings (mentor)</a><br>";
 				echo "</div>";
 			?>
 		</div>	

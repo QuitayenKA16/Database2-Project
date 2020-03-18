@@ -39,8 +39,8 @@
 			$gDesc = $_SESSION['group']['description'];
 		?>
 		<div align="center">
-			<br><a href='http://localhost/Database2-Project/view_groups_page.php'>View Groups</a>
-			<a href='http://localhost/Database2-Project/view_all_meetings_page.php'>View Meetings</a>
+			<br><a href='<?php echo "$_SESSION[path]";?>view_groups_page.php'>View Groups</a>
+			<a href='<?php echo "$_SESSION[path]";?>view_all_meetings_page.php'>View Meetings</a>
 		</div>
 		
 		<div class="column1" style="background-color:#f2f2f2;">
@@ -50,22 +50,19 @@
 			<p class="p1"><b>Description: </b> <?php echo "$gDesc"; ?> <br>
 			<p class="p1"><b>Can Mentor: </b> <?php echo "$gMentee"; ?> <br>
 			<p class="p1"><b>Can be Mentored by: </b> <?php echo "$gMentor"; ?> <br>
-
-			<br><br>
-			<a href='http://localhost/Database2-Project/edit_group_form.php'>Edit Details</a>
 		</div>
 		
 		<div class="column1" style="">
 			<h3 align="center">Actions</h3>
 			<div align='center'>
 			<h4>View/Edit</h4>
-			<a href='http://localhost/Database2-Project/view_members_page.php'>View members</a><br>
+			<a href='<?php echo "$_SESSION[path]";?>view_members_page.php'>View members</a><br>
 			<?php
 				if ($_SESSION['group']['mentor_grade_req'] != NULL){
-					echo "<a href='http://localhost/Database2-Project/view_meetings_page.php'>View meetings</a><br><br>";
+					echo "<a href='$_SESSION[path]view_meetings_page.php'>View meetings</a><br><br>";
 					echo "<h4>Create</h4>";
-					echo "<a href='http://localhost/Database2-Project/create_meeting_form.php'>Create single meeting</a><br>";
-					echo "<a href='http://localhost/Database2-Project/create_meetings_form.php'>Create multiple meetings</a><br>";
+					echo "<a href='$_SESSION[path]create_meeting_form.php'>Create single meeting</a><br>";
+					echo "<a href='$_SESSION[path]create_meetings_form.php'>Create multiple meetings</a><br>";
 				}
 				echo "</div>";
 			?>

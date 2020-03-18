@@ -7,7 +7,7 @@
 			$meet_id = $_SESSION['meet']['meet_id'];
 			$student_list = "";
 			
-			echo "<br><a href='http://localhost/Database2-Project/admin_page.php'>Back</a><br><br>";
+			echo "<br><a href='$_SESSION[path]admin_page.php'>Back</a><br><br>";
 			
 			$query = "SELECT * from enroll WHERE meet_id = $meet_id";
 			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
