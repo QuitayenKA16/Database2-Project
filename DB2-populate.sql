@@ -55,6 +55,48 @@ insert into users (name, email, phone, password) values ("Cameron Napolitano", "
 insert into users (name, email, phone, password) values ("Mark Pierre", "mpierre@mail.com", "1234567890", "password1");
 insert into users (name, email, phone, password) values ("Mel Carignan", "mcarignan@mail.com", "1234567890", "password1");
 insert into users (name, email, phone, password) values ("Justin Dom", "jdom@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Joel Curry", "jcurry@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Betsy Parsons", "bparsons@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Nichole Sparks", "nsparks@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Levi Berry", "lberry@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Mikasa Ackerman", "mackerman@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Van O'Brien", "vobrien@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Russell Norman", "rnorman@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Percy Jackson", "pjackson@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Annabeth Chase", "achase@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Jason Grace", "jgrace@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Piper McLean", "pmclean@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Leo Valdez", "lvaldez@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Frank Zhang", "fzhang@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Hazel Levesque", "hlevesque@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Nico DiAngelo", "ndiangelo@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Luke Castellan", "lcastellan@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Grover Wood", "gwood@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Harry Potter", "hpotter@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Ron Weasley", "rweasley@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Hermione Granger", "hgranger@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Draco Malfoy", "dmalfoy@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Nick Zimmerman", "nzimmerman@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Frank Malone", "fmalone@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Thelma Harmon", "tharmon@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Wilbur Watkins", "wwatkins@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Sonya Carr", "scarr@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Glen Pratt", "gpratt@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Josh Mitchell", "jmitchell@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Tom Brady", "tbrady@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Julian Edelman", "jedelman@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Rob Gronkowski", "rgronkowski@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Bill Belichick", "bbelichick@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Robert Kraft", "rkraft@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Kyle Van Noy", "kvannoy@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Danny Amendola", "damendola@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Timmy Turner", "tturner@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Jimmy Neutron", "jneutron@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Phineas Flynn", "pflynn@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Ferb Fletcher", "ffletcher@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Isabella Garcia-Shapiro", "ishapiro@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Spongebob Squarepants", "ssquarepants@mail.com", "1234567890", "password1");
+insert into users (name, email, phone, password) values ("Patrick Star", "pstar@mail.com", "1234567890", "password1");
 
 
 -- admins (admin_id)
@@ -102,6 +144,48 @@ insert into students (student_id, parent_id, grade) values (37+15,5+15,9);
 insert into students (student_id, parent_id, grade) values (38+15,6+15,10);
 insert into students (student_id, parent_id, grade) values (39+15,3+15,11);
 insert into students (student_id, parent_id, grade) values (40+15,4+15,12);
+insert into students (student_id, parent_id, grade) values (41+15,5+15,6);
+insert into students (student_id, parent_id, grade) values (42+15,6+15,7);
+insert into students (student_id, parent_id, grade) values (43+15,3+15,8);
+insert into students (student_id, parent_id, grade) values (44+15,4+15,9);
+insert into students (student_id, parent_id, grade) values (45+15,5+15,10);
+insert into students (student_id, parent_id, grade) values (46+15,6+15,11);
+insert into students (student_id, parent_id, grade) values (47+15,3+15,12);
+insert into students (student_id, parent_id, grade) values (48+15,4+15,6);
+insert into students (student_id, parent_id, grade) values (49+15,5+15,7);
+insert into students (student_id, parent_id, grade) values (50+15,6+15,8);
+insert into students (student_id, parent_id, grade) values (51+15,3+15,9);
+insert into students (student_id, parent_id, grade) values (52+15,4+15,10);
+insert into students (student_id, parent_id, grade) values (53+15,5+15,11);
+insert into students (student_id, parent_id, grade) values (54+15,6+15,12);
+insert into students (student_id, parent_id, grade) values (55+15,3+15,6);
+insert into students (student_id, parent_id, grade) values (56+15,4+15,7);
+insert into students (student_id, parent_id, grade) values (57+15,5+15,8);
+insert into students (student_id, parent_id, grade) values (58+15,6+15,9);
+insert into students (student_id, parent_id, grade) values (59+15,3+15,10);
+insert into students (student_id, parent_id, grade) values (60+15,4+15,11);
+insert into students (student_id, parent_id, grade) values (61+15,5+15,12);
+insert into students (student_id, parent_id, grade) values (62+15,6+15,6);
+insert into students (student_id, parent_id, grade) values (63+15,3+15,7);
+insert into students (student_id, parent_id, grade) values (64+15,4+15,8);
+insert into students (student_id, parent_id, grade) values (65+15,5+15,9);
+insert into students (student_id, parent_id, grade) values (66+15,6+15,10);
+insert into students (student_id, parent_id, grade) values (67+15,3+15,11);
+insert into students (student_id, parent_id, grade) values (68+15,4+15,12);
+insert into students (student_id, parent_id, grade) values (69+15,5+15,6);
+insert into students (student_id, parent_id, grade) values (70+15,6+15,7);
+insert into students (student_id, parent_id, grade) values (71+15,3+15,8);
+insert into students (student_id, parent_id, grade) values (72+15,4+15,9);
+insert into students (student_id, parent_id, grade) values (73+15,5+15,10);
+insert into students (student_id, parent_id, grade) values (74+15,6+15,11);
+insert into students (student_id, parent_id, grade) values (75+15,3+15,12);
+insert into students (student_id, parent_id, grade) values (76+15,4+15,6);
+insert into students (student_id, parent_id, grade) values (77+15,5+15,7);
+insert into students (student_id, parent_id, grade) values (78+15,6+15,8);
+insert into students (student_id, parent_id, grade) values (79+15,3+15,9);
+insert into students (student_id, parent_id, grade) values (80+15,4+15,10);
+insert into students (student_id, parent_id, grade) values (81+15,5+15,11);
+insert into students (student_id, parent_id, grade) values (82+15,6+15,12);
 
 
 -- create groups (group_id, name, description, mentee_grade_req, mentor_grade_req)
@@ -126,162 +210,140 @@ insert into time_slot (day_of_the_week, start_time, end_time) values ("Sunday", 
 	
 -- meetings (meet_id, meet_name, date, time_slot_id, capacity, announcement, group_id)
 insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 1", "2020-03-21", 1+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 1", "2020-03-21", 2+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 1", "2020-03-21", 3+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 1", "2020-03-21", 4+6, 0, "", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 2", "2020-03-22", 5+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 2", "2020-03-22", 6+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 2", "2020-03-22", 7+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 2", "2020-03-22", 8+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 2", "2020-03-22", 2+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 3", "2020-03-28", 3+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 4", "2020-03-29", 4+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 5", "2020-04-04", 5+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 6", "2020-04-05", 7+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 7", "2020-04-11", 6+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 8", "2020-04-12", 8+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 9", "2020-04-18", 1+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 10", "2020-04-19", 2+6, 0, "", 1);
 
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 3", "2020-03-28", 1+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 3", "2020-03-28", 2+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 3", "2020-03-28", 3+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 3", "2020-03-28", 4+6, 0, "", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 4", "2020-03-29", 5+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 4", "2020-03-29", 6+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 4", "2020-03-29", 7+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 4", "2020-03-29", 8+6, 0, "", 4);
-
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 5", "2020-04-04", 2+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 5", "2020-04-04", 3+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 5", "2020-04-04", 4+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 5", "2020-04-04", 1+6, 0, "", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 6", "2020-04-05", 6+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 6", "2020-04-05", 7+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 6", "2020-04-05", 8+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 6", "2020-04-05", 5+6, 0, "", 4);
-
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 7", "2020-04-11", 3+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 7", "2020-04-11", 4+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 7", "2020-04-11", 1+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 7", "2020-04-11", 2+6, 0, "", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 8", "2020-04-12", 7+6, 0, "", 1);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 1", "2020-03-21", 1+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 2", "2020-03-22", 2+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 3", "2020-03-28", 3+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 4", "2020-03-29", 4+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 5", "2020-04-04", 5+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 6", "2020-04-05", 6+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 7", "2020-04-11", 7+6, 0, "", 2);
 insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 8", "2020-04-12", 8+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 8", "2020-04-12", 5+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 8", "2020-04-12", 6+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 9", "2020-04-18", 3+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 10", "2020-04-19", 4+6, 0, "", 2);
 
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 9", "2020-04-18", 4+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 9", "2020-04-18", 1+6, 0, "", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 9", "2020-04-18", 2+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 9", "2020-04-18", 3+6, 0, "", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 10", "2020-04-19", 8+6, 0, "", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 10", "2020-04-19", 5+6, 0, "", 2);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 1", "2020-03-21", 1+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 2", "2020-03-22", 2+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 3", "2020-03-28", 3+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 4", "2020-03-29", 4+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 5", "2020-04-04", 5+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 6", "2020-04-05", 6+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 7", "2020-04-11", 7+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 8", "2020-04-12", 8+6, 0, "", 3);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 9", "2020-04-18", 5+6, 0, "", 3);
 insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 10", "2020-04-19", 6+6, 0, "", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 10", "2020-04-19", 7+6, 0, "", 4);
+
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 1", "2020-03-21", 1+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 2", "2020-03-22", 2+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 3", "2020-03-28", 3+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 4", "2020-03-29", 4+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 5", "2020-04-04", 5+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 6", "2020-04-05", 6+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 7", "2020-04-11", 7+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 8", "2020-04-12", 8+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 9", "2020-04-18", 7+6, 0, "", 4);
+insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 10", "2020-04-19", 8+6, 0, "", 4);
+
 
 -- set mentors (mentor_id) and mentees (mentee_id)
 insert into mentors (mentor_id) SELECT student_id FROM students WHERE grade >= 9;
 insert into mentees (mentee_id) SELECT student_id FROM students WHERE grade <= 9;
 
--- enroll (meet_id, mentee_id)
-insert into enroll values (100, 42); -- 6th grade saturday
-insert into enroll values (100, 35);
-insert into enroll values (104, 49); -- 6th grade sunday
-insert into enroll values (104, 28);
-insert into enroll values (101, 43); -- 7th grade saturday
-insert into enroll values (101, 36);
-insert into enroll values (105, 50); -- 7th grade sunday
-insert into enroll values (105, 29);
-insert into enroll values (102, 23); -- 8th grade saturday
-insert into enroll values (102, 44);
-insert into enroll values (106, 37); -- 8th grade sunday
-insert into enroll values (106, 30);
-insert into enroll values (103, 52); -- 9th grade saturday
-insert into enroll values (103, 38);
-insert into enroll values (107, 45); -- 9th grade sunday
-insert into enroll values (107, 31);
+DELIMITER //
+DROP PROCEDURE IF EXISTS enrollMentees //
+CREATE PROCEDURE enrollMentees()
+BEGIN
+	DECLARE i INTEGER DEFAULT 100;
+	DECLARE j INTEGER DEFAULT 0;
+	DECLARE id1 INTEGER DEFAULT 0;
+	DECLARE id2 INTEGER DEFAULT 0;
+	DECLARE id3 INTEGER DEFAULT 0;
+	DECLARE gr INTEGER DEFAULT 6;
+	
+	WHILE i <= 139 DO
+		IF j = 10 THEN
+			SET gr = gr + 1;
+			SET j = 0;
+		END IF;
+		SELECT student_id INTO id1 FROM students WHERE grade = gr ORDER BY RAND() LIMIT 1;
+		SELECT student_id INTO id2 FROM students WHERE grade = gr ORDER BY RAND() LIMIT 1;
+		SELECT student_id INTO id3 FROM students WHERE grade = gr ORDER BY RAND() LIMIT 1;
+		INSERT INTO enroll (meet_id, mentee_id) VALUES (i, id1) ON DUPLICATE KEY UPDATE mentee_id = (SELECT student_id FROM students WHERE grade = gr ORDER BY RAND() LIMIT 1);
+		INSERT INTO enroll (meet_id, mentee_id) VALUES (i, id2) ON DUPLICATE KEY UPDATE mentee_id = (SELECT student_id FROM students WHERE grade = gr ORDER BY RAND() LIMIT 1);
+		INSERT INTO enroll (meet_id, mentee_id) VALUES (i, id3) ON DUPLICATE KEY UPDATE mentee_id = (SELECT student_id FROM students WHERE grade = gr ORDER BY RAND() LIMIT 1);
+		SET j = j + 1;
+		SET i = i + 1;
+	END WHILE;
+END
+//
+DELIMITER ;
 
-insert into enroll values (108, 42); -- 6th grade saturday
-insert into enroll values (108, 35);
-insert into enroll values (112, 49); -- 6th grade sunday
-insert into enroll values (112, 28);
-insert into enroll values (109, 43); -- 7th grade saturday
-insert into enroll values (109, 36);
-insert into enroll values (113, 50); -- 7th grade sunday
-insert into enroll values (113, 29);
-insert into enroll values (110, 23); -- 8th grade saturday
-insert into enroll values (110, 44);
-insert into enroll values (114, 37); -- 8th grade sunday
-insert into enroll values (114, 30);
-insert into enroll values (111, 52); -- 9th grade saturday
-insert into enroll values (111, 38);
-insert into enroll values (115, 45); -- 9th grade sunday
-insert into enroll values (115, 31);
+CALL enrollMentees();
 
--- enroll2 (meet_id, mentor_id)
-insert into enroll2 values (100, 38); -- 6th grade saturday
-insert into enroll2 values (100, 31);
-insert into enroll2 values (104, 45); -- 6th grade sunday
-insert into enroll2 values (104, 24);
-insert into enroll2 values (101, 53); -- 7th grade saturday
-insert into enroll2 values (101, 46);
-insert into enroll2 values (105, 25); -- 7th grade sunday
-insert into enroll2 values (105, 32);
-insert into enroll2 values (102, 33); -- 8th grade saturday
-insert into enroll2 values (102, 40);
-insert into enroll2 values (106, 47); -- 8th grade sunday
-insert into enroll2 values (106, 26);
-insert into enroll2 values (103, 41); -- 9th grade saturday
-insert into enroll2 values (103, 48);
-insert into enroll2 values (107, 34); -- 9th grade sunday
-insert into enroll2 values (107, 27);
+DELIMITER //
+DROP PROCEDURE IF EXISTS enrollMentors //
+CREATE PROCEDURE enrollMentors()
+BEGIN
+	DECLARE i INTEGER DEFAULT 100;
+	DECLARE j INTEGER DEFAULT 0;
+	DECLARE id1 INTEGER DEFAULT 0;
+	DECLARE id2 INTEGER DEFAULT 0;
+	DECLARE id3 INTEGER DEFAULT 0;
+	DECLARE req INTEGER DEFAULT 9;
+	
+	WHILE i <= 139 DO
+		IF j = 10 THEN
+			SET req = req + 1;
+			SET j = 0;
+		END IF;
+		SELECT student_id INTO id1 FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1;
+		SELECT student_id INTO id2 FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1;
+		SELECT student_id INTO id3 FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1;
+		INSERT INTO enroll2 (meet_id, mentor_id) VALUES (i, id1) ON DUPLICATE KEY UPDATE mentor_id = (SELECT student_id FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1);
+		INSERT INTO enroll2 (meet_id, mentor_id) VALUES (i, id2) ON DUPLICATE KEY UPDATE mentor_id = (SELECT student_id FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1);
+		INSERT INTO enroll2 (meet_id, mentor_id) VALUES (i, id3) ON DUPLICATE KEY UPDATE mentor_id = (SELECT student_id FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1);
+		SET j = j + 1;
+		SET i = i + 1;
+	END WHILE;
+END
+//
+DELIMITER ;
 
-insert into enroll2 values (108, 38); -- 6th grade saturday
-insert into enroll2 values (108, 31);
-insert into enroll2 values (112, 45); -- 6th grade sunday
-insert into enroll2 values (112, 24);
-insert into enroll2 values (109, 53); -- 7th grade saturday
-insert into enroll2 values (109, 46);
-insert into enroll2 values (113, 25); -- 7th grade sunday
-insert into enroll2 values (113, 32);
-insert into enroll2 values (110, 33); -- 8th grade saturday
-insert into enroll2 values (110, 40);
-insert into enroll2 values (114, 47); -- 8th grade sunday
-insert into enroll2 values (114, 26);
-insert into enroll2 values (111, 41); -- 9th grade saturday
-insert into enroll2 values (111, 48);
-insert into enroll2 values (115, 34); -- 9th grade sunday
-insert into enroll2 values (115, 27);
+CALL enrollMentors();
 
 -- update meeting capacities
 update meetings set capacity = (SELECT COUNT(*) FROM enroll WHERE meet_id = meetings.meet_id) + (SELECT COUNT(*) FROM enroll2 WHERE meet_id = meetings.meet_id);
 
+DELIMITER //
+DROP PROCEDURE IF EXISTS createMaterial //
+CREATE PROCEDURE createMaterial()
+BEGIN
+	DECLARE i INTEGER DEFAULT 1;
+	
+	WHILE i <= 40 DO
+		INSERT INTO material (title, author, type, url, assigned_date, notes)
+			VALUES (
+				CONCAT("Title #", i),
+				CONCAT("Author #", i),
+				CONCAT("Type #", i),
+				CONCAT("www.url", i, ".com"),
+				DATE_ADD(CURDATE(), INTERVAL i DAY),
+				"this is a note"
+			);
+		INSERT INTO assign (meet_id, material_id) VALUES (i + 100 - 1, i + 11);
+		SET i = i + 1;
+	END WHILE;
+END
+//
+DELIMITER ;
 
--- create study material (material_id, title, author, type, url, assigned_date, notes)
-insert into material (title, author, type, url, assigned_date, notes) values ("Fantasy Fiction", "English Author1", "English", "N/A", "2020-09-05", "CH1"); --6th grade
-insert into material (title, author, type, url, assigned_date, notes) values ("Pre-Algebra", "Math Author1", "Math", "N/A", "2020-09-06", "CH1");
-insert into material (title, author, type, url, assigned_date, notes) values ("Autobiographies", "English Author2", "English", "N/A", "2020-09-05", "CH1"); --7th grade
-insert into material (title, author, type, url, assigned_date, notes) values ("Geometry", "Math Author2", "Math", "N/A", "2020-09-06", "CH1");
-insert into material (title, author, type, url, assigned_date, notes) values ("Shakespearan Literature", "English Author3", "English", "N/A", "2020-09-05", "CH1"); --8th grade
-insert into material (title, author, type, url, assigned_date, notes) values ("Algebra", "Math Author3", "Math", "N/A", "2020-09-06", "CH1");
-insert into material (title, author, type, url, assigned_date, notes) values ("Dystopian Fiction", "English Author41", "English", "N/A", "2020-09-05", "CH1"); --9th grade
-insert into material (title, author, type, url, assigned_date, notes) values ("Pre-Calculus", "Math Author4", "Math", "N/A", "2020-09-06", "CH1");
-
-insert into material (title, author, type, url, assigned_date, notes) values ("Fantasy Fiction", "English Author1", "English", "N/A", "2020-09-05", "CH2"); --6th grade
-insert into material (title, author, type, url, assigned_date, notes) values ("Pre-Algebra", "Math Author1", "Math", "N/A", "2020-09-06", "CH2");
-insert into material (title, author, type, url, assigned_date, notes) values ("Autobiographies", "English Author2", "English", "N/A", "2020-09-05", "CH2"); --7th grade
-insert into material (title, author, type, url, assigned_date, notes) values ("Geometry", "Math Author2", "Math", "N/A", "2020-09-06", "CH2");
-insert into material (title, author, type, url, assigned_date, notes) values ("Shakespearan Literature", "English Author3", "English", "N/A", "2020-09-05", "CH2"); --8th grade
-insert into material (title, author, type, url, assigned_date, notes) values ("Algebra", "Math Author3", "Math", "N/A", "2020-09-06", "CH2");
-insert into material (title, author, type, url, assigned_date, notes) values ("Dystopian Fiction", "English Author41", "English", "N/A", "2020-09-05", "CH2"); --9th grade
-insert into material (title, author, type, url, assigned_date, notes) values ("Pre-Calculus", "Math Author4", "Math", "N/A", "2020-09-06", "CH2");
-
-
--- assign material (meet_id, material_id)
-insert into assign values (100, 12);
-insert into assign values (101, 13);
-insert into assign values (102, 14);
-insert into assign values (103, 15);
-insert into assign values (104, 16);
-insert into assign values (105, 17);
-insert into assign values (106, 18);
-insert into assign values (107, 19);
-insert into assign values (100, 20);
-insert into assign values (101, 21);
-insert into assign values (102, 22);
-insert into assign values (103, 23);
-insert into assign values (104, 24);
-insert into assign values (105, 25);
-insert into assign values (106, 26);
-insert into assign values (107, 27);
+CALL createMaterial();

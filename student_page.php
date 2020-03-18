@@ -75,7 +75,7 @@
 				echo "<h4>Upcoming Meetings:</h4>";
 				echo "<table style='width:80%;'><tr><th>MID</th><th>GID</th><th>Date</th><th>Time</th><th>Role</th></tr>";
 					
-				$query = "SELECT * FROM meetings m, enroll e WHERE m.meet_id = e.meet_id AND e.mentee_id = $uid";
+				$query = "SELECT * FROM meetings m, enroll e WHERE m.meet_id = e.meet_id AND e.mentee_id = $uid AND m.date < DATE_ADD(CURDATE(), INTERVAL 1 WEEK)";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				$count = mysqli_num_rows($result);
 					
@@ -92,7 +92,7 @@
 					echo "</tr>";
 				}
 					
-				$query = "SELECT * FROM meetings m, enroll2 e WHERE m.meet_id = e.meet_id AND e.mentor_id = $uid";
+				$query = "SELECT * FROM meetings m, enroll2 e WHERE m.meet_id = e.meet_id AND e.mentor_id = $uid AND m.date < DATE_ADD(CURDATE(), INTERVAL 1 WEEK)";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				$count += mysqli_num_rows($result);
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
@@ -115,8 +115,10 @@
 				echo "</table>";
 				echo "<div align='center'>";
 				echo "<h4>Actions</h4>";
-				if ($_SESSION['grade'] <= 9)	echo "<a href='http://localhost/Database2-Project/user_page.php'>Edit meetings (mentee)</a><br>";
-				if ($_SESSION['grade'] >= 9)	echo "<a href='http://localhost/Database2-Project/user_page.php'>Edit meetings (mentor)</a><br>";
+				echo "<a href='http://localhost/Database2-Project/student_enroll_form.php'>Edit meetings</a><br>";
+				echo "<a href='http://localhost/Database2-Project/view_student_study_material_page.php'>View study material</a><br>";
+				if ($_SESSION['grade'] >= 9)
+					echo "<a href='http://localhost/Database2-Project/view_mentor_meeting_page.php'>View meetings (mentor)</a><br>";
 				echo "</div>";
 			?>
 		</div>	

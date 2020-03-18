@@ -22,7 +22,7 @@
 			<h3>Create new meeting</h3>
 			<label><span>Name:<span class="required">*</span></span> <input type="text" name="name"/></label> <br>
 			<label><span>Announcement:</span><textarea name="announcement"></textarea></label><br>
-			<label><span>Date:<span class="required">*</span></span><input type="week" name="week"/></label><br>
+			<label><span>Week:<span class="required">*</span></span><input type="week" name="week"/></label><br>
 			<label><span>Timeslot:<span class="required">*</span></span></label>
 			<select name="time_slot_id">
 				<?php

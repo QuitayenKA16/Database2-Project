@@ -15,7 +15,9 @@
 			font: normal 14px Verdana, Geneva, sans-serif;
 			margin-left: 10px;
 		}
-		table {width:100%;}
+		table {
+			width:100%;
+		}
 		table, th, td {
 			border: 1px solid black;
 			border-collapse: collapse;

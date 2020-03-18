@@ -15,13 +15,13 @@
 					$sql = "INSERT INTO enroll2 (meet_id, mentor_id) VALUES ($meet_id, $mentor_id)";
 					$_SESSION['message'] .= $sql . "<br>";
 					if ($myconnection->query($sql) != TRUE){
-						$_SESSION['message'] .= "Error: Could not insert new row.<br>" . $myconnection->error . "<br>";
+						$_SESSION['message'] .= "Error: Could not enroll student.<br>" . $myconnection->error . "<br>";
 					}
 					else {
 						$sql = "UPDATE meetings SET capacity = capacity + 1 WHERE meet_id = $meet_id";
 						$_SESSION['message'] .= $sql . "<br>";
 						if ($myconnection->query($sql) != TRUE){
-							$_SESSION['message'] .= "Error: Could not insert new row.<br>" . $myconnection->error . "<br>";
+							$_SESSION['message'] .= "Error: Could not edit capacity.<br>" . $myconnection->error . "<br>";
 						}
 					}
 				}
@@ -29,7 +29,7 @@
 					$sql = "DELETE FROM enroll2 WHERE meet_id = $meet_id AND mentor_id = $mentor_id";
 					$_SESSION['message'] .= $sql . "<br>";
 					if ($myconnection->query($sql) != TRUE){
-						echo "Error: Could not remove student from meeting.<br>" . $myconnection->error . "<br>";
+						$_SESSION['message'] .= "Error: Could not remove student from meeting.<br>" . $myconnection->error . "<br>";
 					}
 					else {
 						$sql = "UPDATE meetings SET capacity = capacity - 1 WHERE meet_id = $meet_id";
@@ -49,7 +49,7 @@
 					$sql = "INSERT INTO enroll (meet_id, mentee_id) VALUES ($meet_id, $mentee_id)";
 					$_SESSION['message'] .= $sql . "<br>";
 					if ($myconnection->query($sql) != TRUE){
-						$_SESSION['message'] .= "Error: Could not insert new row.<br>" . $myconnection->error . "<br>";
+						$_SESSION['message'] .= "Error: Could not enroll student.<br>" . $myconnection->error . "<br>";
 					}
 					else {
 						$sql = "UPDATE meetings SET capacity = capacity + 1 WHERE meet_id = $meet_id";
@@ -63,7 +63,7 @@
 					$sql = "DELETE FROM enroll WHERE meet_id = $meet_id AND mentee_id = $mentee_id";
 					$_SESSION['message'] .= $sql . "<br>";
 					if ($myconnection->query($sql) != TRUE){
-						echo "Error: Could not remove student from meeting.<br>" . $myconnection->error . "<br>";
+						$_SESSION['message'] .= "Error: Could not remove student from meeting.<br>" . $myconnection->error . "<br>";
 					}
 					else {
 						$sql = "UPDATE meetings SET capacity = capacity - 1 WHERE meet_id = $meet_id";

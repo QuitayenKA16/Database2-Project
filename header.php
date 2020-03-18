@@ -7,7 +7,6 @@
 			font: italic 12px Verdana, Geneva, sans-serif;
 			position: fixed;
 			bottom: 0;
-			background-color: white;
 			width: 100%;
 			height: 34px;
 			z-index: -1;
@@ -83,7 +82,6 @@
 					echo "<a href='http://localhost/Database2-Project/logout.php'>Home</a>";
 				}
 			?>
-			
 		</div>
 		
 		<footer>

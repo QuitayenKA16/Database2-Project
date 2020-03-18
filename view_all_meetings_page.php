@@ -59,7 +59,7 @@
 				if ($_SESSION['table_sort']=='capAsc') echo " value='capDes'>&#9660</button></th>";
 				else echo " value='capAsc'>&#9650</button></th>";
 				
-				echo "<th>Announcement</th><th>Edit</th>";
+				echo "<th>Announcement</th><th>Edit</th></form>";
 				
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					echo "<tr>";
@@ -76,7 +76,6 @@
 					echo "</form></tr>";
 				}
 			?>
-		</form>
 		</table>
 	</body
 </html>

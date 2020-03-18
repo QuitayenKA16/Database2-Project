@@ -26,7 +26,7 @@
 			<?php
 				$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 				$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
-				$query = "SELECT * FROM meetings m, time_slot t WHERE m.group_id = $gid AND m.time_slot_id = t.time_slot_id";
+				$query = "SELECT * FROM meetings m, time_slot t WHERE m.group_id = $gid AND m.time_slot_id = t.time_slot_id ORDER BY m.date";
 	
 				echo $query . "<br>";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());

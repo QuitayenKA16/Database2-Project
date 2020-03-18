@@ -67,16 +67,18 @@
 				if ($_SESSION['table_sort']=='gradeAsc') echo " value='gradeDes'>&#9660</button></th>";
 				else echo " value='gradeAsc'>&#9650</button></th>";
 				
-				echo "<th>Edit</th></tr></form>";
+				echo "<th>Meetings</th><th>Details</th></tr></form>";
 						
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					echo "<tr>";
-					echo "<form action='http://localhost/Database2-Project/edit_user_form.php' method='post'>";
 					echo "<td>$row[id]</td>";
 					echo "<td>$row[name]</td>";
 					echo "<td>$row[email]</td>";
 					echo "<td>$row[phone]</td>";
 					echo "<td>$row[grade]</td>";
+					echo "<form action='http://localhost/Database2-Project/student_enroll_form.php' method='post'>";
+					echo "<td align='center'><button type='submit' name='edit_uid' value='$row[id]'>EDIT</button></td>";
+					echo "<form action='http://localhost/Database2-Project/edit_user_form.php' method='post'>";
 					echo "<td align='center'><button type='submit' name='edit_uid' value='$row[id]'>EDIT</button></td>";
 					echo "</form></tr>";
 				}

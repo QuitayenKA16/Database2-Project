@@ -52,8 +52,7 @@
 			<div align='center'>
 				<h3>Actions</h3>
 				<a href='http://localhost/Database2-Project/create_student_form.php'>Create student account</a><br>
-				<a href='http://localhost/Database2-Project/view_children_page.php'>View children</a><br>
-				<a href='http://localhost/Database2-Project/user_page.php'>Assign meetings</a><br>
+				<a href='http://localhost/Database2-Project/view_children_page.php'>View and edit children</a><br>
 			</div>
 		</div>
 

@@ -13,8 +13,7 @@
 	<body>
 		<?php
 			include "header.php";
-			if (isset($_POST['table_sort']))
-				$_SESSION['table_sort'] = $_POST['table_sort'];
+			$_SESSION['table_sort'] = (isset($_POST['table_sort'])) ? $_POST['table_sort'] : 'idAsc';
 		?>
 
 		<form action="view_groups_page.php" method="post">

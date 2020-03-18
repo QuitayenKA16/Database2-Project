@@ -50,12 +50,9 @@
 				$query = "SELECT * FROM users u, students s WHERE u.id = s.student_id AND s.grade = $mentee_grade_req";
 				echo $query . "<br>";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
-				$count = mysqli_num_rows($result);
 				
 				echo "<tr><th>Student ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Status</th><th>Edit</th></tr>";
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
-					$count = 1;
-					$nameStr = "mentor" . $count;
 					echo "<tr>";
 					echo "<td>$row[id]</td>";
 					echo "<td>$row[name]</td>";
@@ -73,7 +70,6 @@
 						echo "<td align='center'><button class='linkBtn' type='submit' name='mentee_id' value='$row[id]0'>enroll</button></td>";
 					}
 					echo "</tr>";
-					$count += 1;
 				}
 			?>
 		</table>
@@ -86,12 +82,9 @@
 				$query = "SELECT * FROM users u, students s WHERE u.id = s.student_id AND s.grade >= $mentor_grade_req";
 				echo "SELECT * FROM users u, students s WHERE u.id = s.student_id AND s.grade >= mentor_grade_req<br>";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
-				$count = mysqli_num_rows($result);
 				
 				echo "<tr><th>Student ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Status</th><th>Edit</th></tr>";
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
-					$count = 1;
-					$nameStr = "mentor" . $count;
 					echo "<tr>";
 					echo "<td>$row[id]</td>";
 					echo "<td>$row[name]</td>";
@@ -109,7 +102,6 @@
 						echo "<td align='center'><button class='linkBtn' type='submit' name='mentor_id' value='$row[id]0'>enroll</button></td>";
 					}
 					echo "</tr>";
-					$count += 1;
 				}
 			?>
 		</table>

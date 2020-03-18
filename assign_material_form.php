@@ -28,5 +28,6 @@
 			<label><span>Notes:</span><textarea name="notes"/></textarea></label><br>
 			<input type="submit" style="font: normal 16px Verdana, Geneva, sans-serif;">
 		</form>
+	
 	</body>
 </html>

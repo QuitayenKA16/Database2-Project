@@ -21,6 +21,5 @@
 			<label for="field6"><span>Password: <span class="required">*</span></span> <input type="password" name="password"/></label> <br>
 			<input type="submit" style="font: normal 16px Verdana, Geneva, sans-serif;">
 		</form>
-		
 	</body>
 </html>

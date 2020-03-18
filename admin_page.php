@@ -75,7 +75,8 @@
 				<a href='http://localhost/Database2-Project/view_users_page.php'>View users</a><br>
 				<a href='http://localhost/Database2-Project/view_groups_page.php'>View groups</a><br>
 				<a href='http://localhost/Database2-Project/view_time_slots_page.php'>View time slots</a><br>
-				<a href='http://localhost/Database2-Project/view_all_meetings_page.php'>View meetings</a><br><br>
+				<a href='http://localhost/Database2-Project/view_all_meetings_page.php'>View meetings</a><br>
+				<a href='http://localhost/Database2-Project/view_study_material_page.php'>View study materials</a><br><br>
 
 				<h4>Create</h4>
 				<a href='http://localhost/Database2-Project/create_admin_form.php'>Create new admin account</a><br>
@@ -94,7 +95,7 @@
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				
 				echo "<table><tr><th>MID</th><th>GID</th><th>Date</th><th>Day of Week</th><th>Timeslot</th>
-						<th>Mentors (min. 1)</th><th>Mentees (min. 2)</th><th>Study Material</th><th>Edit</th><th>Cancel</th></tr>";
+						<th>Mentors (min. 1)</th><th>Mentees (min. 3)</th><th>Study Material</th><th>Edit</th><th>Cancel</th></tr>";
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					echo "<tr>";
 					echo "<td align='center'>$row[meet_id]</td>";
@@ -138,7 +139,8 @@
 					echo "</tr>";
 				}
 				
-				echo "</div>";
+				echo "</table></div>";
 		?>
+		
 	</body
 </html>
