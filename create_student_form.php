@@ -1,8 +1,4 @@
 <html>
-	
-	<style>
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -13,14 +9,13 @@
 			$email = $_SESSION['loggedUser']['email'];
 			$password = $_SESSION['loggedUser']['password'];
 		?>
-
 		<form action="new_student.php" method="post">
-			<h3>Create student account</h3>
-			<label for="field3"><span>Name: <span class="required">*</span></span> <input type="text" name="name"/></label> <br>
-			<label for="field5"><span>Phone: </span> <input type="text" name="phone"/></label> <br>
-			<label for="field4"><span>Email: <span class="required">*</span></span> <input type="text" name="email"/></label> <br>
-			<label for="field7"><span>Password: <span class="required">*</span></span> <input type="password" name="password"/></label> <br>
-			<label for="field8"><span>Grade Level: <span class="required">*</span></span></label>
+			<h2>Create student account</h2>
+			<label><b>Name:*</label><br><input type="text" name="name"/><br><br>
+			<label>Phone:</label><br><input type="text" name="phone"/><br><br>
+			<label>Email:*</label><br><input type="text" name="email"/><br><br>
+			<label>Password:*</label><br><input type="password" name="password"/><br><br>
+			<label>Grade Level:*</label><br>
 			<select type="number" name="grade">
 				<option value="6">6</option>
 				<option value="7">7</option>
@@ -29,8 +24,8 @@
 				<option value="10">10</option>
 				<option value="11">11</option>
 				<option value="12">12</option>
-			</select><br>
-			<input type="submit" style="font: normal 16px Verdana, Geneva, sans-serif;">
+			</select><br><br>
+			<input type="submit">
 		</form>
 	</body>
 </html>

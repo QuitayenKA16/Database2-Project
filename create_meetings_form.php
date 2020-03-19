@@ -1,13 +1,4 @@
 <html>
-	
-	<style>
-		textarea {
-			width: 231px;
-			height: 50px;
-			resize: none;
-		}
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -17,15 +8,14 @@
 			}
 			$gid = $_SESSION['group']['group_id'];
 		?>
-		
 		<form action="new_meetings.php" method="post">
 			<br><a href='<?php echo "$_SESSION[path]";?>group_page.php'>Back</a>
-			<h3>Create mutiple new meetings for Group <?php echo $gid;?></h3>
-			<label><span>Name:<span class="required">*</span></span> <input type="text" name="name"/></label> <br>
-			<label><span>Announcement:</span><textarea name="announcement"></textarea></label><br>
-			<label><span>Start Week:<span class="required">*</span></span><input type="week" name="start_week"/></label><br>
-			<label><span>End Week:<span class="required">*</span></span><input type="week" name="end_week"/></label><br>
-			<label><span>Timeslot:<span class="required">*</span></span></label>
+			<h2>Create mutiple new meetings for Group <?php echo $gid;?></h2>
+			<label><b>Name:*</label><br><input type="text" name="name"/><br><br>
+			<label>Announcement:</label><br><textarea name="announcement"></textarea><br><br>
+			<label>Start Week:*</label><br><input type="week" name="start_week"/><br><br>
+			<label>End Week:*</label><br><input type="week" name="end_week"/><br><br>
+			<label>Timeslot:*</label><br>
 			<select name="time_slot_id">
 				<?php
 					$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
@@ -37,7 +27,7 @@
 					}
 				?>
 			</select><br>
-			<input type="submit" style="font: normal 16px Verdana, Geneva, sans-serif;">
+			<input type="submit">
 		</form>
 	</body>
 </html>

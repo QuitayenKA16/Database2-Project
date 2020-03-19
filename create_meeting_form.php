@@ -1,13 +1,4 @@
 <html>
-	
-	<style>
-		textarea {
-			width: 231px;
-			height: 50px;
-			resize: none;
-		}
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -19,11 +10,11 @@
 		
 		<form action="new_meeting.php" method="post">
 			<br><a href='<?php echo "$_SESSION[path]";?>group_page.php'>Back</a>
-			<h3>Create new meeting</h3>
-			<label><span>Name:<span class="required">*</span></span> <input type="text" name="name"/></label> <br>
-			<label><span>Announcement:</span><textarea name="announcement"></textarea></label><br>
-			<label><span>Week:<span class="required">*</span></span><input type="week" name="week"/></label><br>
-			<label><span>Timeslot:<span class="required">*</span></span></label>
+			<h2>Create new meeting</h2>
+			<label><b>Name:*</label><br><input type="text" name="name"/><br><br>
+			<label>Announcement:</label><br><textarea name="announcement"></textarea><br><br>
+			<label>Week:*</label><br><input type="week" name="week"/><br><br>
+			<label>Timeslot:*</label><br>
 			<select name="time_slot_id">
 				<?php
 					$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
@@ -34,8 +25,8 @@
 						echo "<option value='$row[time_slot_id]'>ID$row[time_slot_id]: $row[day_of_the_week] $row[start_time]-$row[end_time]</option>";
 					}
 				?>
-			</select><br>
-			<input type="submit" style="font: normal 16px Verdana, Geneva, sans-serif;">
+			</select><br><br>
+			<input type="submit">
 		</form>
 	</body>
 </html>

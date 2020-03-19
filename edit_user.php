@@ -46,6 +46,5 @@
 			}
 			$myconnection->close();
 		?>
-		<br>
 	</body>
 </html>

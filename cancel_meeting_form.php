@@ -1,11 +1,4 @@
 <html>
-	<style>
-		p.p1 {
-			font: normal 15px Verdana, Geneva, sans-serif;
-			margin-left: 15px;
-		}
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -29,21 +22,17 @@
 			$mCapacity = $_SESSION['meet']['capacity'];
 			$mAnnounce = $_SESSION['meet']['announcement'];
 		?>
-		<h3>Cancel meeting</h3>
+		<h2>Cancel meeting</h2>
+			<p><b>Meeting ID: </b><?php echo $edit_mid;?></p>
+			<p><b>Name: </b><?php echo $mName;?></p>
+			<p><b>Date: </b><?php echo $mDate;?></p>
+			<p><b>DOW: </b><?php echo $mDayOfWeek;?></p>
+			<p><b>Timeslot: </b><?php echo $mStartTime . "-" . $mEndTime;?></p>
+			<p><b>Capacity: </b><?php echo $mCapacity;?></p>
+			<p><b>Announcement: </b><?php echo $mAnnounce;?></p>
 			
-		<?php
-			echo "<p class='p1'><b>Meeting ID: </b>$edit_mid</p>";
-			echo "<p class='p1'><b>Name: </b>$mName</p>";
-			echo "<p class='p1'><b>Date: </b>$mDate</p>";
-			echo "<p class='p1'><b>DOW: </b>$mDayOfWeek</p>";
-			echo "<p class='p1'><b>Timeslot: </b>$mStartTime-$mEndTime</p>";
-			echo "<p class='p1'><b>Capacity: </b>$mCapacity</p>";
-			echo "<p class='p1'><b>Announcement: </b>$mAnnounce</p>";
-		?>
 		<p style='color:red;'>Are you sure you want to cancel this meeting?</p>
-			
-		<button onclick="window.location.href='admin_page.php'" style="font: normal 16px Verdana, Geneva, sans-serif;">No, Go Back</button>
-		<button onclick="window.location.href='cancel_meeting.php'" style="font: normal 16px Verdana, Geneva, sans-serif;">Yes, Cancel</button>
-
+		<button onclick="window.location.href='admin_page.php'">No, Go Back</button>
+		<button onclick="window.location.href='cancel_meeting.php'">Yes, Cancel</button><hr>
 	</body>
 </html>

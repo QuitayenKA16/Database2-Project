@@ -1,49 +1,4 @@
 <html>
-	<style>
-		* {
-			box-sizing: border-box;
-		}
-		.column1{
-			border-style: solid;
-			float: left;
-			padding: 10px;
-			min-height: 350px;
-			height: auto;
-			margin-top: 15px;
-			margin-bottom: px;
-			position: relative;
-		}
-		.column1 > span {
-			position: absolute;
-			bottom: 0;
-			right: 0;
-		}
-		p.p1 {
-			font: normal 16px Verdana, Geneva, sans-serif;
-			margin-left: 10px;
-		}
-		h4 {
-			margin: 20px 0px 5px 0px;
-		}
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-			margin-bottom: 25px;
-		}
-		table {
-			width: 95%;
-		}
-		button.linkBtn {
-			background-color: transparent;
-			outline: none;
-			border: none;
-			overflow: hidden;
-			text-decoration: underline;
-			cursor: pointer;
-			color: #2c87f0;
-		}
-	</style>
-
 	<body>
 		<?php
 			include "header.php";
@@ -61,36 +16,34 @@
 			$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 		?>
 		
-		<div class="column1" style="background-color:#f2f2f2; width:40%;">
-			<h3 align="center">User Information</h3>
-			<p class="p1"><b>Name: </b> <?php echo "$name"; ?> <br>
-			<p class="p1"><b>Email: </b> <?php echo "$email"; ?> <br>
-			<p class="p1"><b>Phone Number: </b> <?php echo "$phone"; ?> <br>
-			<p class="p1"><b>User type: </b>Admin<br>
-			<br><br><br><br><br>
+		<div align="center">
+			<h2>User Information</h2>
+			<p><b>Name: </b> <?php echo "$name"; ?> <br>
+			<p><b>Email: </b> <?php echo "$email"; ?> <br>
+			<p><b>Phone Number: </b> <?php echo "$phone"; ?> <br>
+			<p><b>User type: </b>Admin<br><br>
 			<a href='<?php echo "$_SESSION[path]";?>edit_user_form.php'>Edit Details</a>
-		</div>
+		</div><br><hr>
 	
-		<div class='column1' style='width:60%;'>
-			<div align='center'>
-				<h3>Actions</h3>
-				<h4>Views/Edit</h4>
-				<a href='<?php echo "$_SESSION[path]";?>view_users_page.php'>View users</a><br>
-				<a href='<?php echo "$_SESSION[path]";?>view_groups_page.php'>View groups</a><br>
-				<a href='<?php echo "$_SESSION[path]";?>view_time_slots_page.php'>View time slots</a><br>
-				<a href='<?php echo "$_SESSION[path]";?>view_all_meetings_page.php'>View meetings</a><br>
-				<a href='<?php echo "$_SESSION[path]";?>view_study_material_page.php'>View study materials</a><br><br>
+		<div align='center'>
+			<h2>Actions</h2>
+			<h3>Views/Edit</h3>
+			<a href='<?php echo "$_SESSION[path]";?>view_users_page.php'>View users</a><br>
+			<a href='<?php echo "$_SESSION[path]";?>view_groups_page.php'>View groups</a><br>
+			<a href='<?php echo "$_SESSION[path]";?>view_time_slots_page.php'>View time slots</a><br>
+			<a href='<?php echo "$_SESSION[path]";?>view_all_meetings_page.php'>View meetings</a><br>
+			<a href='<?php echo "$_SESSION[path]";?>view_study_material_page.php'>View study materials</a><br><br>
 
-				<h4>Create</h4>
-				<a href='<?php echo "$_SESSION[path]";?>create_admin_form.php'>Create new admin account</a><br>
-				<a href='<?php echo "$_SESSION[path]";?>create_time_slot_form.php'>Create new time slot</a><br>
-			</div>
-		</div>	
+			<h3>Create</h3>
+			<a href='<?php echo "$_SESSION[path]";?>create_admin_form.php'>Create new admin account</a><br>
+			<a href='<?php echo "$_SESSION[path]";?>create_time_slot_form.php'>Create new time slot</a><br>
+		</div><br><hr>
 		
-		<div class='column1' align='center' style='width:100%; margin-bottom:25px;'>
-			<h3>Finalize Meetings</h3>
+		<div align='center'>
+			<h2>Finalize Meetings</h2>
 			<b>Next deadline: </b><?php echo date('l yy-m-d', strtotime('next week'));?><br><br>
-			<table><tr><th>MID</th><th>GID</th><th>Date</th><th>Day of Week</th><th>Timeslot</th><th>Mentors (min. 1)</th><th>Mentees (min. 3)</th><th>Study Material</th><th>Edit</th><th>Cancel</th></tr>
+			<table width=90% border="1">
+			<tr><th>MID</th><th>GID</th><th>Date</th><th>Day of Week</th><th>Timeslot</th><th>Mentors (min. 1)</th><th>Mentees (min. 3)</th><th>Study Material</th><th>Edit</th><th>Cancel</th></tr>
 			<?php
 				$query = "SELECT * FROM meetings WHERE date > CURDATE() AND date < DATE_ADD(CURDATE(), INTERVAL 1 WEEK)";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
@@ -121,7 +74,7 @@
 					echo "<td align='center'>$materialCnt</td>";
 					
 					echo "<form action='$_SESSION[path]meeting_page.php' method='post'>";
-					echo "<td align='center'><button class='linkBtn' type='submit' name='edit_mid' value='$row[meet_id]'>Details</button></td></form>";
+					echo "<td align='center'><button type='submit' name='edit_mid' value='$row[meet_id]'>Details</button></td></form>";
 					
 					echo "<form action='$_SESSION[path]cancel_meeting_form.php' method='post'>";
 					echo "<td align='center'><button type='submit' name='edit_mid' value='$row[meet_id]'>CANCEL</button></td></form>";
@@ -129,7 +82,7 @@
 					echo "</tr>";
 				}
 			?>
-			</table>
-		</div>
-	</body
+			</table><br>
+		</div><hr>
+	</body>
 </html>

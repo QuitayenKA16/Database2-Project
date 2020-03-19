@@ -1,13 +1,4 @@
 <html>
-	
-	<style>
-		textarea {
-			width: 231px;
-			height: 50px;
-			resize: none;
-		}
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -18,16 +9,15 @@
 		?>
 		
 		<div><br><a href='<?php echo "$_SESSION[path]";?>meeting_page.php'>Back</a></div>
-		<h3>Assign new study material</h3>
+		<h2>Assign new study material</h2>
 		<form action="new_study_material.php" method="post">
-			<label><span>Title:<span class="required">*</span></span> <input type="text" name="title"/></label> <br>
-			<label><span>Author:<span class="required">*</span></span><input type="text" name="author"/></label><br>
-			<label><span>Type:<span class="required">*</span></span><input type="text" name="type"/></label><br>
-			<label><span>URL:</span><input type="text" name="url"/></label><br>
-			<label><span>Assigned Date:<span class="required">*</span></span><input type="date" name="date"/></label><br>
-			<label><span>Notes:</span><textarea name="notes"/></textarea></label><br>
-			<input type="submit" style="font: normal 16px Verdana, Geneva, sans-serif;">
+			<label><b>Title:*</label><br><input type="text" name="title"/><br><br>
+			<label>Author:*</label><br><input type="text" name="author"/><br><br>
+			<label>Type:</label><br><input type="text" name="type"/><br><br>
+			<label>URL:</label><br><input type="text" name="url"/><br><br>
+			<label>Assigned Date:*</label><br><input type="date" name="date"/><br><br>
+			<label>Notes:</label><br><textarea name="notes"/></textarea><br><br>
+			<input type="submit">
 		</form>
-	
 	</body>
 </html>

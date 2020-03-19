@@ -1,37 +1,4 @@
 <html>
-	<style>
-		* {
-			box-sizing: border-box;
-		}
-		.column1{
-			border-style: solid;
-			float: left;
-			padding: 10px;
-			min-height: 360px;
-			height: auto;
-			margin-top: 15px;
-			margin-bottom: px;
-			position: relative;
-		}
-		.column1 > span {
-			position: absolute;
-			bottom: 0;
-			right: 0;
-		}
-		p.p1 {
-			font: normal 16px Verdana, Geneva, sans-serif;
-			margin-left: 10px;
-		}
-		h4 {
-			margin: 20px 0px 5px 0px;
-		}
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-			margin-bottom: 50px;
-		}
-	</style>
-
 	<body>
 		<?php
 			include "header.php";
@@ -46,8 +13,8 @@
 			$phone = $_SESSION['loggedUser']['phone'];
 		?>
 		
-		<div class="column1" style="background-color:#f2f2f2; width:35%;">
-			<h3 align="center">User Information</h3>
+		<div align='center'>
+			<h2>User Information</h2>
 			<p class="p1"><b>Name: </b> <?php echo "$name"; ?> <br>
 			<p class="p1"><b>Email: </b> <?php echo "$email"; ?> <br>
 			<p class="p1"><b>Phone Number: </b> <?php echo "$phone"; ?> <br>
@@ -63,17 +30,16 @@
 					$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
 					echo "$row[parent_id]";
 				?>
-			<br><br><br>
+			<br><br>
 			<a href='<?php echo "$_SESSION[path]";?>edit_user_form.php'>Edit Details</a>
-		</div>
+		</div><br><hr>
 		
 			<?php
-				echo "<div class='column1' style='width:65%;'>";
 				echo "<div align='center'>";
 				$gid = $_SESSION['grade'] - 5;
 					
-				echo "<h4>Upcoming Meetings:</h4>";
-				echo "<table style='width:80%;'><tr><th>MID</th><th>GID</th><th>Date</th><th>Time</th><th>Role</th></tr>";
+				echo "<h2>Upcoming Meetings</h2>";
+				echo "<table width=70% border='1'><tr><th>MID</th><th>GID</th><th>Date</th><th>Time</th><th>Role</th></tr>";
 					
 				$query = "SELECT * FROM meetings m, enroll e WHERE m.meet_id = e.meet_id AND e.mentee_id = $uid AND m.date < DATE_ADD(CURDATE(), INTERVAL 1 WEEK)";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
@@ -107,20 +73,18 @@
 					echo "<td align='center'>mentor</td>";
 					echo "</tr>";
 				}
-				echo "</div>";
 					
 				if ($count == 0)
 					echo "<tr><td align='center' colspan=5>No Upcoming Meetings</td></tr>";
 					
-				echo "</table>";
+				echo "</table></div><br><hr>";
 				echo "<div align='center'>";
-				echo "<h4>Actions</h4>";
+				echo "<h2>Actions</h2>";
 				echo "<a href='$_SESSION[path]student_enroll_form.php'>Edit meeting enrollment</a><br>";
 				echo "<a href='$_SESSION[path]view_student_study_material_page.php'>View study material</a><br>";
 				if ($_SESSION['grade'] >= 9)
 					echo "<a href='$_SESSION[path]view_mentor_meeting_page.php'>View meetings (mentor)</a><br>";
-				echo "</div>";
 			?>
-		</div>	
+		</div><br><hr>
 	</body
 </html>

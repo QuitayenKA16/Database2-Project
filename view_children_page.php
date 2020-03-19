@@ -1,12 +1,4 @@
 <html>
-	<style>
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-			margin-bottom: 50px;
-		}
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -23,11 +15,11 @@
 		
 		<form action="view_children_page.php" method="post">
 			<div align='center'>
-				<h3>View Students</h3>
+				<h2>View Students</h2>
 			</div>
 			<br>
 		
-		<table style='width:100%'>
+		<table width=100% border='1'>
 			<?php
 				$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 				$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
@@ -49,21 +41,21 @@
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				$count = mysqli_num_rows($result);
 				
-				echo "<tr><th>ID <button type='submit' class='class2' name='table_sort' ";
+				echo "<tr><th>ID <button type='submit' name='table_sort' ";
 				if ($_SESSION['table_sort']=='idAsc') echo " value='idDes'>&#9660</button></th>";
 				else echo " value='idAsc'>&#9650</button></th>";
 				
-				echo "<th>Name <button type='submit' class='class2' name='table_sort' ";
+				echo "<th>Name <button type='submit' name='table_sort' ";
 				if ($_SESSION['table_sort']=='nameAsc') echo " value='nameDes'>&#9660</button></th>";
 				else echo " value='nameAsc'>&#9650</button></th>";
 				
-				echo "<th>Email <button type='submit' class='class2' name='table_sort' ";
+				echo "<th>Email <button type='submit' name='table_sort' ";
 				if ($_SESSION['table_sort']=='emailAsc') echo " value='emailDes'>&#9660</button></th>";
 				else echo " value='emailAsc'>&#9650</button></th>";
 				
 				echo "<th>Phone Number</th>";
 				
-				echo "<th>Grade Level <button type='submit' class='class2' name='table_sort' ";
+				echo "<th>Grade Level <button type='submit' name='table_sort' ";
 				if ($_SESSION['table_sort']=='gradeAsc') echo " value='gradeDes'>&#9660</button></th>";
 				else echo " value='gradeAsc'>&#9650</button></th>";
 				

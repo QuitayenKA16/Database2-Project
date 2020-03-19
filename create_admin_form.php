@@ -1,8 +1,4 @@
 <html>
-	
-	<style>
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -12,14 +8,13 @@
 			}
 		?>
 		
-		<h3>Create new admin account</h3>
-		
+		<h2>Create new admin account</h2>
 		<form action="new_admin.php" method="post">
-			<label for="field1"><span>Name: <span class="required">*</span></span> <input type="text" name="name"/></label> <br>
-			<label for="field4"><span>Phone: </span> <input type="text" name="phone"/></label> <br>
-			<label for="field3"><span>Email: <span class="required">*</span></span> <input type="text" name="email"/></label> <br>
-			<label for="field6"><span>Password: <span class="required">*</span></span> <input type="password" name="password"/></label> <br>
-			<input type="submit" style="font: normal 16px Verdana, Geneva, sans-serif;">
+			<label><b>Name:*</label><br><input type="text" name="name"/><br><br>
+			<label>Phone:</label><br><input type="text" name="phone"/><br><br>
+			<label>Email:*</label><br><input type="text" name="email"/><br><br>
+			<label>Password:*</label><br><input type="password" name="password"/><br><br>
+			<input type="submit">
 		</form>
 	</body>
 </html>

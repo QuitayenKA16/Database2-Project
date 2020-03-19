@@ -1,7 +1,4 @@
 <html>
-	<style>
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -10,12 +7,11 @@
 				unset($_SESSION['message']);
 			}
 		?>
-		<h3>Login as existing account</h3>
+		<h2>Login as existing account</h2>
 		<form action="process_login.php" method="post">
-			<label for="field1"><span>Email: <span class="required">*</span></span> <input type="text" name="loginEmail"/></label> <br>
-			<label for="field2"><span>Password: <span class="required">*</span></span> <input type="password" name="loginPassword"/></label> <br>
-			<input type="submit" style="font: normal 16px Verdana, Geneva, sans-serif;">
+			<label><b>Email:*</label><br><input type="text" name="loginEmail"/><br><br>
+			<label>Password:*</label><br><input type="password" name="loginPassword"/><br><br>
+			<input type="submit" >
 		</form>
-
 	</body>
 </html>

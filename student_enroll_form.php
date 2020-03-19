@@ -1,24 +1,4 @@
 <html>
-	<style>
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-			margin-bottom: 25px;
-		}
-		button.linkBtn {
-			background-color: transparent;
-			outline: none;
-			border: none;
-			overflow: hidden;
-			text-decoration: underline;
-			cursor: pointer;
-			color: #2c87f0;
-		}
-		h4 {
-			margin: 0px 10px 0px 5px;
-		}
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -43,29 +23,26 @@
 			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 			$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
 			$student_name = $row['name'];
-			echo "<h3>Edit meeting enrollment: $student_name ($uid)</h3>";
+			echo "<h2>Edit meeting enrollment: $student_name ($uid)</h2>";
 		?>
 		
 		<form action="student_enroll.php" method="post">
-			
 		<?php
-			$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
-			$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 			if ($grade <= 9){
-				echo "<div align='center'><h3>Mentee</h3></div>";
+				echo "<div align='center'><h2>Mentee</h2>";
 				
 				$query = "SELECT * FROM groups WHERE description = $grade";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				$group = mysqli_fetch_array ($result, MYSQLI_ASSOC);
 				$group_id = $group['group_id'];
 				$group_name = $group['name'];
-				echo "<div align='center' style='margin-bottom:10px;'><h4>$group_name</h3>";
-				echo "<button style='margin-right:5px;' type='submit' name='mentee_all' value='$group_id 0'>ENROLL ALL</button>";
-				echo "<button type='submit' name='mentee_all' value='$group_id 1'>REMOVE ALL</button></div>";
+				echo "<div><h3>$group_name</h3>";
+				echo "<button type='submit' name='mentee_all' value='$group_id 0'>ENROLL ALL</button>";
+				echo "<button type='submit' name='mentee_all' value='$group_id 1'>REMOVE ALL</button></div><br>";
 				
 				$query = "SELECT * FROM meetings m, time_slot t WHERE group_id = $group_id AND m.time_slot_id = t.time_slot_id ORDER BY m.date";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
-				echo "<table style='width:100%'>";
+				echo "<table width=100% border='1'>";
 				echo "<tr><th>MID</th><th>Name</th><th>Date</th><th>Timeslot</th><th>Capacity</th><th>Announcement</th><th>Status</th><th>Edit</th></tr>";
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					echo "<tr>";
@@ -80,34 +57,34 @@
 					echo "<td align='center'>";
 					if (mysqli_num_rows($result2) == 1){
 						echo "&#10004</td>";
-						echo "<td align='center'><button class='linkBtn' type='submit' name='mentee_meet_id' value='$row[meet_id]1'>leave</button></td>";
+						echo "<td align='center'><button type='submit' name='mentee_meet_id' value='$row[meet_id]1'>leave</button></td>";
 					}
 					else{
 						echo "</td>";
-						echo "<td align='center'><button class='linkBtn' type='submit' name='mentee_meet_id' value='$row[meet_id]0'>enroll</button></td>";
+						echo "<td align='center'><button type='submit' name='mentee_meet_id' value='$row[meet_id]0'>enroll</button></td>";
 					}
 					echo "</tr>";
 				}
 				
-				echo "</table>";
-				
+				echo "</table></div><br><hr>";
 			}
 			
 			if ($grade >= 9){
-				echo "<div align='center'><h3>Mentor</h3></div>";
+				echo "<div align='center'><h2>Mentor</h2></div>";
 				
 				$query = "SELECT * FROM groups WHERE mentor_grade_req <= $grade";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					$group_id = $row['group_id'];
 					$group_name = $row['name'];
-					echo "<div align='center' style='margin-bottom:10px;'><h4>$group_name</h3>";
-					echo "<button style='margin-right:5px;' type='submit' name='mentor_all' value='$group_id 0'>ENROLL ALL</button>";
-					echo "<button type='submit' name='mentor_all' value='$group_id 1'>REMOVE ALL</button></div>";
+					echo "<div align='center'>";
+					echo "<h3>$group_name</h3>";
+					echo "<button type='submit' name='mentor_all' value='$group_id 0'>ENROLL ALL</button>";
+					echo "<button type='submit' name='mentor_all' value='$group_id 1'>REMOVE ALL</button></div><br>";
 					
 					$query = "SELECT * FROM meetings m, time_slot t WHERE group_id = $group_id AND m.time_slot_id = t.time_slot_id ORDER BY m.date";
 					$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
-					echo "<table style='width:100%'>";
+					echo "<table width=100% border='1'>";
 					echo "<tr><th>MID</th><th>Name</th><th>Date</th><th>Timeslot</th><th>Capacity</th><th>Announcement</th><th>Status</th><th>Edit</th></tr>";
 					while ($row2 = mysqli_fetch_array ($result2, MYSQLI_ASSOC)) {
 						echo "<tr>";
@@ -122,15 +99,15 @@
 						echo "<td align='center'>";
 						if (mysqli_num_rows($result3) == 1){
 							echo "&#10004</td>";
-							echo "<td align='center'><button class='linkBtn' type='submit' name='mentor_meet_id' value='$row2[meet_id]1'>leave</button></td>";
+							echo "<td align='center'><button type='submit' name='mentor_meet_id' value='$row2[meet_id]1'>leave</button></td>";
 						}
 						else{
 							echo "</td>";
-							echo "<td align='center'><button class='linkBtn' type='submit' name='mentor_meet_id' value='$row2[meet_id]0'>enroll</button></td>";
+							echo "<td align='center'><button type='submit' name='mentor_meet_id' value='$row2[meet_id]0'>enroll</button></td>";
 						}
 						echo "</tr>";
 					}
-					echo "</table>";
+					echo "</table></div><br><hr>";
 				}
 			}
 		?>

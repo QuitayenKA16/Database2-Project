@@ -1,28 +1,16 @@
 <html>
-	<style>
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-			margin-bottom: 50px;
-		}
-		label > span{
-			width: 25px;
-		}
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
+			$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
+			$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 		?>
 
-		<table style='width:100%'>
+		<table width=100% border='1'>
 			<div align='center'>
-				<h3>View Study Material</h3>
+				<h2>View Study Material</h2>
 			</div>
 			<?php
-				$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
-				$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
-				
 				$query = "SELECT * FROM material";
 				echo $query . "<br>";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());

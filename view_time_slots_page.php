@@ -1,23 +1,12 @@
 <html>
-	<style>
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-			margin-bottom: 50px;
-		}
-		label > span{
-			width: 25px;
-		}
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
 		?>
 
-		<table style='width:100%'>
+		<table width=100% border='1'>
 			<div align='center'>
-				<h3>View Time Slots</h3>
+				<h2>View Time Slots</h2>
 			</div>
 			<?php
 				$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());

@@ -1,15 +1,4 @@
 <html>
-	<style>
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-			margin-bottom: 50px;
-		}
-		label > span{
-			width: 25px;
-		}
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -17,9 +6,9 @@
 		?>
 
 		<form action="view_all_meetings_page.php" method="post">
-		<table style='width:100%'>
+		<table width=100% border='1'>
 			<div align='center'>
-				<h3>View Meetings</h3>
+				<h2>View Meetings</h2>
 			</div>
 			<?php
 				$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
@@ -41,21 +30,21 @@
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				$count = mysqli_num_rows($result);
 				
-				echo "<tr><th>MID <button type='submit' class='class2' name='table_sort' ";
+				echo "<tr><th>MID <button type='submit' name='table_sort' ";
 				if ($_SESSION['table_sort']=='midAsc') echo " value='midDes'>&#9660</button></th>";
 				else echo " value='midAsc'>&#9650</button></th>";
 				
-				echo "<th>GID <button type='submit' class='class2' name='table_sort' ";
+				echo "<th>GID <button type='submit' name='table_sort' ";
 				if ($_SESSION['table_sort']=='gidAsc') echo " value='gidDes'>&#9660</button></th>";
 				else echo " value='gidAsc'>&#9650</button></th>";
 				
 				echo "<th>Name</th>";
 				
-				echo "<th>Date <button type='submit' class='class2' name='table_sort' ";
+				echo "<th>Date <button type='submit' name='table_sort' ";
 				if ($_SESSION['table_sort']=='dateAsc') echo " value='dateDes'>&#9660</button></th>";
 				else echo " value='dateAsc'>&#9650</button></th>";
 				
-				echo "<th>DOW</th><th>Time</th><th>Capacity <button type='submit' class='class2' name='table_sort' ";
+				echo "<th>DOW</th><th>Time</th><th>Capacity <button type='submit' name='table_sort' ";
 				if ($_SESSION['table_sort']=='capAsc') echo " value='capDes'>&#9660</button></th>";
 				else echo " value='capAsc'>&#9650</button></th>";
 				

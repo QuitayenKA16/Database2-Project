@@ -1,7 +1,4 @@
 <html>
-	<style>
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -36,19 +33,18 @@
 			$row = mysqli_fetch_array ($result, MYSQLI_ASSOC);
 			$grade = (mysqli_num_rows($result) == 1) ? $row['grade'] : 5;
 		?>
-		
 		<form action="edit_user.php" method="post">
-			<h3>Edit account details</h3>
-			<label><span>Name: <span class="required">*</span></span> <input type="text" name="name" <?php echo "value='$name'";?>/></label> <br>
-			<label><span>Phone: </span> <input type="text" name="phone" <?php echo "value='$phone'";?>/></label> <br>
-			<label><span>Email: </span> <input type="text" name="email" <?php echo "value='$email'";?> disabled='disabled'/></label> <br>
-			<label><span>Password: <span class="required">*</span></span> <input type="password" name="password" 
+			<h2>Edit account details</h2>
+			<label><b>Name:</label><br><input type="text" name="name" <?php echo "value='$name'";?>/><br><br>
+			<label>Phone:</label><br><input type="text" name="phone" <?php echo "value='$phone'";?>/><br><br>
+			<label>Email:</label><br><input type="text" name="email" <?php echo "value='$email'";?> disabled='disabled'/><br><br>
+			<label>Password:*</label><br><input type="password" name="password" 
 				<?php
 					echo "value='$password'";
 					if ($_SESSION['edit_uid'] != $_SESSION['loggedUser']['id'] && $_SESSION['type'] == 0)
 						echo " disabled='disabled'";
 				?>
-				/></label> <br>
+				/><br><br>
 			<label><span>Grade Level: <span class="required">*</span></span></label>
 			<select name="grade" 
 				<?php
@@ -79,6 +75,5 @@
 				echo "<button type='submit' name='delete' value='delete'>Delete</button>";?>
 			<button type="submit" name="action" value="edit">Submit</button>
 		</form>
-		
 	</body>
 </html>

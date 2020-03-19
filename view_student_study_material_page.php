@@ -1,15 +1,4 @@
-<html>
-	<style>
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-			margin-bottom: 50px;
-		}
-		label > span{
-			width: 25px;
-		}
-	</style>
-	
+<html>	
 	<body>
 		<?php
 			include "header.php";
@@ -18,7 +7,7 @@
 		?>
 
 		<div align='center'>
-			<h3>View Study Material</h3>
+			<h2>View Study Material</h2>
 		</div>
 		<?php
 			$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
@@ -32,8 +21,9 @@
 				$query = "SELECT * FROM meetings WHERE group_id = $group_id";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 					
-				echo "<h4 align='center' style='margin-bottom:0px;'>Mentee</h4>";
-				echo "<table style='width:100%'><tr><th>MID</th><th>GID</th><th>Title</th><th>Author</th><th>Type</th><th>URL</th><th>Assigned Date</th><th>Notes</th>";
+				echo "<h3 align='center'>Mentee</h3>";
+				echo "<table width=100% border='1'>";
+				echo "<tr><th>MID</th><th>GID</th><th>Title</th><th>Author</th><th>Type</th><th>URL</th><th>Assigned Date</th><th>Notes</th>";
 					
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)){
 					$meet_id = $row['meet_id'];
@@ -59,12 +49,14 @@
 						}
 					}
 				}
-				echo "</table>";
+				echo "</table><br><hr>";
 			}
 				
 			if ($grade >= 9){
-				echo "<h4 align='center' style='margin-bottom:0px;'>Mentor</h4>";
-				echo "<table style='width:100%'><tr><th>MID</th><th>GID</th><th>Title</th><th>Author</th><th>Type</th><th>URL</th><th>Assigned Date</th><th>Notes</th>";
+				echo "<h3 align='center'>Mentor</h3>";
+				echo "<table width=100% border='1'>";
+				echo "<tr><th>MID</th><th>GID</th><th>Title</th><th>Author</th><th>Type</th><th>URL</th><th>Assigned Date</th><th>Notes</th>";
+				
 				$query = "SELECT * FROM enroll2 WHERE mentor_id = $uid";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)){
@@ -94,7 +86,7 @@
 						}
 					}
 				}
-				echo "</table>";
+				echo "</table><br><hr>";
 			}
 		?>
 	</body

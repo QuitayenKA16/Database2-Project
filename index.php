@@ -1,10 +1,4 @@
 <html>
-	<style>	
-		h3 {
-			margin: 20px 0px 5px 0px;
-		}
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -12,13 +6,12 @@
 		?>
 		
 		<div>
-			<h3>Existing user</h3>
+			<h2>Existing user</h2>
 			<a href="<?php echo "$_SESSION[path]";?>login_form.php">Login existing account</a><br>
-		</div>
-		<br>
+		</div><br>
 		
 		<div>
-			<h3>New user</h3>
+			<h2>New user</h2>
 			<p><u>Admin:</u> Must be logged in as an admin to create a new admin account.</p>
 			<p><u>Parent:</u>
 			<a href="<?php echo "$_SESSION[path]";?>create_parent_form.php"> Create new parent account</a><br>

@@ -1,15 +1,4 @@
 <html>
-	<style>
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-			margin-bottom: 50px;
-		}
-		label > span{
-			width: 25px;
-		}
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -17,9 +6,9 @@
 		?>
 
 		<form action="view_groups_page.php" method="post">
-		<table style='width:100%'>
+		<table width=100% border='1'>
 			<div align='center'>
-			<h3>View Groups</h3>
+			<h2>View Groups</h2>
 			</div>
 			<?php
 				$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
@@ -39,21 +28,21 @@
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				$count = mysqli_num_rows($result);
 				
-				echo "<tr><th>GID <button type='submit' class='class2' name='table_sort' ";
+				echo "<tr><th>GID <button type='submit' name='table_sort' ";
 				if ($_SESSION['table_sort']=='idAsc') echo " value='idDes'>&#9660</button></th>";
 				else echo " value='idAsc'>&#9650</button></th>";
 				
-				echo "<th>Name <button type='submit' class='class2' name='table_sort' ";
+				echo "<th>Name <button type='submit' name='table_sort' ";
 				if ($_SESSION['table_sort']=='nameAsc') echo " value='nameDes'>&#9660</button></th>";
 				else echo " value='nameAsc'>&#9650</button></th>";
 				
 				echo "<th>Description</th>";
 				
-				echo "<th>Mentee Grade <button type='submit' class='class2' name='table_sort' ";
+				echo "<th>Mentee Grade <button type='submit' name='table_sort' ";
 				if ($_SESSION['table_sort']=='menteeGradeAsc') echo " value='menteeGradeDes'>&#9660</button></th>";
 				else echo " value='menteeGradeAsc'>&#9650</button></th>";
 				
-				echo "<th>Mentor Grade <button type='submit' class='class2' name='table_sort' ";
+				echo "<th>Mentor Grade <button type='submit' name='table_sort' ";
 				if ($_SESSION['table_sort']=='mentorGradeAsc') echo " value='mentorGradeDes'>&#9660</button></th>";
 				else echo " value='mentorGradeAsc'>&#9650</button></th>";
 				

@@ -1,8 +1,4 @@
 <html>
-	
-	<style>
-	</style>
-	
 	<body>
 		<?php
 			include "header.php";
@@ -11,17 +7,16 @@
 				unset($_SESSION['message']);
 			}
 		?>
-		
 		<form action="new_time_slot.php" method="post">
-			<h3>Create new time slot</h3>
-			<label><span>Start Time: <span class="required">*</span></span> <input type="time" name="start_time"/></label> <br>
-			<label><span>DOW:<span class="required">*</span></span></label>
+			<h2>Create new time slot</h2>
+			<label><b>Start Time:*</label><br><input type="time" name="start_time"/><br><br>
+			<label>DOW:*</label><br>
 			<select name="day_of_the_week">
 				<option value='Saturday'>Saturday</option>
 				<option value='Sunday'>Sunday</option>
 			</select><br><br>
-			<p style="font: normal 14px Verdana, Geneva, sans-serif;">*Meeting length is automatically set to 1 hour.</p>
-			<input type="submit" style="font: normal 16px Verdana, Geneva, sans-serif;">
+			<p style='color:red;'><font size="3">*Meeting length is automatically set to 1 hour.</font></p>
+			<input type="submit">
 		</form>
 	</body>
 </html>

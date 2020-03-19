@@ -1,30 +1,4 @@
 <html>
-	<style>
-		* {
-			box-sizing: border-box;
-		}
-		.column1{
-			border-style: solid;
-			float: left;
-			padding: 10px;
-			height: auto;
-			min-height:317px;
-			margin-top:15px;
-		}
-		p.p1 {
-			font: normal 14px Verdana, Geneva, sans-serif;
-			margin-left: 10px;
-		}
-		table {
-			width:100%;
-		}
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-			margin-bottom: 50px;
-		}
-	</style>
-
 	<body>
 		<?php
 			include "header.php";
@@ -53,20 +27,19 @@
 			<a href='<?php echo "$_SESSION[path]";?>view_all_meetings_page.php'>View Meetings</a>
 		</div>
 		
-		<div class="column1" style="background-color:#f2f2f2; width:40%;">
-			<h3 align="center">Meeting Information</h3>
+		<div align="center">
+			<h2>Meeting Information</h2>
 			<p class="p1"><b>MID: </b> <?php echo "$edit_mid"; ?> <br>
-			<p class="p1"><b>GID: </b> <?php echo "<a style='font: normal 14px Verdana, Geneva, sans-serif;'
-														href='$_SESSION[path]group_page.php'>$gid</a>"; ?> <br>
+			<p class="p1"><b>GID: </b> <?php echo "<a style='font: normal 14px Verdana, Geneva, sans-serif;' href='$_SESSION[path]group_page.php'>$gid</a>"; ?><br>
 			<p class="p1"><b>Name: </b> <?php echo "$mName"; ?> <br>
 			<p class="p1"><b>Date: </b> <?php echo "$mDate"; ?> <br>
 			<p class="p1"><b>Time Slot: </b> <?php echo "$mDayOfWeek $mStartTime - $mEndTime"; ?> <br>
 			<p class="p1"><b>Capacity: </b> <?php echo "$mCapacity"; ?> <br>
-			<p class="p1"><b>Announcement: </b> <?php echo "$mAnnounce"; ?> <br><br>
-		</div>
+			<p class="p1"><b>Announcement: </b> <?php echo "$mAnnounce"; ?> <br>
+		</div><br><hr>
 		
-		<div class="column1" align="center" style="width:30%;">
-			<h3>Mentors</h3>
+		<div align="center">
+			<h2>Mentors</h2>
 			<a href='<?php echo "$_SESSION[path]";?>enroll_members_form.php'>Edit</a><br><br>
 			<?php
 				$query = "SELECT * FROM enroll2 WHERE meet_id = $edit_mid";
@@ -80,9 +53,10 @@
 					echo $row2['name'] . "<br>";
 				}
 			?>
-		</div>
-		<div class="column1" align="center" style="width:30%;">
-			<h3 >Mentees</h3>
+		</div><br><hr>
+		
+		<div align="center">
+			<h2>Mentees</h2>
 			<a href='<?php echo "$_SESSION[path]";?>enroll_members_form.php'>Edit</a><br><br>
 			<?php
 				$query = "SELECT * FROM enroll WHERE meet_id = $edit_mid";
@@ -96,14 +70,15 @@
 					echo $row2['name'] . "<br>";
 				}
 			?>
-		</div>
-		<div class="column1" align="center" style="width:100%; min-height:200px; margin-bottom:25px">
-			<br><h3 style="display: inline;">Study Material</h3>
+		</div><br><hr>
+		
+		<div align="center">
+			<h2>Study Material</h2>
 			<a href='<?php echo "$_SESSION[path]";?>assign_material_form.php'>Edit</a><br><br>
 			<?php
 				$query = "SELECT * FROM assign a, material m WHERE m.material_id = a.material_id AND a.meet_id = $edit_mid";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
-				echo "<table>";
+				echo "<table width=80% border='1'>";
 				echo "<th>ID</th><th>Title</th><th>Author</th><th>Type</th><th>URL</th><th>Assigned Date</th><th>Notes</th>";
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)){
 					echo "<tr>";
@@ -118,6 +93,6 @@
 				}
 				echo "</table></td></tr>";
 			?>
-		</div>
+		</div><br><hr>
 	</body
 </html>

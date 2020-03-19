@@ -1,25 +1,4 @@
 <html>
-	<style>
-		* {
-			box-sizing: border-box;
-		}
-		.column1{
-			border-style: solid;
-			float: left;
-			padding: 10px;
-			height:300px;
-			margin-top:15px;
-			width:50%;
-		}
-		p.p1 {
-			font: normal 14px Verdana, Geneva, sans-serif;
-			margin-left: 10px;
-		}
-		h4 {
-			margin: 20px 0px 5px 0px;
-		}
-	</style>
-
 	<body>
 		<?php
 			include "header.php";
@@ -43,29 +22,27 @@
 			<a href='<?php echo "$_SESSION[path]";?>view_all_meetings_page.php'>View Meetings</a>
 		</div>
 		
-		<div class="column1" style="background-color:#f2f2f2;">
-			<h3 align="center">Group Information</h3>
-			<p class="p1"><b>GID: </b> <?php echo "$gid"; ?> <br>
-			<p class="p1"><b>Name: </b> <?php echo "$gName"; ?> <br>
-			<p class="p1"><b>Description: </b> <?php echo "$gDesc"; ?> <br>
-			<p class="p1"><b>Can Mentor: </b> <?php echo "$gMentee"; ?> <br>
-			<p class="p1"><b>Can be Mentored by: </b> <?php echo "$gMentor"; ?> <br>
-		</div>
+		<div align="center">
+			<h2>Group Information</h2>
+			<p><b>GID: </b> <?php echo "$gid"; ?> <br>
+			<p><b>Name: </b> <?php echo "$gName"; ?> <br>
+			<p><b>Description: </b> <?php echo "$gDesc"; ?> <br>
+			<p><b>Can Mentor: </b> <?php echo "$gMentee"; ?> <br>
+			<p><b>Can be Mentored by: </b> <?php echo "$gMentor"; ?> <br>
+		</div><br><hr>
 		
-		<div class="column1" style="">
-			<h3 align="center">Actions</h3>
-			<div align='center'>
-			<h4>View/Edit</h4>
+		<div align="center">
+			<h2>Actions</h2>
+			<h3>View/Edit</h3>
 			<a href='<?php echo "$_SESSION[path]";?>view_members_page.php'>View members</a><br>
 			<?php
 				if ($_SESSION['group']['mentor_grade_req'] != NULL){
 					echo "<a href='$_SESSION[path]view_meetings_page.php'>View meetings</a><br><br>";
-					echo "<h4>Create</h4>";
+					echo "<h3>Create</h3>";
 					echo "<a href='$_SESSION[path]create_meeting_form.php'>Create single meeting</a><br>";
 					echo "<a href='$_SESSION[path]create_meetings_form.php'>Create multiple meetings</a><br>";
 				}
-				echo "</div>";
 			?>
-		</div>
+		</div><br><hr>
 	</body
 </html>
