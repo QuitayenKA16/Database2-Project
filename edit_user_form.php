@@ -38,14 +38,14 @@
 			<label><b>Name:</label><br><input type="text" name="name" <?php echo "value='$name'";?>/><br><br>
 			<label>Phone:</label><br><input type="text" name="phone" <?php echo "value='$phone'";?>/><br><br>
 			<label>Email:</label><br><input type="text" name="email" <?php echo "value='$email'";?> disabled='disabled'/><br><br>
-			<label>Password:*</label><br><input type="password" name="password" 
+			<label>Password:</label><br><input type="password" name="password" 
 				<?php
 					echo "value='$password'";
 					if ($_SESSION['edit_uid'] != $_SESSION['loggedUser']['id'] && $_SESSION['type'] == 0)
 						echo " disabled='disabled'";
 				?>
 				/><br><br>
-			<label><span>Grade Level: <span class="required">*</span></span></label>
+			<label>Grade Level:</label>
 			<select name="grade" 
 				<?php
 					if ($grade > 5){

@@ -15,7 +15,7 @@
 			<label>Phone:</label><br><input type="text" name="phone"/><br><br>
 			<label>Email:*</label><br><input type="text" name="email"/><br><br>
 			<label>Password:*</label><br><input type="password" name="password"/><br><br>
-			<label>Grade Level:*</label><br>
+			<label>Grade Level:*</label>
 			<select type="number" name="grade">
 				<option value="6">6</option>
 				<option value="7">7</option>
