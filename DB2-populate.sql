@@ -110,83 +110,34 @@ insert into parents values (5+15);
 insert into parents values (6+15);
 
 -- (student_id, parent_id, grade)
-insert into students (student_id, parent_id, grade) values (7+15,3+15,7);
-insert into students (student_id, parent_id, grade) values (8+15,4+15,8);
-insert into students (student_id, parent_id, grade) values (9+15,5+15,9);
-insert into students (student_id, parent_id, grade) values (10+15,6+15,10);
-insert into students (student_id, parent_id, grade) values (11+15,3+15,11);
-insert into students (student_id, parent_id, grade) values (12+15,4+15,12);
-insert into students (student_id, parent_id, grade) values (13+15,5+15,6);
-insert into students (student_id, parent_id, grade) values (14+15,6+15,7);
-insert into students (student_id, parent_id, grade) values (15+15,3+15,8);
-insert into students (student_id, parent_id, grade) values (16+15,4+15,9);
-insert into students (student_id, parent_id, grade) values (17+15,5+15,10);
-insert into students (student_id, parent_id, grade) values (18+15,6+15,11);
-insert into students (student_id, parent_id, grade) values (19+15,3+15,12);
-insert into students (student_id, parent_id, grade) values (20+15,4+15,6);
-insert into students (student_id, parent_id, grade) values (21+15,5+15,7);
-insert into students (student_id, parent_id, grade) values (22+15,6+15,8);
-insert into students (student_id, parent_id, grade) values (23+15,3+15,9);
-insert into students (student_id, parent_id, grade) values (24+15,4+15,10);
-insert into students (student_id, parent_id, grade) values (25+15,5+15,11);
-insert into students (student_id, parent_id, grade) values (26+15,6+15,12);
-insert into students (student_id, parent_id, grade) values (27+15,3+15,6);
-insert into students (student_id, parent_id, grade) values (28+15,4+15,7);
-insert into students (student_id, parent_id, grade) values (29+15,5+15,8);
-insert into students (student_id, parent_id, grade) values (30+15,6+15,9);
-insert into students (student_id, parent_id, grade) values (31+15,3+15,10);
-insert into students (student_id, parent_id, grade) values (32+15,4+15,11);
-insert into students (student_id, parent_id, grade) values (33+15,5+15,12);
-insert into students (student_id, parent_id, grade) values (34+15,6+15,6);
-insert into students (student_id, parent_id, grade) values (35+15,3+15,7);
-insert into students (student_id, parent_id, grade) values (36+15,4+15,8);
-insert into students (student_id, parent_id, grade) values (37+15,5+15,9);
-insert into students (student_id, parent_id, grade) values (38+15,6+15,10);
-insert into students (student_id, parent_id, grade) values (39+15,3+15,11);
-insert into students (student_id, parent_id, grade) values (40+15,4+15,12);
-insert into students (student_id, parent_id, grade) values (41+15,5+15,6);
-insert into students (student_id, parent_id, grade) values (42+15,6+15,7);
-insert into students (student_id, parent_id, grade) values (43+15,3+15,8);
-insert into students (student_id, parent_id, grade) values (44+15,4+15,9);
-insert into students (student_id, parent_id, grade) values (45+15,5+15,10);
-insert into students (student_id, parent_id, grade) values (46+15,6+15,11);
-insert into students (student_id, parent_id, grade) values (47+15,3+15,12);
-insert into students (student_id, parent_id, grade) values (48+15,4+15,6);
-insert into students (student_id, parent_id, grade) values (49+15,5+15,7);
-insert into students (student_id, parent_id, grade) values (50+15,6+15,8);
-insert into students (student_id, parent_id, grade) values (51+15,3+15,9);
-insert into students (student_id, parent_id, grade) values (52+15,4+15,10);
-insert into students (student_id, parent_id, grade) values (53+15,5+15,11);
-insert into students (student_id, parent_id, grade) values (54+15,6+15,12);
-insert into students (student_id, parent_id, grade) values (55+15,3+15,6);
-insert into students (student_id, parent_id, grade) values (56+15,4+15,7);
-insert into students (student_id, parent_id, grade) values (57+15,5+15,8);
-insert into students (student_id, parent_id, grade) values (58+15,6+15,9);
-insert into students (student_id, parent_id, grade) values (59+15,3+15,10);
-insert into students (student_id, parent_id, grade) values (60+15,4+15,11);
-insert into students (student_id, parent_id, grade) values (61+15,5+15,12);
-insert into students (student_id, parent_id, grade) values (62+15,6+15,6);
-insert into students (student_id, parent_id, grade) values (63+15,3+15,7);
-insert into students (student_id, parent_id, grade) values (64+15,4+15,8);
-insert into students (student_id, parent_id, grade) values (65+15,5+15,9);
-insert into students (student_id, parent_id, grade) values (66+15,6+15,10);
-insert into students (student_id, parent_id, grade) values (67+15,3+15,11);
-insert into students (student_id, parent_id, grade) values (68+15,4+15,12);
-insert into students (student_id, parent_id, grade) values (69+15,5+15,6);
-insert into students (student_id, parent_id, grade) values (70+15,6+15,7);
-insert into students (student_id, parent_id, grade) values (71+15,3+15,8);
-insert into students (student_id, parent_id, grade) values (72+15,4+15,9);
-insert into students (student_id, parent_id, grade) values (73+15,5+15,10);
-insert into students (student_id, parent_id, grade) values (74+15,6+15,11);
-insert into students (student_id, parent_id, grade) values (75+15,3+15,12);
-insert into students (student_id, parent_id, grade) values (76+15,4+15,6);
-insert into students (student_id, parent_id, grade) values (77+15,5+15,7);
-insert into students (student_id, parent_id, grade) values (78+15,6+15,8);
-insert into students (student_id, parent_id, grade) values (79+15,3+15,9);
-insert into students (student_id, parent_id, grade) values (80+15,4+15,10);
-insert into students (student_id, parent_id, grade) values (81+15,5+15,11);
-insert into students (student_id, parent_id, grade) values (82+15,6+15,12);
 
+DELIMITER //
+DROP PROCEDURE IF EXISTS createStudent //
+CREATE PROCEDURE createStudent()
+BEGIN
+	DECLARE i INTEGER DEFAULT 22;
+	DECLARE p INTEGER DEFAULT 18;
+	DECLARE g INTEGER DEFAULT 7;
+	
+	WHILE i <= 97 DO
+		IF p = 22 THEN
+			SET p = 18;
+		END IF;
+		
+		IF g = 13 THEN
+			SET g = 6;
+		END IF;
+		
+		INSERT INTO students (student_id, parent_id, grade) values (i, p, g);
+		SET i = i + 1;
+		SET p = p + 1;
+		SET g = g + 1;
+	END WHILE;
+END
+//
+DELIMITER ;
+
+CALL createStudent();
 
 -- create groups (group_id, name, description, mentee_grade_req, mentor_grade_req)
 INSERT INTO `groups` (`name`, `description`, `mentor_grade_req`, `mentee_grade_req`) VALUES ('Grade 6', 6, 9, null);
@@ -264,9 +215,9 @@ CREATE PROCEDURE enrollMentees()
 BEGIN
 	DECLARE i INTEGER DEFAULT 100;
 	DECLARE j INTEGER DEFAULT 0;
-	DECLARE id1 INTEGER DEFAULT 0;
-	DECLARE id2 INTEGER DEFAULT 0;
-	DECLARE id3 INTEGER DEFAULT 0;
+	DECLARE k integer DEFAULT 1;
+	DECLARE id INTEGER DEFAULT 0;
+	DECLARE c INTEGER DEFAULT -1;
 	DECLARE gr INTEGER DEFAULT 6;
 	
 	WHILE i <= 139 DO
@@ -274,12 +225,19 @@ BEGIN
 			SET gr = gr + 1;
 			SET j = 0;
 		END IF;
-		SELECT student_id INTO id1 FROM students WHERE grade = gr ORDER BY RAND() LIMIT 1;
-		SELECT student_id INTO id2 FROM students WHERE grade = gr ORDER BY RAND() LIMIT 1;
-		SELECT student_id INTO id3 FROM students WHERE grade = gr ORDER BY RAND() LIMIT 1;
-		INSERT INTO enroll (meet_id, mentee_id) VALUES (i, id1) ON DUPLICATE KEY UPDATE mentee_id = (SELECT student_id FROM students WHERE grade = gr ORDER BY RAND() LIMIT 1);
-		INSERT INTO enroll (meet_id, mentee_id) VALUES (i, id2) ON DUPLICATE KEY UPDATE mentee_id = (SELECT student_id FROM students WHERE grade = gr ORDER BY RAND() LIMIT 1);
-		INSERT INTO enroll (meet_id, mentee_id) VALUES (i, id3) ON DUPLICATE KEY UPDATE mentee_id = (SELECT student_id FROM students WHERE grade = gr ORDER BY RAND() LIMIT 1);
+		
+		WHILE k <= 3 DO
+			SET c = 1;
+			WHILE c > 0 DO
+				SELECT student_id INTO id FROM students WHERE grade = gr ORDER BY RAND() LIMIT 1;
+				SET c = (SELECT COUNT(*) FROM enroll WHERE mentee_id = id AND meet_id = i);
+			END WHILE;
+			
+			INSERT INTO enroll (meet_id, mentee_id) VALUES (i, id);
+			SET k = k + 1;
+		END WHILE;
+		
+		SET k = 1;
 		SET j = j + 1;
 		SET i = i + 1;
 	END WHILE;
@@ -295,9 +253,9 @@ CREATE PROCEDURE enrollMentors()
 BEGIN
 	DECLARE i INTEGER DEFAULT 100;
 	DECLARE j INTEGER DEFAULT 0;
-	DECLARE id1 INTEGER DEFAULT 0;
-	DECLARE id2 INTEGER DEFAULT 0;
-	DECLARE id3 INTEGER DEFAULT 0;
+	DECLARE k integer DEFAULT 1;
+	DECLARE id INTEGER DEFAULT 0;
+	DECLARE c INTEGER DEFAULT -1;
 	DECLARE req INTEGER DEFAULT 9;
 	
 	WHILE i <= 139 DO
@@ -305,12 +263,19 @@ BEGIN
 			SET req = req + 1;
 			SET j = 0;
 		END IF;
-		SELECT student_id INTO id1 FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1;
-		SELECT student_id INTO id2 FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1;
-		SELECT student_id INTO id3 FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1;
-		INSERT INTO enroll2 (meet_id, mentor_id) VALUES (i, id1) ON DUPLICATE KEY UPDATE mentor_id = (SELECT student_id FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1);
-		INSERT INTO enroll2 (meet_id, mentor_id) VALUES (i, id2) ON DUPLICATE KEY UPDATE mentor_id = (SELECT student_id FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1);
-		INSERT INTO enroll2 (meet_id, mentor_id) VALUES (i, id3) ON DUPLICATE KEY UPDATE mentor_id = (SELECT student_id FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1);
+		
+		WHILE k <= 2 DO
+			SET c = 1;
+			WHILE c > 0 DO
+				SELECT student_id INTO id FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1;
+				SET c = (SELECT COUNT(*) FROM enroll2 WHERE mentor_id = id AND meet_id = i);
+			END WHILE;
+			
+			INSERT INTO enroll2 (meet_id, mentor_id) VALUES (i, id);
+			SET k = k + 1;
+		END WHILE;
+		
+		SET k = 1;
 		SET j = j + 1;
 		SET i = i + 1;
 	END WHILE;
