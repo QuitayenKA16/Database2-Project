@@ -22,9 +22,15 @@
 					echo "Successful deleting user: <b>UID" . $_SESSION['edit_uid'] . "</b><br>";
 			}
 			else {
-				$sql = (isset($_POST['password'])) ? 
-					"UPDATE users SET name='$_POST[name]', phone='$_POST[phone]', password='$_POST[password]' WHERE id=$id" :
-					"UPDATE users SET name='$_POST[name]', phone='$_POST[phone]' WHERE id=$id";
+				$name = $myconnection->real_escape_string($_POST['name']);
+				$phone = $myconnection->real_escape_string($_POST['phone']);
+				if (isset($_POST['password'])){
+					$password = $myconnection->real_escape_string($_POST['password']);
+					"UPDATE users SET name='$name', phone='$phone', password='$password' WHERE id=$id";
+				}
+				else {
+					"UPDATE users SET name='$name', phone='$phone' WHERE id=$id";
+				}
 				echo $sql . "<br>";
 	
 				if ($myconnection->query($sql) === TRUE) {
