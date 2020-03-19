@@ -2,7 +2,9 @@
 	$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
 	$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 
-	$query = "SELECT * FROM users WHERE email = '$_POST[loginEmail]' AND password = '$_POST[loginPassword]'";
+	$loginEmail = $myconnection->real_escape_string($_POST['loginEmail']);
+	$loginPassword = $myconnection->real_escape_string($_POST['loginPassword']);
+	$query = "SELECT * FROM users WHERE email = '$loginEmail' AND password = '$loginPassword'";
 	$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 	
 	if (mysqli_num_rows($result) == 1){
@@ -37,7 +39,5 @@
 		$_SESSION['message'] = "Incorrect email and/or password.";
 		header ("Location:login_form.php");
 	}
-
-	mysqli_free_result($result);
 	mysqli_close($myconnection);
 ?>
