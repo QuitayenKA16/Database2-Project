@@ -4,7 +4,7 @@
 	$mydb = mysqli_select_db ($myconnection, 'db2') or die ('Could not select database');
 	$_SESSION['message'] = "";
 
-	$group_id = $_SESSION['group']['group_id'];
+	$meet_id = $_SESSION['meet']['meet_id'];
 	$name = $myconnection->real_escape_string($_POST['name']);
 	$announcement = $myconnection->real_escape_string($_POST['announcement']);
 	if ($announcement == "Blank")
@@ -24,18 +24,20 @@
 	$date = strtotime($increment, $date);
 	$date = date('yy-m-d', $date);
 	
-	$query = "INSERT INTO meetings (meet_name, date, time_slot_id, capacity, announcement, group_id)
-			VALUES ('$name', '$date', $time_slot_id, 0, '$announcement', $group_id)";
-	$_SESSION['message'] .= $query . "<br>";
-	
-	
-	if ($myconnection->query($query) != TRUE){
-		$_SESSION['message'] .= "Error creating meeting.<br> Error: " . $query . "<br>" . $myconnection->error . "<br>";
+	$sql = "UPDATE meetings SET meet_name='$name', date='$date', time_slot_id=$time_slot_id, announcement='$announcement' WHERE meet_id=$meet_id";
+		
+	if ($myconnection->query($sql) != TRUE){
+		$_SESSION['message'] .= "Error updating meeting.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 	}
 	else {
-		$_SESSION['message'] .= "Successful creation of meeting: $name";
+		$_SESSION['message'] .= $sql . "<br>";
+		$_SESSION['message'] .= "Successfully updated meeting: MID$meet_id";
+		
+		$query = "SELECT * FROM meetings m, time_slot t WHERE meet_id = $meet_id AND m.time_slot_id = t.time_slot_id";
+		$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
+		$_SESSION['meet'] = mysqli_fetch_assoc ($result);
 	}
 	
 	$myconnection->close();
-	header ("Location:create_meeting_form.php");
+	header ("Location:edit_meeting_form.php");
 ?>

@@ -40,7 +40,7 @@
 				echo "<button type='submit' name='mentee_all' value='$group_id 0'>ENROLL ALL</button>";
 				echo "<button type='submit' name='mentee_all' value='$group_id 1'>REMOVE ALL</button></div><br>";
 				
-				$query = "SELECT * FROM meetings m, time_slot t WHERE group_id = $group_id AND m.time_slot_id = t.time_slot_id ORDER BY m.date";
+				$query = "SELECT * FROM meetings m, time_slot t WHERE group_id = $group_id AND m.time_slot_id = t.time_slot_id AND m.date >= CURDATE() ORDER BY m.date";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				echo "<table width=100% border='1'>";
 				echo "<tr><th>MID</th><th>Name</th><th>Date</th><th>Timeslot</th><th>Capacity</th><th>Announcement</th><th>Status</th><th>Edit</th></tr>";
@@ -82,7 +82,7 @@
 					echo "<button type='submit' name='mentor_all' value='$group_id 0'>ENROLL ALL</button>";
 					echo "<button type='submit' name='mentor_all' value='$group_id 1'>REMOVE ALL</button></div><br>";
 					
-					$query = "SELECT * FROM meetings m, time_slot t WHERE group_id = $group_id AND m.time_slot_id = t.time_slot_id ORDER BY m.date";
+					$query = "SELECT * FROM meetings m, time_slot t WHERE group_id = $group_id AND m.time_slot_id = t.time_slot_id AND m.date >= CURDATE() ORDER BY m.date";
 					$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 					echo "<table width=100% border='1'>";
 					echo "<tr><th>MID</th><th>Name</th><th>Date</th><th>Timeslot</th><th>Capacity</th><th>Announcement</th><th>Status</th><th>Edit</th></tr>";

@@ -7,6 +7,8 @@
 	$group_id = $_SESSION['group']['group_id'];
 	$name = $myconnection->real_escape_string($_POST['name']);
 	$announcement = $myconnection->real_escape_string($_POST['announcement']);
+	if ($announcement == "Blank")
+		$announcement = "";
 	$time_slot_id = $myconnection->real_escape_string($_POST['time_slot_id']);
 	
 	$query = "SELECT day_of_the_week FROM time_slot WHERE time_slot_id = $time_slot_id";

@@ -8,20 +8,26 @@
 	
 	if (isset($_POST['mentee_meet_id'])){
 		$meet_id = substr($_POST['mentee_meet_id'], 0, strlen($_POST['mentee_meet_id'])-1);
+		$menteeCnt = mysqli_num_rows(mysqli_query($myconnection, "SELECT mentee_id from enroll WHERE meet_id = $meet_id"));
 		$isEnrolled = substr($_POST['mentee_meet_id'], -1);
 		
 		if ($isEnrolled == "0"){
-			$sql = "INSERT INTO enroll (meet_id, mentee_id) VALUES ($meet_id, $uid)";
-			$_SESSION['message'] .= $sql . "<br>";
-			if ($myconnection->query($sql) != TRUE){
-				$_SESSION['message'] .= "Error: Could not enroll student.<br>" . $myconnection->error . "<br>";
-			}
-			else {
-				$sql = "UPDATE meetings SET capacity = capacity + 1 WHERE meet_id = $meet_id";
+			if ($menteeCnt < 6){
+				$sql = "INSERT INTO enroll (meet_id, mentee_id) VALUES ($meet_id, $uid)";
 				$_SESSION['message'] .= $sql . "<br>";
 				if ($myconnection->query($sql) != TRUE){
-					$_SESSION['message'] .= "Error: Could not edit capacity<br>" . $myconnection->error . "<br>";
+					$_SESSION['message'] .= "Error: Could not enroll student.<br>" . $myconnection->error . "<br>";
 				}
+				else {
+					$sql = "UPDATE meetings SET capacity = capacity + 1 WHERE meet_id = $meet_id";
+					$_SESSION['message'] .= $sql . "<br>";
+					if ($myconnection->query($sql) != TRUE){
+						$_SESSION['message'] .= "Error: Could not edit capacity<br>" . $myconnection->error . "<br>";
+					}
+				}
+			}
+			else {
+				$_SESSION['message'] .= "Meeting $meet_id already has a max of 6 mentees enrolled.<br>";
 			}
 		}
 		else {
@@ -43,20 +49,26 @@
 	
 	else if (isset($_POST['mentor_meet_id'])){
 		$meet_id = substr($_POST['mentor_meet_id'], 0, strlen($_POST['mentor_meet_id'])-1);
+		$mentorCnt = mysqli_num_rows(mysqli_query($myconnection, "SELECT mentor_id from enroll2 WHERE meet_id = $meet_id"));
 		$isEnrolled = substr($_POST['mentor_meet_id'], -1);
 		
 		if ($isEnrolled == "0"){
-			$sql = "INSERT INTO enroll2 (meet_id, mentor_id) VALUES ($meet_id, $uid)";
-			$_SESSION['message'] .= $sql . "<br>";
-			if ($myconnection->query($sql) != TRUE){
-				$_SESSION['message'] .= "Error: Could not enroll student.<br>" . $myconnection->error . "<br>";
-			}
-			else {
-				$sql = "UPDATE meetings SET capacity = capacity + 1 WHERE meet_id = $meet_id";
+			if ($mentorCnt < 3){
+				$sql = "INSERT INTO enroll2 (meet_id, mentor_id) VALUES ($meet_id, $uid)";
 				$_SESSION['message'] .= $sql . "<br>";
 				if ($myconnection->query($sql) != TRUE){
-					$_SESSION['message'] .= "Error: Could not edit capacity<br>" . $myconnection->error . "<br>";
+					$_SESSION['message'] .= "Error: Could not enroll student.<br>" . $myconnection->error . "<br>";
 				}
+				else {
+					$sql = "UPDATE meetings SET capacity = capacity + 1 WHERE meet_id = $meet_id";
+					$_SESSION['message'] .= $sql . "<br>";
+					if ($myconnection->query($sql) != TRUE){
+						$_SESSION['message'] .= "Error: Could not edit capacity<br>" . $myconnection->error . "<br>";
+					}
+				}
+			}
+			else {
+				$_SESSION['message'] .= "Meeting $meet_id already has a max of 3 mentors enrolled.<br>";
 			}
 		}
 		else {
@@ -85,17 +97,23 @@
 			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 			while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 				$meet_id = $row['meet_id'];
-				$sql = "INSERT INTO enroll (meet_id, mentee_id) VALUES ($meet_id, $uid)";
-				if ($myconnection->query($sql) != TRUE){
-					if(strpos($myconnection->error, "Duplicate") != false)
-						$_SESSION['message'] .= $myconnection->error . "<br>";
+				$menteeCnt = mysqli_num_rows(mysqli_query($myconnection, "SELECT mentee_id from enroll WHERE meet_id = $meet_id"));
+				if ($menteeCnt < 6){
+					$sql = "INSERT INTO enroll (meet_id, mentee_id) VALUES ($meet_id, $uid)";
+					if ($myconnection->query($sql) != TRUE){
+						if(strpos($myconnection->error, "Duplicate") != false)
+							$_SESSION['message'] .= $myconnection->error . "<br>";
+					}
+					else {
+						$_SESSION['message'] .= $sql . "<br>";
+						$sql = "UPDATE meetings SET capacity = capacity + 1 WHERE meet_id = $meet_id";
+						if ($myconnection->query($sql) != TRUE){
+							$_SESSION['message'] .= "Error: Could not edit capacity<br>" . $myconnection->error . "<br>";
+						}
+					}
 				}
 				else {
-					$_SESSION['message'] .= $sql . "<br>";
-					$sql = "UPDATE meetings SET capacity = capacity + 1 WHERE meet_id = $meet_id";
-					if ($myconnection->query($sql) != TRUE){
-						$_SESSION['message'] .= "Error: Could not edit capacity<br>" . $myconnection->error . "<br>";
-					}
+					$_SESSION['message'] .= "Meeting $meet_id already has a max of 6 mentees enrolled.<br>";
 				}
 			}
 		}
@@ -132,17 +150,23 @@
 			$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 			while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 				$meet_id = $row['meet_id'];
-				$sql = "INSERT INTO enroll2 (meet_id, mentor_id) VALUES ($meet_id, $uid)";
-				if ($myconnection->query($sql) != TRUE){
-					if(strpos($myconnection->error, "Duplicate") != false)
-						$_SESSION['message'] .= $myconnection->error . "<br>";
+				$mentorCnt = mysqli_num_rows(mysqli_query($myconnection, "SELECT mentor_id from enroll2 WHERE meet_id = $meet_id"));
+				if ($mentorCnt < 3){
+					$sql = "INSERT INTO enroll2 (meet_id, mentor_id) VALUES ($meet_id, $uid)";
+					if ($myconnection->query($sql) != TRUE){
+						if(strpos($myconnection->error, "Duplicate") != false)
+							$_SESSION['message'] .= $myconnection->error . "<br>";
+					}
+					else {
+						$_SESSION['message'] .= $sql . "<br>";
+						$sql = "UPDATE meetings SET capacity = capacity + 1 WHERE meet_id = $meet_id";
+						if ($myconnection->query($sql) != TRUE){
+							$_SESSION['message'] .= "Error: Could not edit capacity<br>" . $myconnection->error . "<br>";
+						}
+					}
 				}
 				else {
-					$_SESSION['message'] .= $sql . "<br>";
-					$sql = "UPDATE meetings SET capacity = capacity + 1 WHERE meet_id = $meet_id";
-					if ($myconnection->query($sql) != TRUE){
-						$_SESSION['message'] .= "Error: Could not edit capacity<br>" . $myconnection->error . "<br>";
-					}
+					$_SESSION['message'] .= "Meeting $meet_id already has a max of 3 mentors enrolled.<br>";
 				}
 			}
 		}

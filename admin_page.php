@@ -41,9 +41,18 @@
 		
 		<div align='center'>
 			<h2>Finalize Meetings</h2>
-			<b>Next deadline: </b><?php echo date('l yy-m-d', strtotime('next week'));?><br><br>
+			<b>Next deadline: </b>
+			<?php
+				if (date('N') == 7){
+					$nextMon = date('yy-m-d', strtotime('next Monday'));
+					$str = $nextMon . " next Monday";
+					echo date('l yy-m-d', strtotime($str));
+				}
+				else
+					echo date('l yy-m-d', strtotime('next Monday'));
+			?><br><br>
 			<table width=90% border="1">
-			<tr><th>MID</th><th>GID</th><th>Date</th><th>Day of Week</th><th>Timeslot</th><th>Mentors (min. 1)</th><th>Mentees (min. 3)</th><th>Study Material</th><th>Edit</th><th>Cancel</th></tr>
+			<tr><th>MID</th><th>GID</th><th>Date</th><th>Day of Week</th><th>Timeslot</th><th>Announcement</th><th>Mentors (min. 1)</th><th>Mentees (min. 3)</th><th>Study Material</th><th>Edit</th><th>Cancel</th></tr>
 			<?php
 				$query = "SELECT * FROM meetings WHERE date > CURDATE() AND date < DATE_ADD(CURDATE(), INTERVAL 1 WEEK)";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
@@ -56,6 +65,7 @@
 					$time_slot =  mysqli_fetch_array (mysqli_query($myconnection, "SELECT * FROM time_slot WHERE time_slot_id = $row[time_slot_id]"), MYSQLI_ASSOC);
 					echo "<td align='center'>$time_slot[day_of_the_week]</td>";
 					echo "<td align='center'>$time_slot[start_time] - $time_slot[end_time]</td>";
+					echo "<td align='center'>$row[announcement]</td>";
 					
 					$menteeCnt = mysqli_num_rows(mysqli_query($myconnection, "SELECT mentee_id from enroll WHERE meet_id = $row[meet_id]"));
 					$mentorCnt = mysqli_num_rows(mysqli_query($myconnection, "SELECT mentor_id from enroll2 WHERE meet_id = $row[meet_id]"));

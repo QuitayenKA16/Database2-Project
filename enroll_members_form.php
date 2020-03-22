@@ -25,7 +25,7 @@
 		<form action="enroll_members.php" method="post">
 		<div align='center'>
 			<br><a href='<?php echo "$_SESSION[path]";?>meeting_page.php'>Back</a><br>
-			<h2>Mentees</h2>
+			<h2>Enroll Mentees</h2>
 			<table width=100% border="1">
 				<?php
 					$query = "SELECT * FROM users u, students s WHERE u.id = s.student_id AND s.grade = $mentee_grade_req";
@@ -57,7 +57,7 @@
 		</div><br><hr>
 		
 		<div align='center'>
-			<h2>Mentors</h2>
+			<h2>Enroll Mentors</h2>
 			<table width=100% border="1">
 				<?php
 					$query = "SELECT * FROM users u, students s WHERE u.id = s.student_id AND s.grade >= $mentor_grade_req";

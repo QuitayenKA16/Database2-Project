@@ -39,7 +39,7 @@
 				$gid = $_SESSION['grade'] - 5;
 					
 				echo "<h2>Upcoming Meetings</h2>";
-				echo "<table width=70% border='1'><tr><th>MID</th><th>GID</th><th>Date</th><th>Time</th><th>Role</th></tr>";
+				echo "<table width=70% border='1'><tr><th>MID</th><th>GID</th><th>Announcement</th><th>Date</th><th>DOW</th><th>Time</th><th>Role</th></tr>";
 					
 				$query = "SELECT * FROM meetings m, enroll e WHERE m.meet_id = e.meet_id AND e.mentee_id = $uid AND m.date < DATE_ADD(CURDATE(), INTERVAL 1 WEEK)";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
@@ -49,11 +49,13 @@
 					echo "<tr>";
 					echo "<td align='center'>$row[meet_id]</td>";
 					echo "<td align='center'>$row[group_id]</td>";
+					echo "<td align='center'>$row[announcement]</td>";
 					echo "<td align='center'>$row[date]</td>";
 					$query = "SELECT * FROM time_slot WHERE time_slot_id = $row[time_slot_id]";
 					$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 					$row2 = mysqli_fetch_array ($result2, MYSQLI_ASSOC);
-					echo "<td align='center'>$row2[day_of_the_week] $row2[start_time] - $row2[end_time]</td>";
+					echo "<td align='center'>$row2[day_of_the_week]</td>";
+					echo "<td align='center'>$row2[start_time] - $row2[end_time]</td>";
 					echo "<td align='center'>mentee</td>";
 					echo "</tr>";
 				}
@@ -65,6 +67,7 @@
 					echo "<tr>";
 					echo "<td align='center'>$row[meet_id]</td>";
 					echo "<td align='center'>$row[group_id]</td>";
+					echo "<td align='center'>$row[announcement]</td>";
 					echo "<td align='center'>$row[date]</td>";
 					$query = "SELECT * FROM time_slot WHERE time_slot_id = $row[time_slot_id]";
 					$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());

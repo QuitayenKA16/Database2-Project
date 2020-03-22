@@ -12,6 +12,7 @@
 			$gid = $_SESSION['meet']['group_id'];
 			$mName = $_SESSION['meet']['meet_name'];
 			$mDate = $_SESSION['meet']['date'];
+			$mTimeSlot = $_SESSION['meet']['time_slot_id'];
 			$mDayOfWeek = $_SESSION['meet']['day_of_the_week'];
 			$mStartTime = $_SESSION['meet']['start_time'];
 			$mEndTime = $_SESSION['meet']['end_time'];
@@ -30,17 +31,19 @@
 		<div align="center">
 			<h2>Meeting Information</h2>
 			<p class="p1"><b>MID: </b> <?php echo "$edit_mid"; ?> <br>
-			<p class="p1"><b>GID: </b> <?php echo "<a style='font: normal 14px Verdana, Geneva, sans-serif;' href='$_SESSION[path]group_page.php'>$gid</a>"; ?><br>
+			<p class="p1"><b>GID: </b> <?php echo "<a href='$_SESSION[path]group_page.php'>$gid</a>"; ?><br>
 			<p class="p1"><b>Name: </b> <?php echo "$mName"; ?> <br>
 			<p class="p1"><b>Date: </b> <?php echo "$mDate"; ?> <br>
 			<p class="p1"><b>Time Slot: </b> <?php echo "$mDayOfWeek $mStartTime - $mEndTime"; ?> <br>
 			<p class="p1"><b>Capacity: </b> <?php echo "$mCapacity"; ?> <br>
-			<p class="p1"><b>Announcement: </b> <?php echo "$mAnnounce"; ?> <br>
+			<p class="p1"><b>Announcement: </b> <?php echo "$mAnnounce"; ?> <br><br>
+			<a href='<?php echo "$_SESSION[path]";?>edit_meeting_form.php'>Edit Details</a>
 		</div><br><hr>
 		
 		<div align="center">
-			<h2>Mentors</h2>
-			<a href='<?php echo "$_SESSION[path]";?>enroll_members_form.php'>Edit</a><br><br>
+			<h2>Members</h2>
+			<a href='<?php echo "$_SESSION[path]";?>enroll_members_form.php'>Edit</a><br>
+			<h3>Mentors</h3>
 			<?php
 				$query = "SELECT * FROM enroll2 WHERE meet_id = $edit_mid";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
@@ -53,11 +56,8 @@
 					echo $row2['name'] . "<br>";
 				}
 			?>
-		</div><br><hr>
 		
-		<div align="center">
-			<h2>Mentees</h2>
-			<a href='<?php echo "$_SESSION[path]";?>enroll_members_form.php'>Edit</a><br><br>
+			<br><h3>Mentees</h3>
 			<?php
 				$query = "SELECT * FROM enroll WHERE meet_id = $edit_mid";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
@@ -74,12 +74,12 @@
 		
 		<div align="center">
 			<h2>Study Material</h2>
-			<a href='<?php echo "$_SESSION[path]";?>assign_material_form.php'>Edit</a><br><br>
+			<a href='<?php echo "$_SESSION[path]";?>assign_material_form.php'>Assign new material</a><br><br>
 			<?php
 				$query = "SELECT * FROM assign a, material m WHERE m.material_id = a.material_id AND a.meet_id = $edit_mid";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
-				echo "<table width=80% border='1'>";
-				echo "<th>ID</th><th>Title</th><th>Author</th><th>Type</th><th>URL</th><th>Assigned Date</th><th>Notes</th>";
+				echo "<table width=90% border='1'>";
+				echo "<th>ID</th><th>Title</th><th>Author</th><th>Type</th><th>URL</th><th>Assigned Date</th><th>Notes</th><th>Edit</th>";
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)){
 					echo "<tr>";
 					echo "<td>$row[material_id]</td>";
@@ -89,6 +89,8 @@
 					echo "<td>$row[url]</td>";
 					echo "<td>$row[assigned_date]</td>";
 					echo "<td>$row[notes]</td>";
+					echo "<form action='$_SESSION[path]edit_material_form.php' method='post'>";
+					echo "<td align='center'><button type='submit' name='material_id' value='$row[material_id]'>EDIT</button></td></form>";
 					echo "</tr>";
 				}
 				echo "</table></td></tr>";
