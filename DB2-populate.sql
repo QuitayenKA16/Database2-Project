@@ -1,4 +1,4 @@
--- usage: mysql -u root db2 < phase2_create_db.sql
+-- usage: mysql -u root db2 < DB2-populate.sql
 
 -- David Nguyen
 -- Karamel Quitayen
@@ -166,8 +166,8 @@ CREATE PROCEDURE createMeetings(IN groupID INTEGER)
 BEGIN
 	DECLARE j INTEGER DEFAULT 1;
 	DECLARE mName VARCHAR(255) DEFAULT "";
-	DECLARE mDate1 date DEFAULT "2020-03-21";
-	DECLARE mDate2 date DEFAULT "2020-03-21";
+	DECLARE mDate1 date DEFAULT "2020-03-28";
+	DECLARE mDate2 date DEFAULT "2020-03-28";
 	DECLARE mTime INTEGER DEFAULT 1;
 	DECLARE mSubject VARCHAR(255) DEFAULT "";
 	DECLARE mSubjectNum INTEGER DEFAULT 0;
