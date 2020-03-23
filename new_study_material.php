@@ -8,10 +8,10 @@
 	$author = $myconnection->real_escape_string($_POST['author']);
 	$type = $myconnection->real_escape_string($_POST['type']);
 	$url = $myconnection->real_escape_string($_POST['url']);
-	$assigned_date = $myconnection->real_escape_string($_POST['assigned_date']);
+	$assigned_date = $myconnection->real_escape_string($_POST['date']);
 	$notes = $myconnection->real_escape_string($_POST['notes']);
 	
-	$sql = "INSERT INTO material (title, author, type, url, assigned_date, notes) VALUES ('$title', '$author', '$type', '$url', '$_date', '$notes')";
+	$sql = "INSERT INTO material (title, author, type, url, assigned_date, notes) VALUES ('$title', '$author', '$type', '$url', '$assigned_date', '$notes')";
 	$_SESSION['message'] = $sql . "<br>";
 
 	if ($myconnection->query($sql) != TRUE){

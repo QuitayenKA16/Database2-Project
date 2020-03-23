@@ -160,50 +160,56 @@ insert into time_slot (day_of_the_week, start_time, end_time) values ("Sunday", 
 insert into time_slot (day_of_the_week, start_time, end_time) values ("Sunday", "19:00:00", "20:00:00"); -- 7pm-8pm
 	
 -- meetings (meet_id, meet_name, date, time_slot_id, capacity, announcement, group_id)
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 1", "2020-03-21", 1+6, 0, "Math", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 2", "2020-03-22", 2+6, 0, "English", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 3", "2020-03-28", 3+6, 0, "Math", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 4", "2020-03-29", 4+6, 0, "English", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 5", "2020-04-04", 5+6, 0, "Math", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 6", "2020-04-05", 7+6, 0, "English", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 7", "2020-04-11", 6+6, 0, "English", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 8", "2020-04-12", 8+6, 0, "Math", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 9", "2020-04-18", 1+6, 0, "English", 1);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("6th grade Study Meeting 10", "2020-04-19", 2+6, 0, "Math", 1);
+DELIMITER //
+DROP PROCEDURE IF EXISTS createMeetings //
+CREATE PROCEDURE createMeetings(IN groupID INTEGER)
+BEGIN
+	DECLARE j INTEGER DEFAULT 1;
+	DECLARE mName VARCHAR(255) DEFAULT "";
+	DECLARE mDate1 date DEFAULT "2020-03-21";
+	DECLARE mDate2 date DEFAULT "2020-03-21";
+	DECLARE mTime INTEGER DEFAULT 1;
+	DECLARE mSubject VARCHAR(255) DEFAULT "";
+	DECLARE mSubjectNum INTEGER DEFAULT 0;
+	
+	WHILE j <= 10 DO
+		SET mName = CONCAT((groupID+5), "th grade Study Meeting ", j);
+		SET mDate2 = ADDDATE(mDate1, INTERVAL 1 DAY);
+		SELECT time_slot_id INTO mTime FROM time_slot WHERE day_of_the_week = "Saturday" ORDER BY RAND() LIMIT 1;
+		SELECT FLOOR(RAND()*(3-1+1))+1 INTO mSubjectNum;
+		IF mSubjectNum = 1 THEN
+			SET mSubject = "Math"; END IF;
+		IF mSubjectNum = 2 THEN
+			SET mSubject = "English"; END IF;
+		IF mSubjectNum = 3 THEN
+			SET mSubject = "History"; END IF;
+			
+		INSERT INTO meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values (mName, mDate1, mTime, 0, mSubject, groupID);
+		
+		SET mName = CONCAT((groupID+5), "th grade Study Meeting ", j+1);
+		
+		SELECT time_slot_id INTO mTime FROM time_slot WHERE day_of_the_week = "Sunday" ORDER BY RAND() LIMIT 1;
+		SELECT FLOOR(RAND()*(3-1+1))+1 INTO mSubjectNum;
+		IF mSubjectNum = 1 THEN
+			SET mSubject = "Math"; END IF;
+		IF mSubjectNum = 2 THEN
+			SET mSubject = "English"; END IF;
+		IF mSubjectNum = 3 THEN
+			SET mSubject = "History"; END IF;
+			
+		INSERT INTO meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values (mName, mDate2, mTime, 0, mSubject, groupID);
+		
+		SET mDate1 = ADDDATE(mDate1, INTERVAL 1 WEEK);
+		SET j = j + 2;
+	END WHILE;
+END
+//
+DELIMITER ;
 
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 1", "2020-03-21", 1+6, 0, "English", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 2", "2020-03-22", 2+6, 0, "Math", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 3", "2020-03-28", 3+6, 0, "English", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 4", "2020-03-29", 4+6, 0, "Math", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 5", "2020-04-04", 5+6, 0, "English", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 6", "2020-04-05", 6+6, 0, "Math", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 7", "2020-04-11", 7+6, 0, "Math", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 8", "2020-04-12", 8+6, 0, "English", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 9", "2020-04-18", 3+6, 0, "Math", 2);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("7th grade Study Meeting 10", "2020-04-19", 4+6, 0, "English", 2);
-
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 1", "2020-03-21", 1+6, 0, "Math", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 2", "2020-03-22", 2+6, 0, "English", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 3", "2020-03-28", 3+6, 0, "Math", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 4", "2020-03-29", 4+6, 0, "English", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 5", "2020-04-04", 5+6, 0, "Math", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 6", "2020-04-05", 6+6, 0, "English", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 7", "2020-04-11", 7+6, 0, "Math", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 8", "2020-04-12", 8+6, 0, "English", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 9", "2020-04-18", 5+6, 0, "Math", 3);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("8th grade Study Meeting 10", "2020-04-19", 6+6, 0, "English", 3);
-
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 1", "2020-03-21", 1+6, 0, "English", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 2", "2020-03-22", 2+6, 0, "Math", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 3", "2020-03-28", 3+6, 0, "English", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 4", "2020-03-29", 4+6, 0, "Math", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 5", "2020-04-04", 5+6, 0, "English", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 6", "2020-04-05", 6+6, 0, "Math", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 7", "2020-04-11", 7+6, 0, "English", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 8", "2020-04-12", 8+6, 0, "Math", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 9", "2020-04-18", 7+6, 0, "English", 4);
-insert into meetings (meet_name, date, time_slot_id, capacity, announcement, group_id) values ("9th grade Study Meeting 10", "2020-04-19", 8+6, 0, "Math", 4);
-
+CALL createMeetings(1);
+CALL createMeetings(2);
+CALL createMeetings(3);
+CALL createMeetings(4);
 
 -- set mentors (mentor_id) and mentees (mentee_id)
 insert into mentors (mentor_id) SELECT student_id FROM students WHERE grade >= 9;
@@ -257,8 +263,17 @@ BEGIN
 	DECLARE id INTEGER DEFAULT 0;
 	DECLARE c INTEGER DEFAULT -1;
 	DECLARE req INTEGER DEFAULT 9;
+	DECLARE dateVar1 date DEFAULT '2020-01-01';
+	DECLARE dateVar2 date DEFAULT '2020-01-01';
+	DECLARE announceVar varchar(255) DEFAULT 'N/A';
+	DECLARE timeVar INTEGER DEFAULT 0;
 	
 	WHILE i <= 139 DO
+		SELECT date INTO dateVar1 FROM meetings WHERE meet_id = i;
+		SELECT announcement INTO announceVar FROM meetings WHERE meet_id = i;
+		SELECT time_slot_id INTO timeVar FROM meetings WHERE meet_id = i;
+		SET dateVar2 = ADDDATE(dateVar1, INTERVAL 1 DAY);
+	
 		IF j = 10 THEN
 			SET req = req + 1;
 			SET j = 0;
@@ -269,6 +284,9 @@ BEGIN
 			WHILE c > 0 DO
 				SELECT student_id INTO id FROM students WHERE grade >= req ORDER BY RAND() LIMIT 1;
 				SET c = (SELECT COUNT(*) FROM enroll2 WHERE mentor_id = id AND meet_id = i);
+				SET c = c + (SELECT COUNT(*) FROM meetings m, enroll2 e WHERE m.meet_id=e.meet_id AND e.mentor_id=id AND m.date=dateVar1 AND m.time_slot_id=timeVar);
+				SET c = c + (SELECT COUNT(*) FROM meetings m, enroll2 e WHERE m.meet_id=e.meet_id AND e.mentor_id=id AND m.date=dateVar1 AND m.announcement=announceVar);
+				SET c = c + (SELECT COUNT(*) FROM meetings m, enroll2 e WHERE m.meet_id=e.meet_id AND e.mentor_id=id AND m.date=dateVar2 AND m.announcement=announceVar);
 			END WHILE;
 			
 			INSERT INTO enroll2 (meet_id, mentor_id) VALUES (i, id);

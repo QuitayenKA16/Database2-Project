@@ -41,7 +41,7 @@
 				echo "<h2>Upcoming Meetings</h2>";
 				echo "<table width=70% border='1'><tr><th>MID</th><th>GID</th><th>Announcement</th><th>Date</th><th>DOW</th><th>Time</th><th>Role</th></tr>";
 					
-				$query = "SELECT * FROM meetings m, enroll e WHERE m.meet_id = e.meet_id AND e.mentee_id = $uid AND m.date < DATE_ADD(CURDATE(), INTERVAL 1 WEEK)";
+				$query = "SELECT * FROM meetings m, enroll e WHERE m.meet_id = e.meet_id AND e.mentee_id = $uid AND m.date > CURDATE() AND m.date < DATE_ADD(CURDATE(), INTERVAL 1 WEEK)";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				$count = mysqli_num_rows($result);
 					
@@ -60,7 +60,7 @@
 					echo "</tr>";
 				}
 					
-				$query = "SELECT * FROM meetings m, enroll2 e WHERE m.meet_id = e.meet_id AND e.mentor_id = $uid AND m.date < DATE_ADD(CURDATE(), INTERVAL 1 WEEK)";
+				$query = "SELECT * FROM meetings m, enroll2 e WHERE m.meet_id = e.meet_id AND e.mentor_id = $uid AND m.date > CURDATE() AND m.date < DATE_ADD(CURDATE(), INTERVAL 1 WEEK)";
 				$result = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 				$count += mysqli_num_rows($result);
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
@@ -72,13 +72,14 @@
 					$query = "SELECT * FROM time_slot WHERE time_slot_id = $row[time_slot_id]";
 					$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
 					$row2 = mysqli_fetch_array ($result2, MYSQLI_ASSOC);
-					echo "<td align='center'>$row2[day_of_the_week] $row2[start_time] - $row2[end_time]</td>";
+					echo "<td align='center'>$row2[day_of_the_week]</td>";
+					echo "<td align='center'>$row2[start_time] - $row2[end_time]</td>";
 					echo "<td align='center'>mentor</td>";
 					echo "</tr>";
 				}
 					
 				if ($count == 0)
-					echo "<tr><td align='center' colspan=5>No Upcoming Meetings</td></tr>";
+					echo "<tr><td align='center' colspan=7>No Upcoming Meetings</td></tr>";
 					
 				echo "</table></div><br><hr>";
 				echo "<div align='center'>";

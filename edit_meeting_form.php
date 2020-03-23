@@ -14,7 +14,9 @@
 			$mName = $_SESSION['meet']['meet_name'];
 			$mDate = $_SESSION['meet']['date'];
 			$mDate = new DateTime($mDate);
+			$year = $mDate->format("yy");
 			$week = $mDate->format("W");
+			$yearWeek = $year . "-W" . $week;
 			$mTimeSlot = $_SESSION['meet']['time_slot_id'];
 			$mDayOfWeek = $_SESSION['meet']['day_of_the_week'];
 			$mStartTime = $_SESSION['meet']['start_time'];
@@ -28,7 +30,7 @@
 			<br><a href='<?php echo "$_SESSION[path]";?>meeting_page.php'>Back</a>
 			<h2>Edit meeting details</h2>
 			<label><b>Name:*</label><br><input type="text" name="name" value="<?php echo $mName;?>"/><br><br>
-			<label>Week:*</label><br><input type="week" name="week" value="<?php echo $week;?>"/><br><br>
+			<label>Week:*</label><br><input type="week" name="week" value="<?php echo $yearWeek;?>"/><br><br>
 			<label>Timeslot:*</label><br>
 			<select name="time_slot_id">
 				<?php

@@ -92,11 +92,8 @@
 						echo "<td>$row[grade]</td>";
 					}
 					
-					$query = "SELECT * FROM admins WHERE admin_id = $row[id]";
-					$result2 = mysqli_query($myconnection, $query) or die ('Query failed: ' . mysql_error());
-					$row2 = mysqli_fetch_array ($result2, MYSQLI_ASSOC);
 					echo "<td align='center'>";
-					if (mysqli_num_rows($result2) != 1)
+					if ($_SESSION['loggedUser']['id'] != $row['id'])
 						echo "<button type='submit' name='edit_uid' value='$row[id]'>EDIT</button>";
 					echo "</td></form></tr>";
 				}

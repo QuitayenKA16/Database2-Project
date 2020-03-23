@@ -3,7 +3,7 @@
 		<?php
 			include "header.php";
 			if (isset($_SESSION['message'])){
-				echo "<br><p>$_SESSION[message]</p>";
+				echo "<p>$_SESSION[message]</p>";
 				unset($_SESSION['message']);
 			}
 			
@@ -23,7 +23,7 @@
 			$notes = $_SESSION['material']['notes'];
 		?>
 		
-		<div><br><a href='<?php echo "$_SESSION[path]";?>meeting_page.php'>Back</a></div>
+		<div><a href='<?php echo "$_SESSION[path]";?>meeting_page.php'>Back</a></div>
 		<h2>Edit study material</h2>
 		<form action="edit_material.php" method="post">
 			<label><b>Title:*</label><br><input type="text" name="title" value="<?php echo $title;?>"/><br><br>
@@ -31,8 +31,9 @@
 			<label>Type:</label><br><input type="text" name="type" value="<?php echo $type;?>"/><br><br>
 			<label>URL:</label><br><input type="text" name="url" value="<?php echo $URL;?>"/><br><br>
 			<label>Assigned Date:*</label><br><input type="date" name="date" value="<?php echo $assignedDate;?>"/><br><br>
-			<label>Notes:</label><br><textarea name="notes" value="<?php echo $notes;?>"/></textarea><br><br>
-			<input type="submit">
+			<label>Notes:</label><br><input name="notes" value="<?php echo $notes;?>"/></input><br><br>
+			<button type='submit' name='action' value='delete'>Delete</button>
+			<button type="submit" name="action" value="edit">Submit</button>
 		</form>
 	</body>
 </html>

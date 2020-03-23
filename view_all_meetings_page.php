@@ -23,6 +23,8 @@
 				if ($_SESSION['table_sort']=='dateDes') $sort .= "m.date DESC";
 				if ($_SESSION['table_sort']=='capAsc') $sort .= "m.capacity ASC";
 				if ($_SESSION['table_sort']=='capDes') $sort .= "m.capacity DESC";
+				if ($_SESSION['table_sort']=='announceAsc') $sort .= "m.announcement ASC";
+				if ($_SESSION['table_sort']=='announceDes') $sort .= "m.announcement DESC";
 				
 				$query = "SELECT * FROM meetings m, time_slot t WHERE m.time_slot_id = t.time_slot_id ORDER BY " . $sort;
 	
@@ -48,7 +50,11 @@
 				if ($_SESSION['table_sort']=='capAsc') echo " value='capDes'>&#9660</button></th>";
 				else echo " value='capAsc'>&#9650</button></th>";
 				
-				echo "<th>Announcement</th><th>Edit</th></form>";
+				echo "<th>Announcement <button type='submit' name='table_sort' ";
+				if ($_SESSION['table_sort']=='announceAsc') echo " value='announceDes'>&#9660</button></th>";
+				else echo " value='announceAsc'>&#9650</button></th>";
+				
+				echo "<th>Edit</th></form>";
 				
 				while ($row = mysqli_fetch_array ($result, MYSQLI_ASSOC)) {
 					echo "<tr>";

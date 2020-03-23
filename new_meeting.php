@@ -24,16 +24,22 @@
 	$date = strtotime($increment, $date);
 	$date = date('yy-m-d', $date);
 	
-	$query = "INSERT INTO meetings (meet_name, date, time_slot_id, capacity, announcement, group_id)
-			VALUES ('$name', '$date', $time_slot_id, 0, '$announcement', $group_id)";
-	$_SESSION['message'] .= $query . "<br>";
+	$duplicateMeetings = mysqli_num_rows(mysqli_query($myconnection, "SELECT meet_id FROM meetings WHERE date = '$date' AND time_slot_id = $time_slot_id AND group_id = $group_id"));
 	
-	
-	if ($myconnection->query($query) != TRUE){
-		$_SESSION['message'] .= "Error creating meeting.<br> Error: " . $query . "<br>" . $myconnection->error . "<br>";
+	if ($duplicateMeetings == 0){
+		$query = "INSERT INTO meetings (meet_name, date, time_slot_id, capacity, announcement, group_id)
+				VALUES ('$name', '$date', $time_slot_id, 0, '$announcement', $group_id)";
+		$_SESSION['message'] .= $query . "<br>";
+		
+		if ($myconnection->query($query) != TRUE){
+			$_SESSION['message'] .= "Error creating meeting.<br> Error: " . $query . "<br>" . $myconnection->error . "<br>";
+		}
+		else {
+			$_SESSION['message'] .= "Successful creation of meeting: $name";
+		}
 	}
 	else {
-		$_SESSION['message'] .= "Successful creation of meeting: $name";
+		$_SESSION['message'] .= "Error: Duplicate date and time-slot for GID$group_id<br>";
 	}
 	
 	$myconnection->close();

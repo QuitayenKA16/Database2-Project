@@ -12,16 +12,25 @@
 	$assigned_date = $myconnection->real_escape_string($_POST['date']);
 	$notes = $myconnection->real_escape_string($_POST['notes']);
 	
-	$sql = "UPDATE material SET title='$title', author='$author', type='$type', url='$url', assigned_date='$assigned_date', notes='$notes' WHERE material_id=$material_id";
-
-	if ($myconnection->query($sql) != TRUE){
-		$_SESSION['message'] .= "Error updating study material.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
-	}
-	else {
-		$_SESSION['message'] .= $sql . "<br>";
-		$_SESSION['message'] .= "Successfully updated study_material: ID$material_id";
+	if ($_POST['action'] == "delete"){
+		$sql = "DELETE FROM material WHERE material_id = $material_id";
+		if ($myconnection->query($sql) === TRUE){
+			echo "Successfully deleted material: <b>ID$material_id</b><br><br>";
+			echo "<a href='$_SESSION[path]meeting_page.php'>Back</a></div>";
+		}
 	}
 	
-	$myconnection->close();
-	header ("Location:edit_material_form.php");
+	else {
+		$sql = "UPDATE material SET title='$title', author='$author', type='$type', url='$url', assigned_date='$assigned_date', notes='$notes' WHERE material_id=$material_id";
+
+		if ($myconnection->query($sql) != TRUE){
+			$_SESSION['message'] .= "Error updating study material.<br> Error: " . $sql . "<br>" . $myconnection->error . "<br>";
+		}
+		else {
+			$_SESSION['message'] .= $sql . "<br>";
+			$_SESSION['message'] .= "Successfully updated study_material: <b>ID$material_id</b><br>";
+		}
+		$myconnection->close();
+		header ("Location:edit_material_form.php");
+	}
 ?>

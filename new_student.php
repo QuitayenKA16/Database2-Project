@@ -24,7 +24,7 @@
 			$studentPhone = $myconnection->real_escape_string($_POST['phone']);
 			$studentPassword = $myconnection->real_escape_string($_POST['password']);
 		
-			$sql = "INSERT INTO users (name, email, phone, password) VALUES ('$studentName', '$stdeuntEmail', '$studentPhone', '$studentPassword')";
+			$sql = "INSERT INTO users (name, email, phone, password) VALUES ('$studentName', '$studentEmail', '$studentPhone', '$studentPassword')";
 			if ($myconnection->query($sql) != TRUE){
 				$_SESSION['message'] .= "Error creating student account.<br>Error: " . $sql . "<br>" . $myconnection->error . "<br>";
 			}

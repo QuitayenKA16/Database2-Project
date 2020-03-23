@@ -3,19 +3,21 @@
 		<?php
 			include "header.php";
 			if (isset($_SESSION['message'])){
-				echo "$_SESSION[message]";
+				echo "$_SESSION[message]<br>";
 				unset($_SESSION['message']);
 			}
 			
 			if (isset($_POST['edit_uid'])){
 				$_SESSION['edit_uid'] = $_POST['edit_uid'];
+			}
+			
+			if ($_SESSION['edit_uid'] == $_SESSION['loggedUser']['id']) //user editing own data
+				echo "<br><a href='$_SESSION[path]user_page.php'>Back</a> ";
+			else{
 				if ($_SESSION['type'] == -1) //admin editing another user
 					echo "<br><a href='$_SESSION[path]view_users_page.php'>Back</a> ";
 				else if ($_SESSION['type'] == 0) //parent editing child
 					echo "<br><a href='$_SESSION[path]view_children_page.php'>Back</a> ";
-			}
-			else {
-				echo "<br><a href='$_SESSION[path]user_page.php'>Back</a> ";
 			}
 			
 			$myconnection = mysqli_connect('localhost', 'root', '') or die ('Could not connect: ' . mysql_error());
@@ -71,7 +73,7 @@
 					}
 				?>
 			</select><br><br>
-			<?php if ($_SESSION['type'] == -1) //only admins can delete
+			<?php if (isset($_POST['edit_uid']) && $_SESSION['loggedUser']['id'] == 16) //only admins can delete
 				echo "<button type='submit' name='delete' value='delete'>Delete</button>";?>
 			<button type="submit" name="action" value="edit">Submit</button>
 		</form>
